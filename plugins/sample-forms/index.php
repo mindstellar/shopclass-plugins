@@ -3,7 +3,7 @@
 Plugin Name: Sample Forms
 Plugin URI: https://github.com/mindstellar/shopclass
 Description: Reference plugin showing how to extend the Forms platform: register a placement context, add/remove fields per context, veto a submission (spam), amend validation, and react to a stored submission (notification stand-in).
-Version: 1.0.0
+Version: 1.0.1
 Author: Mindstellar Community
 Author URI: https://mindstellar.com
 Short Name: sample-forms
