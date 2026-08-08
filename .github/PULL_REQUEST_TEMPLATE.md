@@ -1,9 +1,10 @@
 <!--
 Automated validation runs on this pull request and reports back as a single comment it keeps
-updated. It cannot publish anything yet — there is no catalog (see the banner in README.md), so a
-merged package is not installable. The checklist below mirrors the gates CI enforces
-(docs/PACKAGE-SPEC.md §8 in the core repository); ticking a box is your attestation, not a
-guarantee, but it tells the reviewer where to look first.
+updated. It checks whether the package works; a maintainer separately reviews whether it belongs
+in the registry (scope, duplication, maintenance, accuracy — see CONTRIBUTING.md). Once merged,
+release.yml and catalog.yml publish and catalogue it automatically. The checklist below mirrors
+the gates CI enforces (docs/PACKAGE-SPEC.md §8 in the core repository); ticking a box is your
+attestation, not a guarantee, but it tells the reviewer where to look first.
 -->
 
 ## Package

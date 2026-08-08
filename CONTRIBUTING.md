@@ -1,13 +1,14 @@
 # Contributing
 
-> [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Release automation (`release.yml`) and the
-> catalog build (`catalog.yml`) both exist and publish for real once core ships
-> `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core repository) — until then, a
-> catalog build run is a visible, deliberate no-op rather than a failure. What's still missing is
-> the other half: no core release yet reads the catalog (`docs/MARKET.md` Phase 5), so even a merged
-> and released package cannot be discovered or installed by a site today. The most useful
-> contribution today is an issue rather than a pull request — see `.github/ISSUE_TEMPLATE/`.
+Submissions are open — add your package and open a pull request. Automated CI (§3) checks
+whether it *works*: structure, manifest, header parse, compatibility fields, `php -l` across
+supported PHP versions, the PHP 8.0 floor, a dangerous-construct scan, and a real container
+smoke-install. A green run is necessary but not sufficient — a maintainer still reviews whether
+the package *belongs* in the registry: is it in scope for a classifieds CMS, does it duplicate an
+existing package without a clear reason to exist, does it look maintained, and does it actually do
+what it claims. That's a short, human judgement call, not a second technical gate — CI already
+covers the technical half. Review is best-effort by a small maintainer team, so expect it to take
+a few days, not minutes; there's no SLA.
 
 The rules a package must satisfy are specified once, in `docs/PACKAGE-SPEC.md` in the core
 repository. This document does not repeat them — it walks through the mechanics of submitting.
@@ -37,7 +38,7 @@ Name` header — all three must agree.
 
 ## 2. Check your package locally before opening a PR
 
-`package-lint.php` is the same validator the (future) CI runs, published as a release asset on the
+`package-lint.php` is the same validator CI runs, published as a release asset on the
 core repository so the two never drift. It needs one companion file, `Compatibility.php`, which is
 attached to the same release; download both into one directory and it finds them itself. Pin them to
 the core version you are targeting:
@@ -61,7 +62,7 @@ Exit code `0` means no errors — warnings do not fail a build and are printed a
 Also validate `shopclass.json` against `schema/package.schema.json` with any JSON Schema
 (draft 2020-12) validator — `ajv` (Node) or `jsonschema` (Python) both work.
 
-## 3. What CI checks (once core's half of it has shipped)
+## 3. What CI checks
 
 `pr-validate.yml` runs ten gates against only the package(s) your PR touches — structure,
 manifest schema, header parse, compatibility fields, `php -l` across supported versions, a
@@ -80,9 +81,17 @@ Once your PR merges to `main`, `release.yml` detects that your package's `Versio
 creates a tag `<slug>-v<version>` with a GitHub Release named `<Name> <version>` — body taken from
 your `CHANGELOG.md` section for that version. Re-running on a version that was already released is
 a no-op (idempotent), and a failed build never leaves a tag behind. `release.yml` then triggers
-`catalog.yml`, which rebuilds the catalog once core has published `package-ci/build-catalog.php`
-(see the root `README.md`'s status note) — until then this step is a visible skip, not a failure.
-See `docs/MARKET.md` §7 in the core repository for the full build and catalog steps.
+`catalog.yml`, which rebuilds the published catalog — live within minutes at
+`https://mindstellar.github.io/shopclass-plugins/v1/…` — so a released version is what a site's
+Browse/Update tab sees next. See `docs/MARKET.md` §7 in the core repository for the full build and
+catalog steps.
+
+Two things about the catalog worth knowing before you ship: the browse list's default sort is
+"Recently updated," driven by your newest release's publish time, not anything you set — a
+package with no recent releases sinks toward the bottom regardless of quality. And each release's
+`downloads` figure in the catalog is GitHub's own release-asset download count (also selectable as
+a "Most downloaded" sort) — it includes CI runs, mirrors, and repeat downloads, so treat it as a
+popularity signal, not an install count.
 
 ## 5. Registering an externally-hosted package instead
 
@@ -91,6 +100,6 @@ to hand over your source tree. Add a single file, `external/<slug>.json`, follow
 `schema/external.schema.json` — slug, type, a `source` pointing at your GitHub repo, an
 `asset_pattern` regex matching your release zip's filename, and the same catalog-facing metadata
 (`categories`, `short_description`, and so on) an in-repo package carries in `shopclass.json`. The
-(future) catalog builder resolves your releases directly, reading the real header block out of the
+catalog builder resolves your releases directly, reading the real header block out of the
 zip so the catalog can never drift from what you actually shipped. See `docs/MARKET.md` §3.2 for
 the full shape.

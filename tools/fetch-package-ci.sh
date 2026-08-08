@@ -23,17 +23,14 @@
 #      deprecated-api.json generated on the spot with
 #      scripts/gen-deprecated-api.mjs.
 #
-# Path 2 is not a fallback of last resort today: core has not published the
-# tarball yet (only package-lint.php, Compatibility.php and deprecated-api.json
-# ship as loose release assets — see .github/workflows/build.yml in core), and
-# core's tools/ci/ directory — deprecation-scan.php, annotate.php,
-# smoke-install.sh, deprecation-collector/, build-catalog.php — does not exist
-# yet at all, in any branch or release. All are called out explicitly rather
-# than papered over: this script copies whatever of the seven components it
-# can find and writes package-ci/MANIFEST.json recording which ones actually
-# arrived, so pr-validate.yml and catalog.yml can run every gate/step that has
-# a real implementation and skip — visibly, not silently — the ones that do
-# not exist upstream yet. build-catalog.php (docs/MARKET.md §7) is consumed by
+# Path 1 is the normal one: core publishes shopclass-package-ci.tar.gz with every
+# component from 6.1.0.beta3 onward, alongside the loose package-lint.php,
+# Compatibility.php and deprecated-api.json assets. Path 2 exists for an older
+# core, a release that predates a component, or a network failure reaching the
+# asset. Either way this script copies whatever of the seven components it finds
+# and writes package-ci/MANIFEST.json recording which ones arrived, so
+# pr-validate.yml and catalog.yml run every gate backed by a real implementation
+# and skip — visibly, not silently — anything the resolved core does not carry. build-catalog.php (docs/MARKET.md §7) is consumed by
 # catalog.yml, not by pr-validate.yml — it is listed here anyway because it
 # ships in the same bundle and this is the one place that bundle is unpacked.
 #

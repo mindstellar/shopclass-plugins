@@ -1,16 +1,11 @@
 # shopclass-plugins
 
-The plugin registry for [Shopclass](https://github.com/mindstellar/osclass) — the package
-contract, the plugins themselves, and (once built) the catalog that a site's admin panel browses.
+The plugin registry for [Shopclass](https://github.com/mindstellar/shopclass) — the package
+contract, the plugins themselves, and the catalog a site's admin panel browses, installs, and
+updates from.
 
-> [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Release automation (`release.yml`) and the
-> catalog build (`catalog.yml`) both exist and publish for real once core ships
-> `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core repository) — until then, a
-> catalog build run is a visible, deliberate no-op rather than a failure. What's still missing is
-> the other half: no core release yet reads the catalog (`docs/MARKET.md` Phase 5), so even a merged
-> and released package cannot be discovered or installed by a site today. The most useful
-> contribution today is an issue rather than a pull request — see `.github/ISSUE_TEMPLATE/`.
+Submissions are open, by pull request — see `CONTRIBUTING.md` for the walkthrough, what CI
+checks, and what a maintainer reviews beyond that.
 
 ## What this is
 
@@ -21,16 +16,12 @@ plugin here must satisfy lives in `docs/PACKAGE-SPEC.md`.
 
 ## How a site owner browses this today
 
-There is no Browse tab yet — that is Phase 6 of the ecosystem plan, and it depends on the catalog
-(Phase 4) and the core catalog client (Phase 5), neither of which exists yet either. Until then,
-"browsing" this registry means reading the `plugins/` tree on GitHub, same as any other repository.
-Each package's `README.md` documents what it does and how to configure it; each has its own
-`CHANGELOG.md`.
-
-Once Phase 4 ships, this repository publishes a static catalog to a `catalog` branch (served by
-GitHub Pages, mirrored on `raw.githubusercontent.com`), and once Phase 6 ships, that catalog is
-what powers a **Browse** tab on the Plugins screen in the admin panel — see `docs/MARKET.md` §5 and
-§8.2 in the core repository for the exact contract.
+A Shopclass site's Plugins screen has a **Browse** tab, populated from this registry's catalog:
+thumbnail, name, author, short description, and a compatibility badge, sorted by "Recently
+updated" by default with a "Most downloaded" option. Install and Update run from there directly —
+see `docs/MARKET.md` §5 and §8.2 in the core repository for the exact contract. A package's
+`README.md` renders on its detail screen; reading the `plugins/` tree on GitHub works too, same as
+any other repository.
 
 ## Two hosting models
 
@@ -66,14 +57,14 @@ schema/               JSON Schema for shopclass.json, external/<slug>.json, and 
 - Mirror: `https://raw.githubusercontent.com/mindstellar/shopclass-plugins/catalog/v1/*.json`
 
 The file shapes — `updates.json`, `index.json`, `packages/<slug>.json`, `categories.json` — are
-specified in `docs/MARKET.md` §5 of the core repository. The `catalog` branch does not exist yet:
-`catalog.yml` runs (on release, daily, and on demand) but has nothing to build against until core
-publishes `package-ci/build-catalog.php`, and skips visibly rather than publishing an empty or
-fabricated catalog. These URLs are live from the first run that actually builds something.
+specified in `docs/MARKET.md` §5 of the core repository. `updates.json` and `packages/<slug>.json`
+also carry a `downloads` figure per version and per package — GitHub's own release-asset download
+count, not an install count — and `index.json` carries `updated_at`, which drives the Browse tab's
+default sort. `catalog.yml` rebuilds on every release, daily, and on demand.
 
 ## Contributing
 
-See `CONTRIBUTING.md` — and read the banner above first.
+See `CONTRIBUTING.md`.
 
 ## License
 

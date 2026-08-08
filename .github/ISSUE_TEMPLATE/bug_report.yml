@@ -7,8 +7,8 @@ body:
       value: |
         Use this for a problem with something already in this repository — a package under
         `plugins/`, a schema under `schema/`, or the documentation. If you're proposing a *new*
-        package, use the "Package submission question" template instead — this registry is not
-        yet accepting submission PRs (see the README banner).
+        package, open a pull request instead (see CONTRIBUTING.md) — use the "Package submission
+        question" template only if you have a question first.
 
   - type: dropdown
     id: area

@@ -5,11 +5,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        This registry cannot publish a package yet — there is no catalog (see the README banner
-        and CONTRIBUTING.md), so a merged submission would not reach anyone. Use this form to ask
-        a question instead — whether your plugin fits, which category it belongs in, whether it
-        should be in-repo or an `external/<slug>.json` registration, or anything about
-        `docs/PACKAGE-SPEC.md` you're unsure how to satisfy.
+        Submissions are open by pull request — see CONTRIBUTING.md, you don't need to ask first.
+        Use this form only if you have a question before (or instead of) opening one — whether
+        your plugin fits, which category it belongs in, whether it should be in-repo or an
+        `external/<slug>.json` registration, or anything about `docs/PACKAGE-SPEC.md` you're
+        unsure how to satisfy.
 
   - type: input
     id: plugin-name
