@@ -5,9 +5,10 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 8,
+        "downloads": 11,
         "icon": null,
         "name": "Sample Forms",
+        "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the Forms platform: contexts, field filters, spam veto, and submission hooks.",
         "slug": "sample-forms",
         "tags": [
@@ -16,6 +17,7 @@
             "reference",
             "spam-filter"
         ],
+        "tested_max": "6.1",
         "updated_at": "2026-08-08T09:23:06Z",
         "version": "1.0.1"
     },
@@ -24,9 +26,10 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 9,
+        "downloads": 12,
         "icon": null,
         "name": "Sample Widgets",
+        "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
         "slug": "sample-widgets",
         "tags": [
@@ -35,6 +38,7 @@
             "reference",
             "widgets"
         ],
+        "tested_max": "6.1",
         "updated_at": "2026-08-08T09:23:07Z",
         "version": "1.0.1"
     }
