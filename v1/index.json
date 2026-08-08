@@ -5,6 +5,7 @@
             "anti-spam",
             "content-widgets"
         ],
+        "downloads": 8,
         "icon": null,
         "name": "Sample Forms",
         "short_description": "Reference plugin demonstrating the Forms platform: contexts, field filters, spam veto, and submission hooks.",
@@ -23,6 +24,7 @@
         "categories": [
             "content-widgets"
         ],
+        "downloads": 9,
         "icon": null,
         "name": "Sample Widgets",
         "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
