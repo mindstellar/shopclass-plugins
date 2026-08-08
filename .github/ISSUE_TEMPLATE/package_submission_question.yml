@@ -1,0 +1,68 @@
+name: Package submission question
+description: Ask about submitting a plugin, before or instead of opening a PR.
+labels: ["submission-question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This registry does not yet run automated PR validation, so an actual submission PR would
+        sit unreviewed (see the README banner and CONTRIBUTING.md). Use this form to ask a
+        question instead — whether your plugin fits, which category it belongs in, whether it
+        should be in-repo or an `external/<slug>.json` registration, or anything about
+        `docs/PACKAGE-SPEC.md` you're unsure how to satisfy.
+
+  - type: input
+    id: plugin-name
+    attributes:
+      label: Plugin name
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do?
+      description: A couple of sentences — the same scope as a shopclass.json short_description.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: How would it be hosted?
+      options:
+        - In this repo (plugins/<slug>/) — no release process of my own
+        - In my own repository, registered via external/<slug>.json
+        - Not sure yet
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Which category (or categories) do you think it belongs in?
+      description: See schema/categories.json for the full list with descriptions. Pick your best guess — this is a question, not a commitment.
+      multiple: true
+      options:
+        - payments
+        - listings-moderation
+        - search
+        - storage-media
+        - seo
+        - notifications
+        - anti-spam
+        - import-export
+        - integrations
+        - admin-tools
+        - localisation
+        - content-widgets
+        - none of these fit
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

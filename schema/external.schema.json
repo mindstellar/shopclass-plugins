@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mindstellar.github.io/shopclass-plugins/schema/external.schema.json",
+  "title": "external/<slug>.json (externally-hosted package registration)",
+  "description": "Registers a package that lives in its own repository, as described in docs/MARKET.md §3.2. The catalog builder resolves this to the same entry shape as an in-repo package by reading the header block out of the referenced repo's release asset.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "type", "source", "asset_pattern", "categories", "short_description"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "description": "Must equal the filename (external/<slug>.json).",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,40}$"
+    },
+    "type": {
+      "type": "string",
+      "const": "plugin"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "repo"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "github-release",
+          "description": "The only source kind implemented today: a GitHub Releases feed."
+        },
+        "repo": {
+          "type": "string",
+          "description": "\"owner/name\" of the GitHub repository that publishes releases.",
+          "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?/[A-Za-z0-9._-]+$"
+        }
+      }
+    },
+    "asset_pattern": {
+      "type": "string",
+      "description": "Regular expression matched against release asset filenames to pick the distributable zip, e.g. \"^bender_.*\\\\.zip$\".",
+      "minLength": 1
+    },
+    "categories": {
+      "type": "array",
+      "description": "Drawn from schema/categories.json. At least one, no duplicates.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "payments",
+          "listings-moderation",
+          "search",
+          "storage-media",
+          "seo",
+          "notifications",
+          "anti-spam",
+          "import-export",
+          "integrations",
+          "admin-tools",
+          "localisation",
+          "content-widgets"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32,
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "short_description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 140
+    },
+    "icon": {
+      "type": "string",
+      "description": "Full URL — an externally-hosted package's artwork lives in its own repository, not this one.",
+      "format": "uri"
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["src"],
+        "properties": {
+          "src": {
+            "type": "string",
+            "format": "uri"
+          },
+          "caption": {
+            "type": "string",
+            "maxLength": 140
+          }
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "issues": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docs": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "funding": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

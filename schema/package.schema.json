@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mindstellar.github.io/shopclass-plugins/schema/package.schema.json",
+  "title": "shopclass.json (in-repo package manifest)",
+  "description": "Catalog-facing metadata for a package hosted inside plugins/<slug>/, as described in docs/PACKAGE-SPEC.md §7. This schema enforces shape only; the rules for what makes a submission acceptable live in PACKAGE-SPEC, not here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "type", "categories", "short_description"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "description": "Must equal the containing directory name.",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,40}$"
+    },
+    "type": {
+      "type": "string",
+      "const": "plugin"
+    },
+    "categories": {
+      "type": "array",
+      "description": "Drawn from schema/categories.json. At least one, no duplicates.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "payments",
+          "listings-moderation",
+          "search",
+          "storage-media",
+          "seo",
+          "notifications",
+          "anti-spam",
+          "import-export",
+          "integrations",
+          "admin-tools",
+          "localisation",
+          "content-widgets"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form keywords, lowercase and hyphenated by convention.",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32,
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "short_description": {
+      "type": "string",
+      "description": "One line, rendered on catalog cards. Long-form prose belongs in README.md.",
+      "minLength": 10,
+      "maxLength": 140
+    },
+    "icon": {
+      "type": "string",
+      "description": "Package-relative path to assets/icon.svg or assets/icon.png. Optional — core falls back to a built-in placeholder.",
+      "pattern": "^assets/icon\\.(svg|png)$"
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["src"],
+        "properties": {
+          "src": {
+            "type": "string",
+            "pattern": "^assets/screenshot-.+\\.(png|jpg|jpeg)$"
+          },
+          "caption": {
+            "type": "string",
+            "maxLength": 140
+          }
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "issues": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docs": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "funding": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX identifier, e.g. \"GPL-3.0-or-later\". Must be GPL-compatible per PACKAGE-SPEC §11.",
+      "minLength": 1
+    }
+  }
+}

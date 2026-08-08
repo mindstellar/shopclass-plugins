@@ -1,0 +1,18 @@
+# Normalize line endings for anything text-ish; let git figure out binaries itself.
+* text=auto eol=lf
+
+*.php text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Never let a package's own screenshot/icon go through EOL conversion or be
+# treated as text in a diff.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text eol=lf diff=text
+*.ico binary
+*.zip binary

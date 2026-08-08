@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "sample-widgets",
+  "type": "plugin",
+  "categories": ["content-widgets"],
+  "tags": ["widgets", "reference", "developer", "page-template"],
+  "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/osclass/issues",
+    "docs": "https://github.com/mindstellar/osclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}

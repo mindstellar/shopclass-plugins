@@ -1,0 +1,15 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Anything used to run local schema validation or future tooling scripts —
+# never a package's own committed vendor/ directory (those are part of the
+# package and belong in git).
+/node_modules/
+/tools/node_modules/
+
+# Local scratch output
+*.log

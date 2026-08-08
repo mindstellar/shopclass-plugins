@@ -1,0 +1,47 @@
+name: Bug report
+description: Something in a listed package, a schema, or the repository's own docs is wrong.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for a problem with something already in this repository — a package under
+        `plugins/`, a schema under `schema/`, or the documentation. If you're proposing a *new*
+        package, use the "Package submission question" template instead — this registry is not
+        yet accepting submission PRs (see the README banner).
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where is the problem?
+      options:
+        - A specific package (plugins/<slug>)
+        - A schema (schema/*.schema.json)
+        - Documentation (README, CONTRIBUTING, CODE_OF_CONDUCT)
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: package
+    attributes:
+      label: Package slug (if applicable)
+      description: e.g. sample-forms
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What's wrong?
+      description: What did you expect, and what actually happens?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: If this is a code bug, the minimum steps to see it (Shopclass core version, PHP version, what you did).
+    validations:
+      required: false

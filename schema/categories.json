@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mindstellar.github.io/shopclass-plugins/schema/categories.json",
+  "description": "Fixed category vocabulary for shopclass.json `categories` and external/<slug>.json `categories`. This is the enum source referenced by package.schema.json and external.schema.json.",
+  "categories": [
+    {
+      "id": "payments",
+      "label": "Payments",
+      "description": "Payment gateways, paid listing plans, and other monetization of the marketplace."
+    },
+    {
+      "id": "listings-moderation",
+      "label": "Listings & moderation",
+      "description": "Listing lifecycle, review queues, flagging, and moderation workflow."
+    },
+    {
+      "id": "search",
+      "label": "Search",
+      "description": "Search relevance, filters, facets, and discovery of listings."
+    },
+    {
+      "id": "storage-media",
+      "label": "Storage & media",
+      "description": "File storage, image/video processing, CDN offload, and media handling."
+    },
+    {
+      "id": "seo",
+      "label": "SEO",
+      "description": "Search engine optimization: sitemaps, structured data, metadata, canonicals."
+    },
+    {
+      "id": "notifications",
+      "label": "Notifications",
+      "description": "Email, SMS, push, or webhook notifications to users and admins."
+    },
+    {
+      "id": "anti-spam",
+      "label": "Anti-spam",
+      "description": "Spam and abuse prevention: captcha, honeypots, submission filtering."
+    },
+    {
+      "id": "import-export",
+      "label": "Import & export",
+      "description": "Bulk import, export, feeds, and data migration in or out of a site."
+    },
+    {
+      "id": "integrations",
+      "label": "Integrations",
+      "description": "Connectors to external services and APIs: social login, analytics, CRMs, and similar."
+    },
+    {
+      "id": "admin-tools",
+      "label": "Admin tools",
+      "description": "Dashboard utilities, reporting, and other tools for site administrators."
+    },
+    {
+      "id": "localisation",
+      "label": "Localisation",
+      "description": "Languages, currencies, regions, and other locale-specific behaviour."
+    },
+    {
+      "id": "content-widgets",
+      "label": "Content & widgets",
+      "description": "Widgets, page templates, custom forms, and other content-authoring building blocks."
+    }
+  ]
+}
