@@ -4,14 +4,12 @@ The plugin registry for [Shopclass](https://github.com/mindstellar/osclass) — 
 contract, the plugins themselves, and (once built) the catalog that a site's admin panel browses.
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Pull-request validation (the CI gate
-> described in `docs/MARKET.md` §6 of the core repository) has not been built yet — there is no
-> automated way to check a submitted package today, and merging one without that gate means
-> shipping it to real installs unverified. Opening a PR right now will sit unreviewed. Watch the
-> core repository's `docs/MARKET.md` for **Phase 3 — PR validation**; that is what turns
-> submissions on. Until then, the most useful contribution is filing an issue (see
-> `.github/ISSUE_TEMPLATE/`) — a schema gap, a category that's missing, a question about how your
-> package would fit.
+> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
+> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
+> a merged package still cannot be published or installed by anyone. Validation also expects a
+> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
+> source instead. The most useful contribution today is an issue rather than a pull request — see
+> `.github/ISSUE_TEMPLATE/`.
 
 ## What this is
 

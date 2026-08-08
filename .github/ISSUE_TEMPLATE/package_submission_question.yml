@@ -5,9 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        This registry does not yet run automated PR validation, so an actual submission PR would
-        sit unreviewed (see the README banner and CONTRIBUTING.md). Use this form to ask a
-        question instead — whether your plugin fits, which category it belongs in, whether it
+        This registry cannot publish a package yet — there is no catalog (see the README banner
+        and CONTRIBUTING.md), so a merged submission would not reach anyone. Use this form to ask
+        a question instead — whether your plugin fits, which category it belongs in, whether it
         should be in-repo or an `external/<slug>.json` registration, or anything about
         `docs/PACKAGE-SPEC.md` you're unsure how to satisfy.
 

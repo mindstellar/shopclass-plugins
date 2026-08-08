@@ -1,0 +1,355 @@
+name: Validate package submission
+
+# docs/MARKET.md §6. Deliberately `pull_request`, never `pull_request_target`:
+# every job below runs the contributor's own code (package-lint.php against
+# their files, php -l on their files, eventually a container built from
+# their files) and must never see repository secrets while doing it — see
+# §6.1 and §9 ("Contributor code exfiltrating CI secrets"). There are none to
+# see: no job in this workflow is granted anything beyond the default
+# read-only GITHUB_TOKEN, and only the final comment job is granted
+# pull-requests: write.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: pr-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  CORE_REPO: mindstellar/shopclass
+  PHP_CS_FIXER_VERSION: v3.64.0
+
+jobs:
+  # ---------------------------------------------------------------------
+  # Which package(s) this PR touches. §6.1.
+  # ---------------------------------------------------------------------
+  changed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      packages: ${{ steps.detect.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - id: detect
+        run: |
+          PACKAGES="$(tools/changed-packages.sh "origin/${{ github.base_ref }}")"
+          echo "packages=${PACKAGES}" >> "$GITHUB_OUTPUT"
+          echo "Changed packages: ${PACKAGES}"
+
+  # A PR that only touches root docs (or deletes a package outright) has
+  # nothing to validate. That is a real, green result, not the absence of
+  # one — this job exists so it shows as an explicit passing check rather
+  # than leaving the matrix's "skipped" as the only signal.
+  no-packages:
+    needs: changed
+    if: needs.changed.outputs.packages == '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: |
+          echo "No plugins/<slug> directory changed on this PR (root docs, or a package removed entirely)."
+          echo "Nothing to validate — this is a pass, not a skip."
+
+  # ---------------------------------------------------------------------
+  # Obtain the shared validation harness once, share it with every matrix
+  # job below rather than re-fetching per package. §6.4 ("one parser, no
+  # drift"): package-lint.php and Compatibility.php always come from core,
+  # never from a copy kept in this repo.
+  # ---------------------------------------------------------------------
+  prepare-ci:
+    needs: changed
+    if: needs.changed.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      core_version: ${{ steps.core-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Resolve latest released core version
+        id: core-version
+        run: |
+          VERSION="$(curl -fsSL "https://api.github.com/repos/${CORE_REPO}/releases/latest" | jq -r '.tag_name // empty')"
+          if [ -z "$VERSION" ]; then
+            echo "Could not resolve a latest stable release for ${CORE_REPO}; compatibility gates will use 0.0.0 and likely flag everything." >&2
+            VERSION="0.0.0"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Latest released core: ${VERSION}"
+
+      # docs/MARKET.md §6 "Frozen interface": package-lint.php, Compatibility.php,
+      # deprecated-api.json, and — once core publishes them — deprecation-scan.php,
+      # annotate.php, smoke-install.sh, deprecation-collector/. See the header
+      # comment in this script for exactly what exists today versus what is
+      # still pending upstream; this step does not fail when the optional four
+      # are missing, only when the required three are.
+      - name: Fetch package-ci harness
+        run: tools/fetch-package-ci.sh --out=ci-bundle/package-ci --core-repo="${CORE_REPO}"
+
+      - name: Install PHPCompatibility (gate 6)
+        run: composer install --working-dir=tools/lint --no-interaction
+      - run: |
+          mkdir -p ci-bundle/tools/lint
+          cp -a tools/lint/vendor ci-bundle/tools/lint/vendor
+
+      - name: Fetch php-cs-fixer (gate 10, style — warning only)
+        run: |
+          mkdir -p ci-bundle/tools
+          curl -fsSL -o ci-bundle/tools/php-cs-fixer.phar \
+            "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/releases/download/${PHP_CS_FIXER_VERSION}/php-cs-fixer.phar"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ci-bundle
+          path: ci-bundle
+          retention-days: 1
+
+  # ---------------------------------------------------------------------
+  # One job per changed package. Gates run cheapest-first: package-lint.php
+  # (structure/manifest/header/compat/security in one call, seconds),
+  # manifest schema, php -l, PHPCompatibility, deprecation scan (always
+  # instant, always a warning) all run and are recorded before the one
+  # expensive gate — smoke install — is even considered, and it only runs
+  # if every cheap gate so far passed and core has actually published it
+  # (it has not, as of this writing; see fetch-package-ci.sh).
+  #
+  # Every gate step is continue-on-error: the full picture is gathered
+  # first; "Evaluate gates" at the end is the sole pass/fail decision for
+  # the job, mirroring annotate.php's documented contract ("exit 1 if any
+  # error-level finding").
+  # ---------------------------------------------------------------------
+  validate:
+    needs: [changed, prepare-ci]
+    if: needs.changed.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.changed.outputs.packages) }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: ci-bundle
+          path: .
+
+      - run: |
+          chmod +x package-ci/*.sh 2>/dev/null || true
+          mkdir -p results
+          echo "DIR=plugins/${{ matrix.package }}" >> "$GITHUB_ENV"
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      # --- Gate 1, 3, 4, 8: structure / header / compatibility fields / security ---
+      - name: 'Gate 1,3,4,8: package-lint.php'
+        id: lint
+        continue-on-error: true
+        run: php package-ci/package-lint.php --type=plugin --core="${{ needs.prepare-ci.outputs.core_version }}" --json "$DIR" > results/lint.json
+
+      # --- Gate 2: manifest schema -------------------------------------------
+      - name: 'Gate 2: manifest schema'
+        id: manifest
+        continue-on-error: true
+        run: tools/validate-manifest.sh "$DIR" schema/package.schema.json > results/manifest.json
+
+      # --- Gate 5: php -l across the supported PHP range ----------------------
+      - name: 'Gate 5: php -l (8.0)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.0', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+      - name: 'Gate 5: php -l (8.1)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.1', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+      - name: 'Gate 5: php -l (8.2)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.2', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+      - name: 'Gate 5: php -l (8.3)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.3', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+      - name: 'Gate 5: php -l (8.4)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.4', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+      - name: 'Gate 5: php -l (8.5)'
+        continue-on-error: true
+        uses: shivammathur/setup-php@v2
+        with: { php-version: '8.5', coverage: none }
+      - continue-on-error: true
+        run: tools/php-lint-package.sh "$DIR" results/phplint.json
+
+      # Back to one fixed version for everything below — none of these care
+      # which PHP runs *them*, only which PHP they check *for*.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      # --- Gate 6: PHP 8.0 floor (PHPCompatibility) ----------------------------
+      - name: 'Gate 6: PHPCompatibility'
+        id: phpcompat
+        continue-on-error: true
+        run: tools/phpcompat-package.sh "$DIR" > results/phpcompat.json
+
+      # --- Gate 7: deprecated API — always a warning, never a failure --------
+      - name: 'Gate 7: deprecated API (core scanner)'
+        if: hashFiles('package-ci/deprecation-scan.php') != ''
+        continue-on-error: true
+        run: php package-ci/deprecation-scan.php --inventory=package-ci/deprecated-api.json --json "$DIR" > results/deprecations.json
+      - name: 'Gate 7: deprecated API (fallback — core has not published deprecation-scan.php yet)'
+        if: hashFiles('package-ci/deprecation-scan.php') == ''
+        continue-on-error: true
+        run: tools/deprecation-scan-fallback.sh "$DIR" package-ci/deprecated-api.json > results/deprecations.json
+
+      # --- Gate 9: smoke install — the one expensive gate, so it is gated on
+      # every cheap gate above having passed, AND on core having actually
+      # published it (it has not, as of this writing).
+      - name: 'Gate 9: smoke install'
+        if: >-
+          hashFiles('package-ci/smoke-install.sh') != '' &&
+          steps.lint.outcome == 'success' &&
+          steps.manifest.outcome == 'success' &&
+          steps.phpcompat.outcome == 'success'
+        id: smoke
+        continue-on-error: true
+        run: |
+          bash package-ci/smoke-install.sh --type=plugin --slug="${{ matrix.package }}" \
+            --path="$DIR" --image="ghcr.io/mindstellar/shopclass:edge" --out=results/smoke.json
+
+      # --- Gate 10: style — PSR-12, warning only, never blocking -------------
+      - name: 'Gate 10: style (PSR-12)'
+        continue-on-error: true
+        run: tools/style-package.sh "$DIR" tools/php-cs-fixer.phar > results/style.json
+
+      # --- Terminal step: annotations + this package's comment fragment ------
+      # The only step in this job NOT continue-on-error — its exit code is
+      # this matrix entry's real pass/fail, decided once, from everything
+      # gathered above.
+      - name: Evaluate gates
+        run: |
+          ANNOTATE_ARG=""
+          if [ -f package-ci/annotate.php ]; then
+            ANNOTATE_ARG="--annotate-php=package-ci/annotate.php"
+          fi
+          tools/render-comment.sh \
+            --slug="${{ matrix.package }}" \
+            --lint=results/lint.json \
+            --manifest=results/manifest.json \
+            --phplint=results/phplint.json \
+            --phpcompat=results/phpcompat.json \
+            --style=results/style.json \
+            --deprecations=results/deprecations.json \
+            --smoke=results/smoke.json \
+            $ANNOTATE_ARG \
+            --out=results/fragment.md
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: results-${{ matrix.package }}
+          path: results
+          retention-days: 14
+
+  # ---------------------------------------------------------------------
+  # One sticky comment for the whole PR, updated in place on every push —
+  # never a new comment. §6.2's closing paragraph.
+  # ---------------------------------------------------------------------
+  report:
+    needs: [changed, validate]
+    if: always() && needs.changed.outputs.packages != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: results-*
+          path: all-results
+
+      - name: Compose comment body
+        id: compose
+        run: |
+          # shellcheck disable=SC2016  # backticks below are markdown code-formatting, not command substitution
+          {
+            echo '<!-- shopclass-plugins:pr-validate -->'
+            echo '## Package validation'
+            echo
+            echo 'Automated checks against `docs/PACKAGE-SPEC.md`. Gates marked ❌ block merging;'
+            echo '⚠️ and ⏭️ never do — see `CONTRIBUTING.md` §3 for what each gate means.'
+            echo
+            for f in all-results/*/fragment.md; do
+              [ -f "$f" ] || continue
+              cat "$f"
+              echo
+            done
+            echo '---'
+            echo "_Updated for commit ${GITHUB_SHA}._"
+          } > comment-body.md
+
+      - uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('comment-body.md', 'utf8');
+            const marker = '<!-- shopclass-plugins:pr-validate -->';
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

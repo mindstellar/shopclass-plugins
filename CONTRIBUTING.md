@@ -1,15 +1,12 @@
 # Contributing
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** There is no PR validation workflow in this
-> repository yet, so a pull request opened today cannot be automatically checked against the
-> package contract, and a maintainer reviewing it by hand has no CI run to lean on. Opening a PR
-> now will sit unreviewed rather than merged. This document describes the submission process as it
-> will work once `.github/workflows/pr-validate.yml` exists (`docs/MARKET.md` Phase 3 in the core
-> repository) — read it to know what to prepare, and use `tools/package-lint.php` (below) to check
-> your own work in the meantime. The best contribution today is an issue, not a PR: use
-> `.github/ISSUE_TEMPLATE/` to flag a schema gap, a missing category, or ask whether your plugin
-> fits before you build the submission.
+> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
+> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
+> a merged package still cannot be published or installed by anyone. Validation also expects a
+> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
+> source instead. The most useful contribution today is an issue rather than a pull request — see
+> `.github/ISSUE_TEMPLATE/`.
 
 The rules a package must satisfy are specified once, in `docs/PACKAGE-SPEC.md` in the core
 repository. This document does not repeat them — it walks through the mechanics of submitting.
@@ -58,14 +55,14 @@ Both files are attached from Shopclass 6.1.0 onward. Against an earlier core, cl
 and run `tools/package-lint.php` from inside the checkout instead.
 
 Exit code `0` means no errors — warnings do not fail a build and are printed alongside. Add
-`--json` for machine-readable output (the shape the future sticky PR comment will render).
+`--json` for machine-readable output (the shape the sticky PR comment is built from).
 
 Also validate `shopclass.json` against `schema/package.schema.json` with any JSON Schema
 (draft 2020-12) validator — `ajv` (Node) or `jsonschema` (Python) both work.
 
-## 3. What CI will check (once it exists)
+## 3. What CI checks (once core's half of it has shipped)
 
-`pr-validate.yml` will run ten gates against only the package(s) your PR touches — structure,
+`pr-validate.yml` runs ten gates against only the package(s) your PR touches — structure,
 manifest schema, header parse, compatibility fields, `php -l` across supported versions, a
 PHPCompatibility scan for the PHP 8.0 floor, a dangerous-construct security scan, a smoke install
 in a real container, and a style check. The blocking-versus-warning split for each gate is

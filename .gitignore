@@ -11,5 +11,14 @@ Thumbs.db
 /node_modules/
 /tools/node_modules/
 
+# pr-validate.yml's fetched/installed tooling (tools/fetch-package-ci.sh,
+# tools/lint/, tools/php-cs-fixer.phar) — obtained fresh on every run, never
+# committed, same reasoning as /node_modules/ above.
+/package-ci/
+/package-ci-*/
+/ci-bundle/
+/tools/lint/vendor/
+/tools/php-cs-fixer.phar
+
 # Local scratch output
 *.log

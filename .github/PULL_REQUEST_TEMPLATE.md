@@ -1,8 +1,9 @@
 <!--
-This registry does not yet run automated PR validation (see the banner in README.md /
-CONTRIBUTING.md) — a maintainer is reviewing this by hand. The checklist below mirrors the gates
-that CI will eventually enforce (docs/PACKAGE-SPEC.md §8 in the core repository); ticking a box is
-your attestation, not a guarantee, but it tells the reviewer where to look first.
+Automated validation runs on this pull request and reports back as a single comment it keeps
+updated. It cannot publish anything yet — there is no catalog (see the banner in README.md), so a
+merged package is not installable. The checklist below mirrors the gates CI enforces
+(docs/PACKAGE-SPEC.md §8 in the core repository); ticking a box is your attestation, not a
+guarantee, but it tells the reviewer where to look first.
 -->
 
 ## Package

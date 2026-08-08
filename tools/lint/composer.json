@@ -1,0 +1,13 @@
+{
+    "description": "Isolated PHPCompatibility linter for pr-validate.yml (docs/MARKET.md §6.2 gate 6). Never installed inside a submitted package's own tree.",
+    "require": {
+        "squizlabs/php_codesniffer": "^3.10",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
