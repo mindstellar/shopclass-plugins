@@ -84,21 +84,32 @@ jobs:
 
       - name: Resolve latest released core version
         id: core-version
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          VERSION="$(curl -fsSL "https://api.github.com/repos/${CORE_REPO}/releases/latest" | jq -r '.tag_name // empty')"
+          # Every released tag, prereleases included: the active line is a
+          # prerelease series, and releases/latest silently returns only the
+          # newest stable. The same list feeds --core-versions below, so the
+          # version-existence checks in package-lint.php actually run here.
+          gh api "repos/${CORE_REPO}/releases" --paginate \
+            --jq '.[] | select(.draft == false) | .tag_name' 2>/dev/null \
+            | grep -E '^[0-9]+(\.[0-9]+)*(\.(dev|alpha|beta|rc)[0-9]*)?$' > core-tags.txt || true
+          VERSION="$(php -r '
+              $tags = array_filter(array_map("trim", file("core-tags.txt")));
+              if ($tags === []) { exit(0); }
+              usort($tags, fn($a, $b) => version_compare($b, $a));
+              echo $tags[0];
+            ' 2>/dev/null)"
+          php -r '
+              $tags = array_values(array_filter(array_map("trim", file("core-tags.txt"))));
+              file_put_contents("core-versions.json", json_encode($tags));
+            ' 2>/dev/null || echo '[]' > core-versions.json
           if [ -z "$VERSION" ]; then
-            echo "Could not resolve a latest stable release for ${CORE_REPO}; compatibility gates will use 0.0.0 and likely flag everything." >&2
+            echo "::warning::Could not resolve any released version for ${CORE_REPO}; using 0.0.0."
             VERSION="0.0.0"
           fi
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
-          echo "Latest released core: ${VERSION}"
-
-      # docs/MARKET.md §6 "Frozen interface": package-lint.php, Compatibility.php,
-      # deprecated-api.json, and — once core publishes them — deprecation-scan.php,
-      # annotate.php, smoke-install.sh, deprecation-collector/. See the header
-      # comment in this script for exactly what exists today versus what is
-      # still pending upstream; this step does not fail when the optional four
-      # are missing, only when the required three are.
+          echo "Latest released core: ${VERSION} ($(wc -l < core-tags.txt) known releases)"
       - name: Fetch package-ci harness
         run: tools/fetch-package-ci.sh --out=ci-bundle/package-ci --core-repo="${CORE_REPO}"
 
@@ -167,7 +178,12 @@ jobs:
       - name: 'Gate 1,3,4,8: package-lint.php'
         id: lint
         continue-on-error: true
-        run: php package-ci/package-lint.php --type=plugin --core="${{ needs.prepare-ci.outputs.core_version }}" --json "$DIR" > results/lint.json
+        run: |
+          VERSIONS=()
+          [ -f core-versions.json ] && VERSIONS=(--core-versions=core-versions.json)
+          php package-ci/package-lint.php --type=plugin \
+            --core="${{ needs.prepare-ci.outputs.core_version }}" "${VERSIONS[@]}" \
+            --json "$DIR" > results/lint.json
 
       # --- Gate 2: manifest schema -------------------------------------------
       - name: 'Gate 2: manifest schema'
