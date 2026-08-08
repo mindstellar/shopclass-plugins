@@ -1,12 +1,13 @@
 # Contributing
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
-> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
-> a merged package still cannot be published or installed by anyone. Validation also expects a
-> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
-> source instead. The most useful contribution today is an issue rather than a pull request — see
-> `.github/ISSUE_TEMPLATE/`.
+> **This registry is not yet accepting submissions.** Release automation (`release.yml`) and the
+> catalog build (`catalog.yml`) both exist and publish for real once core ships
+> `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core repository) — until then, a
+> catalog build run is a visible, deliberate no-op rather than a failure. What's still missing is
+> the other half: no core release yet reads the catalog (`docs/MARKET.md` Phase 5), so even a merged
+> and released package cannot be discovered or installed by a site today. The most useful
+> contribution today is an issue rather than a pull request — see `.github/ISSUE_TEMPLATE/`.
 
 The rules a package must satisfy are specified once, in `docs/PACKAGE-SPEC.md` in the core
 repository. This document does not repeat them — it walks through the mechanics of submitting.
@@ -73,11 +74,15 @@ per gate. A PR can merge with warnings outstanding; it cannot merge with an erro
 
 ## 4. How a release is cut
 
-Once your PR merges to `main`, `release.yml` (Phase 4, also not built yet) detects that your
-package's `Version:` header changed, builds `<slug>_<version>.zip` from your package directory
-(honouring `.distignore`), computes its sha256, and creates a tag `<slug>-v<version>` with a GitHub
-Release named `<Name> <version>` — body taken from your `CHANGELOG.md` section for that version.
-See `docs/MARKET.md` §7 in the core repository for the full build and catalog steps that follow.
+Once your PR merges to `main`, `release.yml` detects that your package's `Version:` header changed
+(against the previous commit on `main`), builds `<slug>_<version>.zip` from your package directory
+(honouring `.distignore`, single top-level directory named for the slug), computes its sha256, and
+creates a tag `<slug>-v<version>` with a GitHub Release named `<Name> <version>` — body taken from
+your `CHANGELOG.md` section for that version. Re-running on a version that was already released is
+a no-op (idempotent), and a failed build never leaves a tag behind. `release.yml` then triggers
+`catalog.yml`, which rebuilds the catalog once core has published `package-ci/build-catalog.php`
+(see the root `README.md`'s status note) — until then this step is a visible skip, not a failure.
+See `docs/MARKET.md` §7 in the core repository for the full build and catalog steps.
 
 ## 5. Registering an externally-hosted package instead
 

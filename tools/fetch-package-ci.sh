@@ -27,12 +27,15 @@
 # tarball yet (only package-lint.php, Compatibility.php and deprecated-api.json
 # ship as loose release assets — see .github/workflows/build.yml in core), and
 # core's tools/ci/ directory — deprecation-scan.php, annotate.php,
-# smoke-install.sh, deprecation-collector/ — does not exist yet at all, in any
-# branch or release. Both are called out explicitly rather than papered over:
-# this script copies whatever of the six components it can find and writes
-# package-ci/MANIFEST.json recording which ones actually arrived, so
-# pr-validate.yml can run every gate that has a real implementation and skip
-# — visibly, not silently — the ones that do not exist upstream yet.
+# smoke-install.sh, deprecation-collector/, build-catalog.php — does not exist
+# yet at all, in any branch or release. All are called out explicitly rather
+# than papered over: this script copies whatever of the seven components it
+# can find and writes package-ci/MANIFEST.json recording which ones actually
+# arrived, so pr-validate.yml and catalog.yml can run every gate/step that has
+# a real implementation and skip — visibly, not silently — the ones that do
+# not exist upstream yet. build-catalog.php (docs/MARKET.md §7) is consumed by
+# catalog.yml, not by pr-validate.yml — it is listed here anyway because it
+# ships in the same bundle and this is the one place that bundle is unpacked.
 #
 # Usage:
 #   tools/fetch-package-ci.sh [--out=DIR] [--core-repo=owner/name] [--ref=REF]
@@ -93,7 +96,7 @@ mkdir -p "$OUT"
 OUT="$(cd "$OUT" && pwd)"
 
 REQUIRED=(package-lint.php Compatibility.php deprecated-api.json)
-OPTIONAL=(deprecation-scan.php annotate.php smoke-install.sh deprecation-collector)
+OPTIONAL=(deprecation-scan.php annotate.php smoke-install.sh deprecation-collector build-catalog.php)
 
 have_required() {
   for f in "${REQUIRED[@]}"; do
@@ -244,10 +247,10 @@ try_source_clone() {
     log "fetch-package-ci: MISSING scripts/gen-deprecated-api.mjs in ${CORE_REPO}@${ref} (or no node on PATH) — deprecated-api.json not generated"
   fi
 
-  # Optional quartet — the harness a concurrent effort is building in core's
+  # Optional quintet — the harness a concurrent effort is building in core's
   # tools/ci/. Copied verbatim when present; reported, not fabricated, when
   # not: this repo does not carry a second implementation of any of these.
-  for f in deprecation-scan.php annotate.php smoke-install.sh; do
+  for f in deprecation-scan.php annotate.php smoke-install.sh build-catalog.php; do
     if [ -f "${core}/tools/ci/${f}" ]; then
       cp "${core}/tools/ci/${f}" "${OUT}/${f}"
     else

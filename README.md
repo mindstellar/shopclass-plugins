@@ -4,12 +4,13 @@ The plugin registry for [Shopclass](https://github.com/mindstellar/osclass) — 
 contract, the plugins themselves, and (once built) the catalog that a site's admin panel browses.
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
-> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
-> a merged package still cannot be published or installed by anyone. Validation also expects a
-> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
-> source instead. The most useful contribution today is an issue rather than a pull request — see
-> `.github/ISSUE_TEMPLATE/`.
+> **This registry is not yet accepting submissions.** Release automation (`release.yml`) and the
+> catalog build (`catalog.yml`) both exist and publish for real once core ships
+> `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core repository) — until then, a
+> catalog build run is a visible, deliberate no-op rather than a failure. What's still missing is
+> the other half: no core release yet reads the catalog (`docs/MARKET.md` Phase 5), so even a merged
+> and released package cannot be discovered or installed by a site today. The most useful
+> contribution today is an issue rather than a pull request — see `.github/ISSUE_TEMPLATE/`.
 
 ## What this is
 
@@ -57,13 +58,18 @@ schema/               JSON Schema for shopclass.json, external/<slug>.json, and 
 
 `schema/categories.json` is the fixed category vocabulary both manifest types draw from.
 
-## Catalog URLs (planned)
+## Catalog URLs
 
-Once Phase 4 ships, the catalog is published at
-`raw.githubusercontent.com/mindstellar/shopclass-plugins/catalog/v1/*.json` (and mirrored on GitHub
-Pages). The file shapes — `updates.json`, `index.json`, `packages/<slug>.json`, `categories.json` —
-are specified in `docs/MARKET.md` §5 of the core repository. None of these files exist yet; this
-section is here so the URLs are documented in one place once they do.
+`catalog.yml` publishes to the `catalog` branch, served two ways:
+
+- GitHub Pages: `https://mindstellar.github.io/shopclass-plugins/v1/*.json`
+- Mirror: `https://raw.githubusercontent.com/mindstellar/shopclass-plugins/catalog/v1/*.json`
+
+The file shapes — `updates.json`, `index.json`, `packages/<slug>.json`, `categories.json` — are
+specified in `docs/MARKET.md` §5 of the core repository. The `catalog` branch does not exist yet:
+`catalog.yml` runs (on release, daily, and on demand) but has nothing to build against until core
+publishes `package-ci/build-catalog.php`, and skips visibly rather than publishing an empty or
+fabricated catalog. These URLs are live from the first run that actually builds something.
 
 ## Contributing
 

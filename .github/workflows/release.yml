@@ -1,0 +1,115 @@
+name: Build release
+
+# docs/MARKET.md §7. shopclass-plugins only — shopclass-themes has no in-repo
+# package yet (bender and storefront are both external registrations), so it
+# carries no release.yml today. If an in-repo theme is ever added there, it
+# needs this exact workflow and these exact scripts, not a second
+# implementation — see the "What happens when a theme is hosted in-repo"
+# note in the themes repo's README.md.
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  # Which package(s) had their Version: header change on this push. §7 step 1.
+  detect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      releases: ${{ steps.detect.outputs.releases }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - id: detect
+        run: |
+          RELEASES="$(tools/detect-version-changes.sh '${{ github.event.before }}')"
+          echo "releases=${RELEASES}" >> "$GITHUB_OUTPUT"
+          echo "Detected releases: ${RELEASES}"
+
+  # One release per changed package. Idempotent: a tag that already exists
+  # means this exact version was already released, so the whole leg is a
+  # no-op. The tag itself is only ever created by `gh release create` below,
+  # after the zip exists — so a failed build never leaves a dangling tag.
+  release:
+    needs: detect
+    if: needs.detect.outputs.releases != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.detect.outputs.releases) }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check whether this version was already released
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ matrix.package.slug }}-v${{ matrix.package.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "release: ${TAG} already exists — nothing to do (idempotent re-run)."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build zip (PACKAGE-SPEC §2, honours .distignore)
+        if: steps.check.outputs.skip == 'false'
+        id: build
+        run: tools/build-release-zip.sh "${{ matrix.package.slug }}" dist >> "$GITHUB_OUTPUT"
+
+      - name: Extract this version's CHANGELOG.md section for the release body
+        if: steps.check.outputs.skip == 'false'
+        run: |
+          tools/changelog-section.sh "plugins/${{ matrix.package.slug }}/CHANGELOG.md" "${{ matrix.package.version }}" > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "_No CHANGELOG.md entry found for ${{ matrix.package.version }}._" > release-notes.md
+          fi
+
+      - name: Create tag + release
+        if: steps.check.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ matrix.package.slug }}-v${{ matrix.package.version }}"
+          gh release create "$TAG" \
+            "${{ steps.build.outputs.zip_path }}" \
+            "${{ steps.build.outputs.sha256_path }}" \
+            --title "${{ matrix.package.name }} ${{ matrix.package.version }}" \
+            --notes-file release-notes.md \
+            --target "${{ github.sha }}"
+          echo "release: created ${TAG}."
+
+  # release.yml runs under the default GITHUB_TOKEN, and GitHub does not
+  # chain an event authored by GITHUB_TOKEN (the release just created above)
+  # into a new workflow run — so catalog.yml's `release: published` trigger
+  # does not fire on its own here. workflow_dispatch is explicitly exempted
+  # from that restriction, so this dispatches it directly instead. (A build
+  # that finds nothing to release, or where every matrix leg was an
+  # idempotent skip, still counts as "success" here and re-triggers a catalog
+  # build; that build is itself a deterministic no-op when nothing changed,
+  # so this errs toward an extra no-op run rather than a missed one.)
+  trigger-catalog:
+    needs: release
+    if: always() && needs.release.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run catalog.yml --repo "${{ github.repository }}" --ref main
