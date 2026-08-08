@@ -1,0 +1,48 @@
+{
+    "author": "Mindstellar Community",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "content-widgets"
+    ],
+    "description_html": "<h1>Sample Widgets</h1>\n<p>A reference plugin for the widget and page-template registries. It does not add a feature you would enable on a production site — it exists so a plugin author has working, functioning examples to copy from. Read <code>index.php</code> and <code>widgets/*.php</code>; each is commented with what it demonstrates.</p>\n<h2>What it demonstrates</h2>\n<p>Four widget types, registered through <code>osc_register_widget()</code>:</p>\n<ol><li><strong><code>sample_widgets.notice</code></strong> — a static text box. Proves the registry plus a declarative</li></ol>\n<p>   <code>fields</code> array (a single textarea, rendered as an admin form control automatically).</p>\n<ol><li><strong><code>sample_widgets.recent_listings</code></strong> — lists the newest published listings. Proves a functional</li></ol>\n<p>   widget backed by live data and no configuration; see <code>widgets/recent-listings.php</code>.</p>\n<ol><li><strong><code>sample_widgets.category_listings</code></strong> — the same list, filtered to a chosen category with a</li></ol>\n<p>   configurable count. Proves the <code>s_config</code> JSON round-trip: what you save in the widget&#039;s admin    form is what <code>render</code> receives back; see <code>widgets/category-list.php</code>.</p>\n<ol><li><strong><code>sample_widgets.embed_code</code></strong> — a raw HTML/JavaScript embed field, gated to</li></ol>\n<p>   <code>capability: &#039;super_admin&#039;</code>. Proves that a plugin can ship an unfiltered-output widget type    using the same capability gate as core&#039;s own embed-code widget — deliberately dangerous, and    deliberately restricted to the one role that can already do anything.</p>\n<p>It also registers one page-template type through <code>osc_register_page_template()</code>: <code>sample_widgets.plain</code>, a minimal full-width layout a site owner can pick per static page. It reuses the active theme&#039;s header/footer and the standard <code>osc_static_page_*()</code> helpers, so it is a working example of &quot;a plugin owns page rendering&quot; rather than only widget rendering.</p>\n<h2>Configuration</h2>\n<p>None as a plugin-level setting. Once enabled, the four widget types are available anywhere widgets are placed (admin: <strong>Appearance → Widgets</strong>), and the page template is selectable when editing a static page. Each widget instance&#039;s own fields (message text, listing count, category) are configured per-placement in the widget editor, not in a plugin settings screen.</p>\n<h2>Using this as a starting point</h2>\n<p>Copy the relevant <code>osc_register_widget()</code> or <code>osc_register_page_template()</code> block, rename the type id and the <code>sample_widgets_*</code> functions, and replace <code>render</code> with real markup. Every registry call is guarded with <code>function_exists()</code> so dropping this plugin onto a core version that predates these registries degrades to a no-op instead of a fatal error.</p>",
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/Osclass",
+    "icon": null,
+    "latest_version": "1.0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "Sample Widgets",
+    "screenshots": [],
+    "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
+    "slug": "sample-widgets",
+    "source": "in-repo",
+    "support": {
+        "docs": "https://github.com/mindstellar/osclass/blob/develop/docs/PACKAGE-SPEC.md",
+        "issues": "https://github.com/mindstellar/osclass/issues"
+    },
+    "tags": [
+        "developer",
+        "page-template",
+        "reference",
+        "widgets"
+    ],
+    "type": "plugin",
+    "updated_at": "2026-08-08T09:23:07Z",
+    "versions": [
+        {
+            "changelog_html": "<ul><li>First release published from the registry. Adds the packaging metadata a catalog entry</li></ul>\n<p>  needs — declared core and PHP compatibility, <code>LICENSE</code>, <code>README.md</code> and a <code>.distignore</code>.   No change to the plugin&#039;s behaviour.</p>",
+            "compat": {
+                "blocked": true,
+                "reason": "Requires Shopclass 6.1.0 or newer (you have 6.0.2).",
+                "status": "incompatible"
+            },
+            "published_at": "2026-08-08T09:23:07Z",
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "1018cec3ce11586e8f036e3fc17ab2bb452cef7ec41a5f16cb036b31775de743",
+            "size": 19388,
+            "tested": "6.1",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/sample-widgets-v1.0.1/sample-widgets_1.0.1.zip",
+            "version": "1.0.1"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "count": 0,
+        "description": "Dashboard utilities, reporting, and other tools for site administrators.",
+        "id": "admin-tools",
+        "label": "Admin tools"
+    },
+    {
+        "count": 1,
+        "description": "Spam and abuse prevention: captcha, honeypots, submission filtering.",
+        "id": "anti-spam",
+        "label": "Anti-spam"
+    },
+    {
+        "count": 2,
+        "description": "Widgets, page templates, custom forms, and other content-authoring building blocks.",
+        "id": "content-widgets",
+        "label": "Content & widgets"
+    },
+    {
+        "count": 0,
+        "description": "Bulk import, export, feeds, and data migration in or out of a site.",
+        "id": "import-export",
+        "label": "Import & export"
+    },
+    {
+        "count": 0,
+        "description": "Connectors to external services and APIs: social login, analytics, CRMs, and similar.",
+        "id": "integrations",
+        "label": "Integrations"
+    },
+    {
+        "count": 0,
+        "description": "Listing lifecycle, review queues, flagging, and moderation workflow.",
+        "id": "listings-moderation",
+        "label": "Listings & moderation"
+    },
+    {
+        "count": 0,
+        "description": "Languages, currencies, regions, and other locale-specific behaviour.",
+        "id": "localisation",
+        "label": "Localisation"
+    },
+    {
+        "count": 0,
+        "description": "Email, SMS, push, or webhook notifications to users and admins.",
+        "id": "notifications",
+        "label": "Notifications"
+    },
+    {
+        "count": 0,
+        "description": "Payment gateways, paid listing plans, and other monetization of the marketplace.",
+        "id": "payments",
+        "label": "Payments"
+    },
+    {
+        "count": 0,
+        "description": "Search relevance, filters, facets, and discovery of listings.",
+        "id": "search",
+        "label": "Search"
+    },
+    {
+        "count": 0,
+        "description": "Search engine optimization: sitemaps, structured data, metadata, canonicals.",
+        "id": "seo",
+        "label": "SEO"
+    },
+    {
+        "count": 0,
+        "description": "File storage, image/video processing, CDN offload, and media handling.",
+        "id": "storage-media",
+        "label": "Storage & media"
+    }
+]

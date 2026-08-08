@@ -1,0 +1,39 @@
+[
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "anti-spam",
+            "content-widgets"
+        ],
+        "icon": null,
+        "name": "Sample Forms",
+        "short_description": "Reference plugin demonstrating the Forms platform: contexts, field filters, spam veto, and submission hooks.",
+        "slug": "sample-forms",
+        "tags": [
+            "developer",
+            "forms",
+            "reference",
+            "spam-filter"
+        ],
+        "updated_at": "2026-08-08T09:23:06Z",
+        "version": "1.0.1"
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "content-widgets"
+        ],
+        "icon": null,
+        "name": "Sample Widgets",
+        "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
+        "slug": "sample-widgets",
+        "tags": [
+            "developer",
+            "page-template",
+            "reference",
+            "widgets"
+        ],
+        "updated_at": "2026-08-08T09:23:07Z",
+        "version": "1.0.1"
+    }
+]

@@ -1,0 +1,24 @@
+{
+    "sample-forms": [
+        {
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "1033f4cd28f4a4cc390a18e4529552f33ea8cb9b7cb2e70be0890e7bf1c1bfd8",
+            "size": 16592,
+            "tested": "6.1",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/sample-forms-v1.0.1/sample-forms_1.0.1.zip",
+            "version": "1.0.1"
+        }
+    ],
+    "sample-widgets": [
+        {
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "1018cec3ce11586e8f036e3fc17ab2bb452cef7ec41a5f16cb036b31775de743",
+            "size": 19388,
+            "tested": "6.1",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/sample-widgets-v1.0.1/sample-widgets_1.0.1.zip",
+            "version": "1.0.1"
+        }
+    ]
+}
