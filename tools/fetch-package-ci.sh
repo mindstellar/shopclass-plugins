@@ -224,7 +224,7 @@ try_source_clone() {
 
   local core="${tmp}/core"
 
-  # Required trio — Phase 1 (docs/MARKET.md §10) shipped these; they are
+  # Required trio — core publishes these as standalone release assets; they are
   # published release assets today, so they always exist in the tree too.
   if [ -f "${core}/tools/package-lint.php" ]; then
     cp "${core}/tools/package-lint.php" "${OUT}/package-lint.php"
