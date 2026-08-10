@@ -6,7 +6,7 @@
         "content-widgets"
     ],
     "description_html": "<h1>Sample Forms</h1>\n<p>A reference plugin for the Forms platform. It does not add a feature you would enable on a production site — it exists so a plugin author has a working example to copy from, and every hook it uses is inert unless you deliberately trigger it. Read <code>index.php</code>; each section is commented with what it demonstrates and why.</p>\n<h2>What it demonstrates</h2>\n<ol><li><strong>Registering a placement context</strong> — <code>osc_register_form_context()</code> gives a form embedded</li></ol>\n<p>   through <code>osc_render_form($formId, &#039;sample_forms.embed&#039;, $someId)</code> a readable label (and    optional link) in <strong>Listings → Form submissions</strong>, instead of a raw <code>sample_forms.embed #id</code>.</p>\n<ol><li><strong>Filtering a form&#039;s fields per context</strong> — the <code>form_fields</code> filter runs for both render and</li></ol>\n<p>   submit, so an added/removed/reordered field never diverges between the two. This example only    reverses field order, and only for a form whose slug is literally <code>sample-reversed</code>, so it is    inert on every real form.</p>\n<ol><li><strong>Vetoing a submission</strong> — <code>form_submit_veto</code> rejects a submission by returning a non-empty</li></ol>\n<p>   message. The example rejects any value containing one of a few obviously spammy words.</p>\n<ol><li><strong>Amending validation</strong> — <code>form_validation_errors</code> lets a plugin add its own error messages on</li></ol>\n<p>   top of core validation. The example is a documented no-op; a real plugin would inspect    <code>$values</code> and push messages onto <code>$errors</code>.</p>\n<ol><li><strong>Reacting to a stored submission</strong> — <code>form_submitted</code> fires once a submission is validated and</li></ol>\n<p>   saved. This is where a real plugin would send an email, call a webhook, or push to a CRM; the    example logs the submission id under <code>OSC_DEBUG</code> instead.</p>\n<h2>Configuration</h2>\n<p>None. The plugin has no admin screen, no preferences, and no database table — it registers a context and wires hooks/filters at load time, which is why its install callback is empty.</p>\n<h2>Using this as a starting point</h2>\n<p>Copy <code>index.php</code>, rename the <code>sample_forms_*</code> functions and the <code>Short Name</code> header, and replace each example body with real logic. The registry calls (<code>osc_register_form_context</code>) are guarded with <code>function_exists()</code> so the same file degrades to a no-op rather than a fatal error on a core version that predates the Forms platform.</p>",
-    "downloads": 12,
+    "downloads": 15,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass",
     "icon": null,
@@ -34,7 +34,7 @@
     "versions": [
         {
             "changelog_html": "<ul><li>First release published from the registry. Adds the packaging metadata a catalog entry</li></ul>\n<p>  needs — declared core and PHP compatibility, <code>LICENSE</code>, <code>README.md</code> and a <code>.distignore</code>.   No change to the plugin&#039;s behaviour.</p>",
-            "downloads": 12,
+            "downloads": 15,
             "published_at": "2026-08-08T09:23:06Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
