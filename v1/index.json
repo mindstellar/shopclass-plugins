@@ -5,7 +5,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 16,
+        "downloads": 18,
         "icon": null,
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -26,7 +26,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 16,
+        "downloads": 18,
         "icon": null,
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
