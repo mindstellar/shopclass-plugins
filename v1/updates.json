@@ -1,7 +1,7 @@
 {
     "sample-forms": [
         {
-            "downloads": 20,
+            "downloads": 21,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1033f4cd28f4a4cc390a18e4529552f33ea8cb9b7cb2e70be0890e7bf1c1bfd8",
@@ -13,7 +13,7 @@
     ],
     "sample-widgets": [
         {
-            "downloads": 20,
+            "downloads": 21,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1018cec3ce11586e8f036e3fc17ab2bb452cef7ec41a5f16cb036b31775de743",
