@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "registered-users-only",
+  "type": "plugin",
+  "categories": ["admin-tools", "listings-moderation"],
+  "tags": ["private-site", "members-only", "access", "login"],
+  "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
+  "icon": "assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
+    "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}
