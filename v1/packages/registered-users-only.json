@@ -9,11 +9,11 @@
     "downloads": 0,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
-    "icon": null,
-    "latest_version": null,
+    "icon": "assets/registered-users-only/assets/icon.svg",
+    "latest_version": "2.0.0",
     "license": "GPL-3.0-or-later",
     "name": "Registered Users Only",
-    "requires_min": null,
+    "requires_min": "6.1.0",
     "screenshots": [],
     "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
     "slug": "registered-users-only",
@@ -28,8 +28,21 @@
         "members-only",
         "private-site"
     ],
-    "tested_max": null,
+    "tested_max": "6.2",
     "type": "plugin",
-    "updated_at": null,
-    "versions": []
+    "updated_at": "2026-08-16T18:11:03Z",
+    "versions": [
+        {
+            "changelog_html": "<p>First Shopclass release, rewritten from the Osclass plugin (0.9.3, 2013).</p>\n<h3>Fixed</h3>\n<ul><li><strong>Password recovery and account activation were unreachable.</strong> Only the login and</li></ul>\n<p>  registration pages were let through, so a signed-out visitor following a reset link or   an activation email was redirected to the registration form instead, with no way back   into their account. The whole sign-in flow is now permanently open.</p>\n<ul><li><strong>The sitemap, the feeds and the ajax endpoints were redirected too.</strong> Sending a crawler</li></ul>\n<p>  or an XHR to the registration page does not gate anything, it breaks the route. They are   now exempt.</p>\n<ul><li>The guard function was called <code>login_necessary()</code>, an unprefixed name in the global</li></ul>\n<p>  namespace. Everything this plugin defines is now prefixed.</p>\n<h3>New</h3>\n<ul><li>Settings screen: static pages, the contact form, browsing and search, and individual</li></ul>\n<p>  listings can each be left open. Static pages and the contact form default to open,   because the terms and privacy notice usually have to be readable without an account.</p>\n<ul><li>The always-public set is filterable through <code>registered_users_only_always_public</code>.</li></ul>",
+            "downloads": 0,
+            "published_at": "2026-08-16T18:11:03Z",
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "a2be708f37e7307bc721de798e0f91943378d4d923957dc5a3424d9c7abe3c00",
+            "size": 19622,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/registered-users-only-v2.0.0/registered-users-only_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ]
 }

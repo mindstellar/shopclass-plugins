@@ -96,9 +96,9 @@
             "listings-moderation"
         ],
         "downloads": 0,
-        "icon": null,
+        "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
-        "requires_min": null,
+        "requires_min": "6.1.0",
         "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
         "slug": "registered-users-only",
         "tags": [
@@ -107,9 +107,9 @@
             "members-only",
             "private-site"
         ],
-        "tested_max": null,
-        "updated_at": null,
-        "version": null
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T18:11:03Z",
+        "version": "2.0.0"
     },
     {
         "author": "Mindstellar Community",

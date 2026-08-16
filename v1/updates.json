@@ -25,7 +25,18 @@
     ],
     "google-analytics": [],
     "qr-code": [],
-    "registered-users-only": [],
+    "registered-users-only": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "a2be708f37e7307bc721de798e0f91943378d4d923957dc5a3424d9c7abe3c00",
+            "size": 19622,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/registered-users-only-v2.0.0/registered-users-only_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ],
     "required-registration-fields": [],
     "sample-forms": [
         {
