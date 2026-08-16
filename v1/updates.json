@@ -24,7 +24,18 @@
         }
     ],
     "google-analytics": [],
-    "qr-code": [],
+    "qr-code": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "7247e087e08d9e25ac61992b07e24d4827a12140f7ce2ce79ecef494610137a4",
+            "size": 37858,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/qr-code-v2.0.0/qr-code_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ],
     "registered-users-only": [
         {
             "downloads": 0,

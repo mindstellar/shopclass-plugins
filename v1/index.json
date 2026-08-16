@@ -73,9 +73,9 @@
             "integrations"
         ],
         "downloads": 0,
-        "icon": null,
+        "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
-        "requires_min": null,
+        "requires_min": "6.1.0",
         "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
         "slug": "qr-code",
         "tags": [
@@ -85,9 +85,9 @@
             "qr",
             "share"
         ],
-        "tested_max": null,
-        "updated_at": null,
-        "version": null
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T18:12:16Z",
+        "version": "2.0.0"
     },
     {
         "author": "Mindstellar Community",

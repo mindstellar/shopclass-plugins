@@ -9,11 +9,11 @@
     "downloads": 0,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
-    "icon": null,
-    "latest_version": null,
+    "icon": "assets/qr-code/assets/icon.svg",
+    "latest_version": "2.0.0",
     "license": "GPL-3.0-or-later",
     "name": "QR Code",
-    "requires_min": null,
+    "requires_min": "6.1.0",
     "screenshots": [],
     "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
     "slug": "qr-code",
@@ -29,8 +29,21 @@
         "qr",
         "share"
     ],
-    "tested_max": null,
+    "tested_max": "6.2",
     "type": "plugin",
-    "updated_at": null,
-    "versions": []
+    "updated_at": "2026-08-16T18:12:16Z",
+    "versions": [
+        {
+            "changelog_html": "<p>First Shopclass release, rewritten from the Osclass plugin (1.0.3, 2013).</p>\n<h3>Breaking</h3>\n<ul><li>Codes are no longer PNG files under <code>oc-content/uploads/qrcode/</code>, and the <code>upload_path</code></li></ul>\n<p>  and <code>upload_url</code> settings are gone with them. Any PNGs the old version left behind can   be deleted; nothing reads them.</p>\n<ul><li>The theme-callable <code>show_qrcode()</code> is gone. The code renders through the <code>item_detail</code></li></ul>\n<p>  hook instead, so no theme edit is needed.</p>\n<h3>Changed</h3>\n<ul><li><strong>The symbol is generated in the browser and drawn as SVG.</strong> It was rendered server-side</li></ul>\n<p>  to a PNG per listing by a bundled PHP encoder of 427 files — 400 of them a pre-computed   mask cache — which required GD, accumulated a file per listing, keyed those filenames on   a hash of the URL so every permalink change orphaned one, and needed a cleanup pass on   item delete and on uninstall to chase them. A QR code is a pure function of a URL; none   of that earned its keep.</p>\n<ul><li>The encoder is fetched only when a visitor asks for a code, so a listing page that</li></ul>\n<p>  nobody scans downloads none of it.</p>\n<ul><li>Printing prints the code and the address on their own, at 60 mm.</li></ul>\n<h3>New</h3>\n<ul><li><strong>Share</strong> via the Web Share API and <strong>Copy link</strong> via the Clipboard API, each shown only</li></ul>\n<p>  where the browser supports it.</p>\n<ul><li>The code opens in a native <code>&lt;dialog&gt;</code>, so the backdrop, focus handling and Escape are</li></ul>\n<p>  the browser&#039;s job.</p>\n<ul><li>Error-correction level is a setting; it was fixed before.</li></ul>\n<h3>Fixed</h3>\n<ul><li><strong>Non-ASCII addresses produced an unscannable code.</strong> Encoding wrote one byte per code</li></ul>\n<p>  unit, so a URL with an accented or non-Latin slug came out wrong. UTF-8 encoding is now   used, verified against an independent decoder.</p>\n<ul><li>The plugin rendered nothing at all on a theme that did not call <code>show_qrcode()</code> itself.</li><li>Dropped the <code>osc_version() &lt; 320</code> branch and the <code>getConnection()</code>/<code>commit()</code> calls in</li></ul>\n<p>  install and uninstall, none of which had meant anything for years.</p>",
+            "downloads": 0,
+            "published_at": "2026-08-16T18:12:16Z",
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "7247e087e08d9e25ac61992b07e24d4827a12140f7ce2ce79ecef494610137a4",
+            "size": 37858,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/qr-code-v2.0.0/qr-code_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ]
 }
