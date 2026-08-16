@@ -103,6 +103,14 @@ function ga_measurement_id()
  */
 function ga_should_track()
 {
+    // Front end only. The admin theme emits `admin_header` rather than `header`, so in
+    // practice this hook does not fire there — but that is the admin theme's business,
+    // not a guarantee, and a panel is not an audience. Stated here so it stays true of
+    // any theme.
+    if (defined('OC_ADMIN') && OC_ADMIN) {
+        return false;
+    }
+
     if (ga_measurement_id() === '') {
         return false;
     }

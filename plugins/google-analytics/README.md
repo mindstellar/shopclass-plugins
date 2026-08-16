@@ -36,6 +36,10 @@ the public side of the site, so the server has no way to recognise staff there. 
 in the browser is also what keeps the page cacheable — omitting the tag from some responses
 would give a shared cache two versions of one URL.
 
+## Where it loads
+
+The public side of the site only. Nothing is emitted anywhere in the admin panel.
+
 ## Caching
 
 What is emitted is byte-identical for every visitor who is counted, so a page still has one
