@@ -32,8 +32,16 @@ DIR="$1"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PHPCS="${HERE}/lint/vendor/bin/phpcs"
 
-if [ ! -x "$PHPCS" ]; then
+if [ ! -e "$PHPCS" ]; then
   echo "phpcompat-package: ${PHPCS} not found — run 'composer install --working-dir=tools/lint' first" >&2
+  exit 2
+fi
+
+# Told apart from "not there" on purpose. A CI artifact does not carry the executable
+# bit, so the binary arrives present but unrunnable — and reporting that as "not found"
+# sends whoever is debugging it looking for a failed install that never happened.
+if [ ! -x "$PHPCS" ]; then
+  echo "phpcompat-package: ${PHPCS} is not executable — chmod +x it (an artifact download drops the bit)" >&2
   exit 2
 fi
 

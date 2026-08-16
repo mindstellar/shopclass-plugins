@@ -165,7 +165,13 @@ jobs:
           path: .
 
       - run: |
+          # An artifact does not carry the executable bit, so anything in the bundle that
+          # is run rather than read needs it put back. package-ci/*.sh was already covered;
+          # the vendored phpcs was not, and gate 6 tests for -x — so it reported the binary
+          # missing, emitted a not-ok result, and blocked every in-repo package without the
+          # gate ever having run.
           chmod +x package-ci/*.sh 2>/dev/null || true
+          chmod +x tools/lint/vendor/bin/* 2>/dev/null || true
           mkdir -p results
           echo "DIR=plugins/${{ matrix.package }}" >> "$GITHUB_ENV"
 
