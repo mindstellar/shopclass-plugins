@@ -50,9 +50,9 @@
             "integrations"
         ],
         "downloads": 0,
-        "icon": null,
+        "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
-        "requires_min": null,
+        "requires_min": "6.1.0",
         "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
         "slug": "google-analytics",
         "tags": [
@@ -62,9 +62,9 @@
             "gtag",
             "tracking"
         ],
-        "tested_max": null,
-        "updated_at": null,
-        "version": null
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T18:12:51Z",
+        "version": "1.0.0"
     },
     {
         "author": "Mindstellar Community",

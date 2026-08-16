@@ -9,11 +9,11 @@
     "downloads": 0,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
-    "icon": null,
-    "latest_version": null,
+    "icon": "assets/google-analytics/assets/icon.svg",
+    "latest_version": "1.0.0",
     "license": "GPL-3.0-or-later",
     "name": "Google Analytics",
-    "requires_min": null,
+    "requires_min": "6.1.0",
     "screenshots": [],
     "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
     "slug": "google-analytics",
@@ -29,8 +29,21 @@
         "gtag",
         "tracking"
     ],
-    "tested_max": null,
+    "tested_max": "6.2",
     "type": "plugin",
-    "updated_at": null,
-    "versions": []
+    "updated_at": "2026-08-16T18:12:51Z",
+    "versions": [
+        {
+            "changelog_html": "<p>First release. Restores, as a plugin, the analytics core carried until 6.2.0 — and adds what a plain snippet does not.</p>\n<h3>New</h3>\n<ul><li>Google Analytics 4 through <code>gtag.js</code>, configured from the admin.</li><li><strong>Consent Mode</strong>, initialised denied before the library loads, with</li></ul>\n<p>  <code>oscGoogleAnalytics.grant()</code> / <code>.deny()</code> for a banner to call. Ordering matters: a   default written after gtag.js has started arrives too late, and the first page view is   already recorded with storage allowed.</p>\n<ul><li>A per-browser opt-out, set from the settings screen, so your own visits stay out of the</li></ul>\n<p>  numbers. Per-browser because an admin session cannot be seen from the public side of the   site — and because deciding it in the browser leaves the page cacheable.</p>\n<ul><li>The tracking ID core used to hold is adopted on install, so an upgraded site keeps</li></ul>\n<p>  working without retyping it.</p>\n<ul><li><code>google_analytics_should_track</code> filter for suppressing the tag per request.</li></ul>\n<h3>Notes</h3>\n<ul><li>The measurement ID is checked against the shapes Google issues before it is written into</li></ul>\n<p>  a page.</p>\n<ul><li>Output does not vary between tracked visitors, so the response cache is unaffected.</li></ul>",
+            "downloads": 0,
+            "published_at": "2026-08-16T18:12:51Z",
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "e0da47e8f31389622d6c410b8914a2c65b436040c7b9052fa15cf2df16c1d3b3",
+            "size": 22493,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/google-analytics-v1.0.0/google-analytics_1.0.0.zip",
+            "version": "1.0.0"
+        }
+    ]
 }

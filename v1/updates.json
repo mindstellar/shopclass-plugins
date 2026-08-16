@@ -23,7 +23,18 @@
             "version": "2.0.0"
         }
     ],
-    "google-analytics": [],
+    "google-analytics": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "e0da47e8f31389622d6c410b8914a2c65b436040c7b9052fa15cf2df16c1d3b3",
+            "size": 22493,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/google-analytics-v1.0.0/google-analytics_1.0.0.zip",
+            "version": "1.0.0"
+        }
+    ],
     "qr-code": [
         {
             "downloads": 0,
