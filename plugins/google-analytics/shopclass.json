@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "google-analytics",
+  "type": "plugin",
+  "categories": ["integrations", "admin-tools"],
+  "tags": ["analytics", "ga4", "gtag", "consent", "tracking"],
+  "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
+  "icon": "assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
+    "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}
