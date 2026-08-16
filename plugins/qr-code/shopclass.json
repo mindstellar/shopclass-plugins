@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "qr-code",
+  "type": "plugin",
+  "categories": ["content-widgets", "integrations"],
+  "tags": ["qr", "share", "print", "offline", "listing"],
+  "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
+  "icon": "assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
+    "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}
