@@ -1,0 +1,35 @@
+{
+    "author": "Mindstellar Community",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "admin-tools",
+        "listings-moderation"
+    ],
+    "description_html": "<h1>Registered Users Only</h1>\n<p>Closes the site to visitors who are not signed in, and lets you choose what stays public.</p>\n<h2>What it does</h2>\n<p>A signed-out visitor asking for a closed page is sent to the registration page with a message explaining why. Which pages are closed is up to you.</p>\n<h2>Always public</h2>\n<p>These cannot be closed, because closing them locks out the people the plugin exists to let in — or simply breaks the route:</p>\n<ul><li>signing in, registering, recovering a password, activating an account, the error page</li><li>the sitemap, the feeds, the ajax endpoints and the cron entry point</li></ul>\n<h2>Your choice</h2>\n<table><thead><tr><th>Area</th><th>Default</th></tr></thead><tbody><tr><td>Static pages — terms, privacy notice, imprint</td><td>open</td></tr><tr><td>Contact form</td><td>open</td></tr><tr><td>Browsing and search</td><td>closed</td></tr><tr><td>Individual listings</td><td>closed</td></tr></tbody></table>\n<p>Static pages default to open because that is where the terms and the privacy notice live, and those usually have to be readable without an account.</p>\n<h2>A note on search engines</h2>\n<p>Closing browsing and listings hides them from search engines too — a crawler is a signed-out visitor. That is normally the point of a members-only site, but it is worth knowing before switching it on for a site that relies on organic traffic.</p>\n<h2>Requirements</h2>\n<p>Shopclass 6.1.0 or newer, PHP 8.0 or newer.</p>\n<h2>History</h2>\n<p>Derived from the Osclass &quot;Registered users only&quot; plugin (0.9.3, 2013), which let through only the login and registration pages — so password recovery and account activation were unreachable and a locked-out user could never get back in. See CHANGELOG.md.</p>\n<h2>Licence</h2>\n<p>GPL-3.0-or-later. Derived from Osclass, originally Apache-2.0; both notices are retained in the source headers.</p>",
+    "downloads": 0,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/shopclass-plugins",
+    "icon": null,
+    "latest_version": null,
+    "license": "GPL-3.0-or-later",
+    "name": "Registered Users Only",
+    "requires_min": null,
+    "screenshots": [],
+    "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
+    "slug": "registered-users-only",
+    "source": "in-repo",
+    "support": {
+        "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md",
+        "issues": "https://github.com/mindstellar/shopclass-plugins/issues"
+    },
+    "tags": [
+        "access",
+        "login",
+        "members-only",
+        "private-site"
+    ],
+    "tested_max": null,
+    "type": "plugin",
+    "updated_at": null,
+    "versions": []
+}

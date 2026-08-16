@@ -1,18 +1,18 @@
 [
     {
-        "count": 0,
+        "count": 4,
         "description": "Dashboard utilities, reporting, and other tools for site administrators.",
         "id": "admin-tools",
         "label": "Admin tools"
     },
     {
-        "count": 1,
+        "count": 2,
         "description": "Spam and abuse prevention: captcha, honeypots, submission filtering.",
         "id": "anti-spam",
         "label": "Anti-spam"
     },
     {
-        "count": 2,
+        "count": 4,
         "description": "Widgets, page templates, custom forms, and other content-authoring building blocks.",
         "id": "content-widgets",
         "label": "Content & widgets"
@@ -24,13 +24,13 @@
         "label": "Import & export"
     },
     {
-        "count": 0,
+        "count": 2,
         "description": "Connectors to external services and APIs: social login, analytics, CRMs, and similar.",
         "id": "integrations",
         "label": "Integrations"
     },
     {
-        "count": 0,
+        "count": 2,
         "description": "Listing lifecycle, review queues, flagging, and moderation workflow.",
         "id": "listings-moderation",
         "label": "Listings & moderation"
@@ -66,7 +66,7 @@
         "label": "SEO"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "File storage, image/video processing, CDN offload, and media handling.",
         "id": "storage-media",
         "label": "Storage & media"

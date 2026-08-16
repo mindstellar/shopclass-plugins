@@ -2,10 +2,144 @@
     {
         "author": "Mindstellar Community",
         "categories": [
+            "admin-tools",
+            "content-widgets"
+        ],
+        "downloads": 0,
+        "icon": "assets/age-warning/assets/icon.svg",
+        "name": "Age Warning",
+        "requires_min": "6.1.0",
+        "short_description": "Show an age-confirmation notice before a visitor sees adult content, and remember the answer.",
+        "slug": "age-warning",
+        "tags": [
+            "adult",
+            "age-gate",
+            "compliance",
+            "consent"
+        ],
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T18:09:14Z",
+        "version": "2.0.0"
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "listings-moderation",
+            "storage-media"
+        ],
+        "downloads": 0,
+        "icon": null,
+        "name": "Digital Goods",
+        "requires_min": "6.1.0",
+        "short_description": "Let sellers attach downloadable files to a listing, stored privately and served through a gated link.",
+        "slug": "digital-goods",
+        "tags": [
+            "attachments",
+            "digital",
+            "downloads",
+            "files"
+        ],
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T11:06:21Z",
+        "version": "2.0.0"
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "admin-tools",
+            "integrations"
+        ],
+        "downloads": 0,
+        "icon": null,
+        "name": "Google Analytics",
+        "requires_min": null,
+        "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
+        "slug": "google-analytics",
+        "tags": [
+            "analytics",
+            "consent",
+            "ga4",
+            "gtag",
+            "tracking"
+        ],
+        "tested_max": null,
+        "updated_at": null,
+        "version": null
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "content-widgets",
+            "integrations"
+        ],
+        "downloads": 0,
+        "icon": null,
+        "name": "QR Code",
+        "requires_min": null,
+        "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
+        "slug": "qr-code",
+        "tags": [
+            "listing",
+            "offline",
+            "print",
+            "qr",
+            "share"
+        ],
+        "tested_max": null,
+        "updated_at": null,
+        "version": null
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "admin-tools",
+            "listings-moderation"
+        ],
+        "downloads": 0,
+        "icon": null,
+        "name": "Registered Users Only",
+        "requires_min": null,
+        "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
+        "slug": "registered-users-only",
+        "tags": [
+            "access",
+            "login",
+            "members-only",
+            "private-site"
+        ],
+        "tested_max": null,
+        "updated_at": null,
+        "version": null
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
+            "admin-tools",
+            "anti-spam"
+        ],
+        "downloads": 0,
+        "icon": null,
+        "name": "Required Registration Fields",
+        "requires_min": null,
+        "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
+        "slug": "required-registration-fields",
+        "tags": [
+            "profile",
+            "registration",
+            "signup",
+            "validation"
+        ],
+        "tested_max": null,
+        "updated_at": null,
+        "version": null
+    },
+    {
+        "author": "Mindstellar Community",
+        "categories": [
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 22,
+        "downloads": 23,
         "icon": null,
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -26,7 +160,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 22,
+        "downloads": 23,
         "icon": null,
         "name": "Sample Widgets",
         "requires_min": "6.1.0",

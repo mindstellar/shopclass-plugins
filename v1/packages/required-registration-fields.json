@@ -1,0 +1,35 @@
+{
+    "author": "Mindstellar Community",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "admin-tools",
+        "anti-spam"
+    ],
+    "description_html": "<h1>Required Registration Fields</h1>\n<p>Adds profile fields to the registration form and lets you decide which are mandatory.</p>\n<h2>Fields</h2>\n<p>Mobile phone, landline, website, address, and account type (person or company). Each is set to <strong>not shown</strong>, <strong>shown and optional</strong>, or <strong>shown and required</strong>, from Plugins → Required Registration Fields → Configure.</p>\n<p>Nothing is added until you ask for it, so installing the plugin changes nothing on its own.</p>\n<h2>Required means required</h2>\n<p>A field marked required is checked when the account is created. A registration that leaves one empty is rejected and what was typed is kept, so the visitor can correct it.</p>\n<p>The form also carries the browser&#039;s own <code>required</code> attribute, but that is a convenience to save a round trip — it is not what enforces the rule. The original plugin enforced its rules only in the browser, through jQuery validation, which meant anything that posted the form directly bypassed them entirely.</p>\n<h2>What gets stored</h2>\n<p>Only the fields you turn on, written to the matching column on the new account. The set of columns is fixed in the plugin, so a request cannot reach a column you did not enable.</p>\n<h2>Requirements</h2>\n<p>Shopclass 6.1.0 or newer, PHP 8.0 or newer.</p>\n<h2>History</h2>\n<p>Derived from the Osclass &quot;Required Fields at Registration&quot; plugin (1.0.6, 2013), which was a file to edit rather than a plugin to configure, validated only in the browser, and could not run on a current install. See CHANGELOG.md.</p>\n<h2>Licence</h2>\n<p>GPL-3.0-or-later. Derived from Osclass, originally Apache-2.0; both notices are retained in the source headers.</p>",
+    "downloads": 0,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/shopclass-plugins",
+    "icon": null,
+    "latest_version": null,
+    "license": "GPL-3.0-or-later",
+    "name": "Required Registration Fields",
+    "requires_min": null,
+    "screenshots": [],
+    "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
+    "slug": "required-registration-fields",
+    "source": "in-repo",
+    "support": {
+        "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md",
+        "issues": "https://github.com/mindstellar/shopclass-plugins/issues"
+    },
+    "tags": [
+        "profile",
+        "registration",
+        "signup",
+        "validation"
+    ],
+    "tested_max": null,
+    "type": "plugin",
+    "updated_at": null,
+    "versions": []
+}

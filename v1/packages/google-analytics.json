@@ -1,0 +1,36 @@
+{
+    "author": "Mindstellar Community",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "admin-tools",
+        "integrations"
+    ],
+    "description_html": "<h1>Google Analytics</h1>\n<p>Adds Google Analytics 4 to your site. Core carried this as a built-in field until 6.2.0, when it was removed — analytics is one vendor&#039;s product among many, and every site was shipping the code for a service most of them do not use. This is where it lives now.</p>\n<h2>Upgrading from 6.1.0 or earlier</h2>\n<p>Installing the plugin picks up the tracking ID core already had, so a site that had analytics configured keeps working without retyping anything.</p>\n<h2>Consent</h2>\n<p>Consent Mode is initialised with storage <strong>denied</strong>, before the library loads. Until something grants consent, gtag.js sets no cookie and no identifier — it queues what it would have sent and delivers it only if consent arrives during the same page view.</p>\n<p>Whatever asks the visitor calls:</p>\n<pre><code>oscGoogleAnalytics.grant();  // they agreed\noscGoogleAnalytics.deny();   // they refused, or changed their mind</code></pre>\n<p>Remembering the answer is the banner&#039;s job, not this plugin&#039;s — it is the thing that knows what was asked and under which policy. Turn the setting off if another tool already manages consent for the whole page.</p>\n<h2>Keeping your own visits out</h2>\n<p>The settings screen has a button that marks <strong>this browser</strong> as not counted, and the tag then does nothing there.</p>\n<p>It is per-browser rather than per-account on purpose: an admin session is not visible from the public side of the site, so the server has no way to recognise staff there. Deciding it in the browser is also what keeps the page cacheable — omitting the tag from some responses would give a shared cache two versions of one URL.</p>\n<h2>Where it loads</h2>\n<p>The public side of the site only. Nothing is emitted anywhere in the admin panel.</p>\n<h2>Caching</h2>\n<p>What is emitted is byte-identical for every visitor who is counted, so a page still has one version per URL and the response cache is unaffected.</p>\n<h2>Settings</h2>\n<p>Plugins → Google Analytics → Configure: the measurement ID, the two switches above, and the opt-out button. An ID that is not a shape Google issues (<code>G-</code>, <code>GT-</code>, <code>UA-</code>, <code>AW-</code>) is refused and the screen says so, rather than writing it into a script tag on every page.</p>\n<h2>Extending</h2>\n<p><code>google_analytics_should_track</code> — return false to suppress the tag for a particular request.</p>\n<h2>Requirements</h2>\n<p>Shopclass 6.1.0 or newer, PHP 8.0 or newer.</p>\n<h2>Licence</h2>\n<p>GPL-3.0-or-later.</p>",
+    "downloads": 0,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/shopclass-plugins",
+    "icon": null,
+    "latest_version": null,
+    "license": "GPL-3.0-or-later",
+    "name": "Google Analytics",
+    "requires_min": null,
+    "screenshots": [],
+    "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
+    "slug": "google-analytics",
+    "source": "in-repo",
+    "support": {
+        "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md",
+        "issues": "https://github.com/mindstellar/shopclass-plugins/issues"
+    },
+    "tags": [
+        "analytics",
+        "consent",
+        "ga4",
+        "gtag",
+        "tracking"
+    ],
+    "tested_max": null,
+    "type": "plugin",
+    "updated_at": null,
+    "versions": []
+}

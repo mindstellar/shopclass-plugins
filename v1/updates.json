@@ -1,7 +1,35 @@
 {
+    "age-warning": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "f230980b6d29fcbb0eb43f7d904a06d293caa0b724c5515f90040ba029190828",
+            "size": 23844,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/age-warning-v2.0.0/age-warning_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ],
+    "digital-goods": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "fe23dea1a38ad4a4657231dc351eca85b8b5705fe7d5f5c8600cc0a81fcd307d",
+            "size": 39054,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugin-digital-goods/releases/download/2.0.0/digital-goods_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ],
+    "google-analytics": [],
+    "qr-code": [],
+    "registered-users-only": [],
+    "required-registration-fields": [],
     "sample-forms": [
         {
-            "downloads": 22,
+            "downloads": 23,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1033f4cd28f4a4cc390a18e4529552f33ea8cb9b7cb2e70be0890e7bf1c1bfd8",
@@ -13,7 +41,7 @@
     ],
     "sample-widgets": [
         {
-            "downloads": 22,
+            "downloads": 23,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1018cec3ce11586e8f036e3fc17ab2bb452cef7ec41a5f16cb036b31775de743",
