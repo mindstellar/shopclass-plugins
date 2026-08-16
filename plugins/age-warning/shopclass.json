@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "age-warning",
+  "type": "plugin",
+  "categories": ["content-widgets", "admin-tools"],
+  "tags": ["age-gate", "adult", "compliance", "consent"],
+  "short_description": "Show an age-confirmation notice before a visitor sees adult content, and remember the answer.",
+  "icon": "assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
+    "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}
