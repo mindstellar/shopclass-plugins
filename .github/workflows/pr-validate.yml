@@ -165,7 +165,13 @@ jobs:
           path: .
 
       - run: |
+          # An artifact does not carry the executable bit, so anything in the bundle that
+          # is run rather than read needs it put back. package-ci/*.sh was already covered;
+          # the vendored phpcs was not, and gate 6 tests for -x — so it reported the binary
+          # missing, emitted a not-ok result, and blocked every in-repo package without the
+          # gate ever having run.
           chmod +x package-ci/*.sh 2>/dev/null || true
+          chmod +x tools/lint/vendor/bin/* 2>/dev/null || true
           mkdir -p results
           echo "DIR=plugins/${{ matrix.package }}" >> "$GITHUB_ENV"
 
@@ -330,11 +336,15 @@ jobs:
             echo 'Automated checks against `docs/PACKAGE-SPEC.md`. Gates marked ❌ block merging;'
             echo '⚠️ and ⏭️ never do — see `CONTRIBUTING.md` §3 for what each gate means.'
             echo
-            for f in all-results/*/fragment.md; do
-              [ -f "$f" ] || continue
+            # Located rather than globbed at a fixed depth. download-artifact puts each
+            # artifact in its own directory when several match the pattern, but flattens
+            # into the target directory when only one does — so a single-package run left
+            # the fragment at all-results/fragment.md, one level above where the glob
+            # looked, and every comment came out as a header with no gate table.
+            while IFS= read -r f; do
               cat "$f"
               echo
-            done
+            done < <(find all-results -name fragment.md -type f | sort)
             echo '---'
             echo "_Updated for commit ${GITHUB_SHA}._"
           } > comment-body.md
