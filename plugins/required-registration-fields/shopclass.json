@@ -1,0 +1,14 @@
+{
+  "$schema": "../../schema/package.schema.json",
+  "slug": "required-registration-fields",
+  "type": "plugin",
+  "categories": ["admin-tools", "anti-spam"],
+  "tags": ["registration", "profile", "validation", "signup"],
+  "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
+  "icon": "assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
+    "docs": "https://github.com/mindstellar/shopclass/blob/develop/docs/PACKAGE-SPEC.md"
+  }
+}
