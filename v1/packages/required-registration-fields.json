@@ -9,11 +9,11 @@
     "downloads": 0,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
-    "icon": null,
-    "latest_version": null,
+    "icon": "assets/required-registration-fields/assets/icon.svg",
+    "latest_version": "2.0.0",
     "license": "GPL-3.0-or-later",
     "name": "Required Registration Fields",
-    "requires_min": null,
+    "requires_min": "6.1.0",
     "screenshots": [],
     "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
     "slug": "required-registration-fields",
@@ -28,8 +28,21 @@
         "signup",
         "validation"
     ],
-    "tested_max": null,
+    "tested_max": "6.2",
     "type": "plugin",
-    "updated_at": null,
-    "versions": []
+    "updated_at": "2026-08-16T18:11:38Z",
+    "versions": [
+        {
+            "changelog_html": "<p>First Shopclass release, rewritten from the Osclass plugin (1.0.6, 2013).</p>\n<h3>Fixed</h3>\n<ul><li><strong>The plugin could not run at all.</strong> Saving a registration pulled in</li></ul>\n<p>  <code>LIB_PATH . &#039;osclass/UserActions.php&#039;</code>, a path that has not existed for several major   versions, so completing a registration with the plugin active was a fatal error.</p>\n<ul><li><strong>Nothing was enforced on the server.</strong> The rules were jQuery-validate calls emitted</li></ul>\n<p>  into the page, so a field was mandatory only for a browser that ran them and chose to   comply; anything posting the form directly ignored them. Validation now runs during   account creation and rejects the registration, keeping what was typed.</p>\n<ul><li><strong>The save wrote back whatever <code>prepareData()</code> produced from the request</strong>, which hands</li></ul>\n<p>  the request control over every column that method touches. Only the configured fields   are written now, read one at a time.</p>\n<ul><li>The client-side rules depended on jQuery and jQuery-validate. Neither ships any more, so</li></ul>\n<p>  on a current install the rules silently did nothing even in the browser.</p>\n<ul><li>Labels were translated under the <code>modern</code> text domain, borrowed from a theme that may</li></ul>\n<p>  not be installed.</p>\n<h3>Changed</h3>\n<ul><li><strong>It is configured, not edited.</strong> Which fields appeared was decided by uncommenting</li></ul>\n<p>  lines in <code>form.php</code>, and which were mandatory by uncommenting matching lines of   JavaScript — two lists to keep in agreement by hand, both lost on update. Each field is   now a setting: not shown, shown and optional, or shown and required.</p>\n<ul><li>Installing the plugin no longer changes the registration form until a field is turned on.</li></ul>\n<h3>New</h3>\n<ul><li>Settings screen listing every available field with its three states.</li><li>Error messages are translatable, under this plugin&#039;s own text domain.</li></ul>",
+            "downloads": 0,
+            "published_at": "2026-08-16T18:11:38Z",
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "b2f4905670af76f21f2c481e07a8e31b4befaf97b846f47f2da82786a0acf094",
+            "size": 21510,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/required-registration-fields-v2.0.0/required-registration-fields_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ]
 }

@@ -37,7 +37,18 @@
             "version": "2.0.0"
         }
     ],
-    "required-registration-fields": [],
+    "required-registration-fields": [
+        {
+            "downloads": 0,
+            "requires": "6.1.0",
+            "requires_php": "8.0",
+            "sha256": "b2f4905670af76f21f2c481e07a8e31b4befaf97b846f47f2da82786a0acf094",
+            "size": 21510,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/shopclass-plugins/releases/download/required-registration-fields-v2.0.0/required-registration-fields_2.0.0.zip",
+            "version": "2.0.0"
+        }
+    ],
     "sample-forms": [
         {
             "downloads": 23,

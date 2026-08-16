@@ -118,9 +118,9 @@
             "anti-spam"
         ],
         "downloads": 0,
-        "icon": null,
+        "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
-        "requires_min": null,
+        "requires_min": "6.1.0",
         "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
         "slug": "required-registration-fields",
         "tags": [
@@ -129,9 +129,9 @@
             "signup",
             "validation"
         ],
-        "tested_max": null,
-        "updated_at": null,
-        "version": null
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T18:11:38Z",
+        "version": "2.0.0"
     },
     {
         "author": "Mindstellar Community",
