@@ -10,8 +10,15 @@ on:
   push:
     branches: [main]
 
+# Keyed on the commit, not the branch. Every push to main used to share one group,
+# and GitHub keeps only the newest *pending* run in a group — so merging several
+# packages in quick succession cancelled the runs in between. Each of those runs was
+# the only thing that would ever release its package, because detect works from that
+# push's own github.event.before: the merge succeeded, the run showed "cancelled",
+# and the package simply had no release until someone noticed. Per-commit means a run
+# can never supersede another push's.
 concurrency:
-  group: release-${{ github.ref }}
+  group: release-${{ github.sha }}
   cancel-in-progress: false
 
 permissions:
@@ -46,6 +53,13 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
+    # The serialisation that is actually wanted: one leg at a time per package and
+    # version, so two pushes touching the same package cannot both get past the
+    # tag-exists check and race to create it. Waiting rather than cancelling, because
+    # the loser here still has work to do.
+    concurrency:
+      group: release-${{ matrix.package.slug }}-${{ matrix.package.version }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
