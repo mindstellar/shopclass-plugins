@@ -5,7 +5,7 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 10,
+        "downloads": 11,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -27,7 +27,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 12,
+        "downloads": 13,
         "icon": null,
         "name": "Digital Goods",
         "requires_min": "6.1.0",
@@ -49,7 +49,7 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 6,
+        "downloads": 7,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -72,7 +72,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 6,
+        "downloads": 7,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -95,7 +95,7 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 8,
+        "downloads": 9,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -117,7 +117,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 7,
+        "downloads": 8,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -139,7 +139,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 32,
+        "downloads": 33,
         "icon": null,
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -160,7 +160,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 32,
+        "downloads": 33,
         "icon": null,
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
