@@ -1,0 +1,19 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "cloudflare",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-cloudflare"
+  },
+  "asset_pattern": "^cloudflare_.*\\.zip$",
+  "categories": ["integrations"],
+  "tags": ["cloudflare", "cdn", "cache", "purge"],
+  "short_description": "Purge Cloudflare's cache when listings change, install the recommended cache rules, and view cache analytics.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-cloudflare/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-cloudflare#readme"
+  }
+}
