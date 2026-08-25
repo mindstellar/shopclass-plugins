@@ -24,7 +24,7 @@
         "label": "Import & export"
     },
     {
-        "count": 2,
+        "count": 3,
         "description": "Connectors to external services and APIs: social login, analytics, CRMs, and similar.",
         "id": "integrations",
         "label": "Integrations"
