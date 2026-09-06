@@ -5,7 +5,7 @@
         "integrations"
     ],
     "description_html": "<h1>Cloudflare</h1>\n<p>Connect a Shopclass site to Cloudflare: purge changed pages automatically, install the recommended cache rules, and view cache analytics — all from the admin.</p>\n<p><img src=\"assets/screenshot-settings.png\" alt=\"The Cloudflare plugin settings page in the Shopclass admin\" loading=\"lazy\"></p>\n<h2>What it does</h2>\n<p><strong>Automatic cache purge.</strong> When a listing is created, edited, deleted, or changes state (enabled/disabled, activated, made premium, expiry changed), and when a category or static page changes, the plugin purges the affected URLs at Cloudflare: the item&#039;s own page (per enabled locale), the home page, the item&#039;s category listing, the seller&#039;s public profile, and the sitemap index. All URLs are derived from core helpers — nothing about your site&#039;s structure is hardcoded.</p>\n<p>Purges are immediate and best-effort; anything that fails (a Cloudflare blip, an expired token) is queued and retried on the hourly cron, so a purge is never lost and a listing save is never blocked.</p>\n<p>Search and filter result URLs are <strong>not</strong> purged — they are unbounded and can&#039;t be enumerated, so they rely on whatever TTL your cache rules give them.</p>\n<p><strong>Cache rules.</strong> One click installs three rules in your zone&#039;s cache phase:</p>\n<ol><li>cache public pages, respecting the origin&#039;s <code>Cache-Control</code>;</li><li>bypass the admin (<code>/oc-admin/*</code>);</li><li>bypass any request carrying a login/personalization cookie.</li></ol>\n<p>The cookie list comes from core (<code>osc_cache_relevant_cookies()</code>), so it stays correct across versions. The plugin touches only the rules it created — your other rules are preserved — and it is safe by construction: a page the app marks <code>private, no-store</code> is never cached.</p>\n<p><strong>Cache lifetime.</strong> Optionally set how long <strong>Cloudflare&#039;s edge</strong> keeps each page, per page type — item, static, and listings (home/search/category). Sent as a <code>Cloudflare-CDN-Cache-Control</code> header, so only Cloudflare holds the longer copy while the origin micro-cache keeps its short, self-healing TTL (the origin has no invalidation; only the edge is purged). Off by default; a longer item TTL is safe because purge-on-change clears the edge — so it relies on cache purge working.</p>\n<p><strong>Analytics.</strong> A read-only widget shows the last 24h cache hit ratio, requests, and bandwidth served from cache.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.2.0+ (uses the core caching contract and <code>osc_cache_relevant_cookies()</code>).</li><li>PHP 8.0+.</li><li>A Cloudflare account with the site as a zone.</li></ul>\n<h2>Setup</h2>\n<ol><li>Create a zone-scoped Cloudflare API token with these permissions:<ul><li><strong>Cache Purge</strong> — Edit</li><li><strong>Cache Rules</strong> — Edit</li><li><strong>Analytics</strong> — Read</li><li><strong>Zone</strong> — Read</li></ul></li><li>In admin, open <strong>Settings → Cloudflare</strong>, paste the token, and Save.</li><li>Click <strong>Discover zone</strong> to fill the Zone ID from your site domain (or paste it),</li></ol>\n<p>   then <strong>Test connection</strong>.</p>\n<ol><li>Click <strong>Install / update cache rules</strong>.</li></ol>\n<h2>Purge on deploy</h2>\n<p>To clear the whole cache after a deploy that changes site-wide markup:</p>\n<pre><code>php oc-content/plugins/cloudflare/bin/purge.php</code></pre>\n<p>It reads the same saved credentials and purges everything.</p>\n<h2>Data and privacy</h2>\n<p>The plugin stores only your API token and Zone ID (in the site&#039;s preferences) and talks solely to the Cloudflare API over HTTPS. It sends no analytics or telemetry anywhere else.</p>\n<h2>Licence</h2>\n<p>GPL-3.0-or-later. See <a href=\"LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
-    "downloads": 99,
+    "downloads": 105,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-cloudflare",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
@@ -33,7 +33,7 @@
     "versions": [
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>A &quot;Getting started&quot; setup guide on the settings page — numbered steps, the exact token scopes with a link to create the token, and the one Cloudflare toggle to leave off. Collapses once configured.</li></ul>\n<h3>Changed</h3>\n<ul><li>Moved the admin menu from Settings to Plugins.</li></ul>",
-            "downloads": 15,
+            "downloads": 16,
             "published_at": "2026-08-25T06:30:33Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -45,7 +45,7 @@
         },
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>The &quot;Test connection&quot; analytics probe used an invalid GraphQL field (<code>count</code>), so it wrongly reported analytics as missing. It now uses a valid field.</li></ul>",
-            "downloads": 15,
+            "downloads": 16,
             "published_at": "2026-08-25T04:08:31Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -57,7 +57,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>&quot;Test connection&quot; now checks every permission the plugin needs (token, zone, cache purge, cache rules, analytics) and names any that are missing — so a token short a scope (e.g. Cache Purge) surfaces instead of failing silently.</li></ul>",
-            "downloads": 17,
+            "downloads": 18,
             "published_at": "2026-08-25T03:51:34Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -69,7 +69,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>The per-page-type cache TTL now targets Cloudflare&#039;s edge only, via a <code>Cloudflare-CDN-Cache-Control</code> header, instead of raising <code>s-maxage</code>. The origin micro-cache keeps its short, self-healing TTL — a long <code>s-maxage</code> would have made the un-purgeable origin cache serve stale pages for the whole TTL, defeating purge-on-change.</li></ul>",
-            "downloads": 16,
+            "downloads": 17,
             "published_at": "2026-08-25T03:45:49Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -81,7 +81,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Editable per-page-type cache TTL (item / static / listings), applied via the <code>public_cache_max_age</code> filter — off by default; a longer item TTL is safe because purge-on-change keeps it fresh.</li><li>Redesigned settings page: Bootstrap-native cards, status badges, a cache-analytics widget with stat tiles, and dark-mode support.</li></ul>\n<h3>Changed</h3>\n<ul><li>Settings save as one form; every action button (Test, Discover, Install rules) persists the form first, so it acts on what&#039;s on screen.</li></ul>",
-            "downloads": 16,
+            "downloads": 17,
             "published_at": "2026-08-25T03:29:29Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -93,7 +93,7 @@
         },
         {
             "changelog_html": "<p>First release.</p>\n<h3>New</h3>\n<ul><li>Automatic Cloudflare cache purge on listing, category, and static-page changes, with a durable retry queue drained on the hourly cron.</li><li>One-click install of the recommended cache rules (cache public pages respecting the origin, bypass admin, bypass personalized requests), owning only the plugin&#039;s own rules.</li><li>Read-only cache analytics widget (hit ratio, requests, bandwidth) for the last 24h.</li><li>Admin settings: API token, zone auto-discovery, connection test, manual &quot;purge everything&quot;.</li><li><code>bin/purge.php</code> standalone script for purging the whole cache after a deploy.</li></ul>",
-            "downloads": 20,
+            "downloads": 21,
             "published_at": "2026-08-25T01:37:35Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
