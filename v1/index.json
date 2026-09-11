@@ -5,7 +5,7 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 39,
+        "downloads": 40,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -26,7 +26,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 130,
+        "downloads": 136,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "name": "Cloudflare",
         "requires_min": "6.2.0",
@@ -48,7 +48,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 41,
+        "downloads": 42,
         "icon": null,
         "name": "Digital Goods",
         "requires_min": "6.1.0",
@@ -70,7 +70,7 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 35,
+        "downloads": 36,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -92,7 +92,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 30,
+        "downloads": 32,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "name": "nginx Cache",
         "requires_min": "6.2.0",
@@ -115,7 +115,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 38,
+        "downloads": 39,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -138,7 +138,7 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 39,
+        "downloads": 40,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -160,7 +160,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 39,
+        "downloads": 40,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -182,7 +182,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 64,
+        "downloads": 65,
         "icon": null,
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -203,7 +203,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 71,
+        "downloads": 73,
         "icon": null,
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
