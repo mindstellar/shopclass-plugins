@@ -4,7 +4,7 @@ Plugin Name: Registered Users Only
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Require a visitor to sign in before they can see the site, with control over what stays public.
 Version: 2.0.0
-Author: Mindstellar Community
+Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: registered-users-only
 Requires Shopclass: 6.1.0
@@ -16,7 +16,7 @@ Support URI: https://github.com/mindstellar/shopclass-plugins/issues
 /*
  * This file is part of Shopclass (Mindstellar).
  * Copyright (c) 2013 Osclass (original work, licensed under the Apache License 2.0)
- * Copyright (c) 2021-2026 Mindstellar Community
+ * Copyright (c) 2021-2026 Navjot Tomer (Mindstellar) and contributors
  *
  * Distributed under the GNU General Public License v3.0 or later. The original
  * Osclass code it derives from was licensed under the Apache License 2.0.

@@ -4,7 +4,7 @@ Plugin Name: Google Analytics
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.
 Version: 1.0.0
-Author: Mindstellar Community
+Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: google-analytics
 Requires Shopclass: 6.1.0
@@ -15,7 +15,7 @@ Support URI: https://github.com/mindstellar/shopclass-plugins/issues
 
 /*
  * This file is part of Shopclass (Mindstellar).
- * Copyright (c) 2021-2026 Mindstellar Community
+ * Copyright (c) 2021-2026 Navjot Tomer (Mindstellar) and contributors
  *
  * Distributed under the GNU General Public License v3.0 or later. See LICENSE.
  *
