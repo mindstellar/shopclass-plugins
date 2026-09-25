@@ -6,6 +6,16 @@
   "tags": ["age-gate", "adult", "compliance", "consent"],
   "short_description": "Show an age-confirmation notice before a visitor sees adult content, and remember the answer.",
   "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "The notice a visitor sees before the site"
+    },
+    {
+      "src": "assets/screenshot-2.png",
+      "caption": "Its wording, buttons, and how long an answer is remembered"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugins/issues",

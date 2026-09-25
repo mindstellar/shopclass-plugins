@@ -11,6 +11,12 @@
   "tags": ["cloudflare", "cdn", "cache", "purge"],
   "short_description": "Purge Cloudflare's cache when listings change, install the recommended cache rules, and view cache analytics.",
   "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/screenshot-1.png",
+      "caption": "Connection, cache rules and purging, with first-time setup steps"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugin-cloudflare/issues",

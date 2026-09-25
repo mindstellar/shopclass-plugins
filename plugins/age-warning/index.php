@@ -3,12 +3,12 @@
 Plugin Name: Age Warning
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Show an age-confirmation notice before a visitor sees adult content, and remember the answer.
-Version: 2.0.0
+Version: 2.0.1
 Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: age-warning
 Requires Shopclass: 6.1.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 8.0
 Support URI: https://github.com/mindstellar/shopclass-plugins/issues
 */

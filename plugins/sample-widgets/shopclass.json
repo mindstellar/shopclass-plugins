@@ -9,5 +9,12 @@
   "support": {
     "issues": "https://github.com/mindstellar/osclass/issues",
     "docs": "https://github.com/mindstellar/osclass/blob/develop/docs/PACKAGE-SPEC.md"
-  }
+  },
+  "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "The sample widget types, ready to place in a section"
+    }
+  ]
 }

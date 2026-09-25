@@ -3,12 +3,12 @@
 Plugin Name: QR Code
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Show a QR code for a listing so it can be scanned, shared or printed.
-Version: 2.0.0
+Version: 2.0.1
 Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: qr-code
 Requires Shopclass: 6.1.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 8.0
 Support URI: https://github.com/mindstellar/shopclass-plugins/issues
 */

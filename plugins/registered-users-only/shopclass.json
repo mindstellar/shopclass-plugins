@@ -6,6 +6,16 @@
   "tags": ["private-site", "members-only", "access", "login"],
   "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
   "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "A signed-out visitor is asked to register"
+    },
+    {
+      "src": "assets/screenshot-2.png",
+      "caption": "Choose what stays open to visitors"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugins/issues",

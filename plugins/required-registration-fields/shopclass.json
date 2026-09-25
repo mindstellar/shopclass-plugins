@@ -6,6 +6,12 @@
   "tags": ["registration", "profile", "validation", "signup"],
   "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
   "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "Choose which fields registration shows, and which are required"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugins/issues",

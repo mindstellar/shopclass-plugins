@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Changed
+
+- Tested up to Shopclass 6.4.
+
 ## 1.0.0
 
 First release. Restores, as a plugin, the analytics core carried until 6.2.0 — and adds

@@ -6,6 +6,16 @@
   "tags": ["qr", "share", "print", "offline", "listing"],
   "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
   "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "A listing's QR code, ready to scan, copy or print"
+    },
+    {
+      "src": "assets/screenshot-2.png",
+      "caption": "How much damage the code survives"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugins/issues",

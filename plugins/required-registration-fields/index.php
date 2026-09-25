@@ -3,12 +3,12 @@
 Plugin Name: Required Registration Fields
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Ask for more than a name and an email when someone registers, and require the fields you pick.
-Version: 2.0.0
+Version: 2.0.1
 Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: required-registration-fields
 Requires Shopclass: 6.1.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 8.0
 Support URI: https://github.com/mindstellar/shopclass-plugins/issues
 */

@@ -6,6 +6,12 @@
   "tags": ["analytics", "ga4", "gtag", "consent", "tracking"],
   "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
   "icon": "assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "assets/screenshot-1.png",
+      "caption": "Measurement ID, consent mode, and leaving out your own visits"
+    }
+  ],
   "license": "GPL-3.0-or-later",
   "support": {
     "issues": "https://github.com/mindstellar/shopclass-plugins/issues",
