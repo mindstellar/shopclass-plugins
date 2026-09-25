@@ -14,6 +14,7 @@ let in — or simply breaks the route:
 
 - signing in, registering, recovering a password, activating an account, the error page
 - the sitemap, the feeds, the ajax endpoints and the cron entry point
+- a signed-in user's own account pages
 
 ## Your choice
 

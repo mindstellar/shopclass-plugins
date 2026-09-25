@@ -5,8 +5,10 @@ Adds profile fields to the registration form and lets you decide which are manda
 ## Fields
 
 Mobile phone, landline, website, address, and account type (person or company). Each is
-set to **not shown**, **shown and optional**, or **shown and required**, from
-Plugins → Required Registration Fields → Configure.
+set to **Not shown**, **Shown, optional** or **Shown, required**, from **Plugins → Manage
+plugins**, then **Settings** next to Required Registration Fields.
+
+The fields take the theme's own layout on the sign-up form.
 
 Nothing is added until you ask for it, so installing the plugin changes nothing on its own.
 
@@ -15,10 +17,8 @@ Nothing is added until you ask for it, so installing the plugin changes nothing 
 A field marked required is checked when the account is created. A registration that leaves
 one empty is rejected and what was typed is kept, so the visitor can correct it.
 
-The form also carries the browser's own `required` attribute, but that is a convenience to
-save a round trip — it is not what enforces the rule. The original plugin enforced its
-rules only in the browser, through jQuery validation, which meant anything that posted the
-form directly bypassed them entirely.
+The form also carries the browser's own `required` attribute as a convenience; the check
+that matters runs on the server.
 
 ## What gets stored
 

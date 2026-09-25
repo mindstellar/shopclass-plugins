@@ -5,19 +5,8 @@ put in a window.
 
 ## How it works
 
-The code is drawn **in the browser**, as inline SVG, and only once a visitor asks for it.
-Nothing is stored on the server.
-
-That is the whole design, and it is what makes the rest fall out:
-
-- **No files.** The original rendered a PNG per listing into `oc-content/uploads/qrcode/`
-  and served it. A QR code is a pure function of a URL, so storing one buys nothing and
-  costs a growing directory, a cleanup pass on delete and on uninstall, and an orphaned
-  file every time a permalink changes.
-- **No GD, no PHP encoder.** The encoder is 52 KB of JavaScript fetched on demand — a
-  listing nobody scans downloads none of it.
-- **Sharp at any size.** SVG, not a fixed-resolution bitmap, which is what a printed code
-  wants.
+The code is drawn in the browser as SVG, only when a visitor asks for it, so it stays sharp
+when printed. No files are stored on the server.
 
 ## What the visitor gets
 
@@ -34,15 +23,14 @@ failing.
 
 ## Settings
 
-One: the error-correction level, under Plugins → QR Code → Configure. **M** is the
+One: the error-correction level, under **Plugins → Manage plugins**, then **Settings** next to QR Code. **M** is the
 default — it survives a scuffed print or an off-angle scan while keeping the symbol sparse
 enough to read quickly. **H** costs roughly a third more modules for damage tolerance most
 listings never need.
 
 ## Where it appears
 
-Through the `item_detail` theme hook. The original defined `show_qrcode()` and left it to
-the theme to call, so on any theme that had not been edited for it, the plugin did nothing.
+On every listing page, through the theme's `item_detail` hook. No theme edit is needed.
 
 ## Requirements
 

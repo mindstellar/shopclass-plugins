@@ -1,8 +1,6 @@
 # Google Analytics
 
-Adds Google Analytics 4 to your site. Core carried this as a built-in field until 6.2.0,
-when it was removed — analytics is one vendor's product among many, and every site was
-shipping the code for a service most of them do not use. This is where it lives now.
+Adds Google Analytics 4 to your site. Core had this as a built-in field until 6.2.0.
 
 ## Upgrading from 6.1.0 or earlier
 
@@ -29,25 +27,15 @@ consent for the whole page.
 ## Keeping your own visits out
 
 The settings screen has a button that marks **this browser** as not counted, and the tag
-then does nothing there.
-
-It is per-browser rather than per-account on purpose: an admin session is not visible from
-the public side of the site, so the server has no way to recognise staff there. Deciding it
-in the browser is also what keeps the page cacheable — omitting the tag from some responses
-would give a shared cache two versions of one URL.
+then does nothing there. Use it in each browser you visit the site from.
 
 ## Where it loads
 
-The public side of the site only. Nothing is emitted anywhere in the admin panel.
-
-## Caching
-
-What is emitted is byte-identical for every visitor who is counted, so a page still has one
-version per URL and the response cache is unaffected.
+The public side of the site only, never the admin. It works with a page cache.
 
 ## Settings
 
-Plugins → Google Analytics → Configure: the measurement ID, the two switches above, and the opt-out button.
+**Plugins → Manage plugins**, then **Settings** next to Google Analytics: the measurement ID, the two switches above, and the opt-out button.
 An ID that is not a shape Google issues (`G-`, `GT-`, `UA-`, `AW-`) is refused and the
 screen says so, rather than writing it into a script tag on every page.
 
