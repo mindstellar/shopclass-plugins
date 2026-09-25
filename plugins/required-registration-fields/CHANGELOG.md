@@ -6,6 +6,10 @@
 
 - Tested up to Shopclass 6.4.
 
+### Fixed
+
+- The extra sign-up fields take the theme's own row layout instead of appearing unstyled.
+
 ## 2.0.0
 
 First Shopclass release, rewritten from the Osclass plugin (1.0.6, 2013).

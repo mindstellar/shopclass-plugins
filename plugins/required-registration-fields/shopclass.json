@@ -9,6 +9,10 @@
   "screenshots": [
     {
       "src": "assets/screenshot-1.png",
+      "caption": "The extra fields take the theme's own look on the sign-up form"
+    },
+    {
+      "src": "assets/screenshot-2.png",
       "caption": "Choose which fields registration shows, and which are required"
     }
   ],

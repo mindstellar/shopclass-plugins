@@ -45,6 +45,45 @@ $rrfRequiredIds = array();
         </div>
     <?php } ?>
 </div>
+<script>
+(function () {
+    // Each theme lays out its sign-up rows its own way, so the fields take the shape of the
+    // theme's own e-mail row. Without script they stay in the plain layout above.
+    var box = document.currentScript.previousElementSibling;
+    var ref = document.querySelector('[name="s_email"]');
+    var row = ref;
+    while (row && row.parentElement && row.parentElement !== box.parentElement) {
+        row = row.parentElement;
+    }
+    if (!row || !row.parentElement || !row.querySelector('label')) {
+        return;
+    }
+    var refInput = row.querySelector('input');
+    Array.prototype.forEach.call(box.querySelectorAll('.rrf-field'), function (field) {
+        var label = field.querySelector('label');
+        var control = field.querySelector('input, select, textarea');
+        if (!label || !control) {
+            return;
+        }
+        var copy = row.cloneNode(true);
+        var copyLabel = copy.querySelector('label');
+        copyLabel.innerHTML = label.innerHTML;
+        copyLabel.htmlFor = label.htmlFor;
+        var slot = copy.querySelector('input, select, textarea');
+        if (control.tagName === 'INPUT' && refInput && refInput.className) {
+            control.className = (control.className + ' ' + refInput.className).trim();
+        }
+        slot.replaceWith(control);
+        Array.prototype.forEach.call(copy.querySelectorAll('input, select, textarea'), function (extra) {
+            if (extra !== control) {
+                extra.remove();
+            }
+        });
+        box.parentNode.insertBefore(copy, box);
+    });
+    box.remove();
+})();
+</script>
 <?php if ($rrfRequiredIds !== array()) { ?>
 <script>
 (function () {
