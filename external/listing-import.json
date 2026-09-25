@@ -15,7 +15,8 @@
     { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-1.png", "caption": "Sources: partners who send listings, and feeds this site fetches" },
     { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-2.png", "caption": "Fetch a JSON, CSV or RSS feed on a schedule" },
     { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-3.png", "caption": "Preview a feed before it changes anything" },
-    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-4.png", "caption": "API keys with their own permissions" }
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-4.png", "caption": "API keys with their own permissions" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/screenshot-5.png", "caption": "A help screen with the API guide" }
   ],
   "license": "GPL-3.0-or-later",
   "support": {
