@@ -1,11 +1,11 @@
 [
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 55,
+        "downloads": 56,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -17,16 +17,16 @@
             "compliance",
             "consent"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T18:09:14Z",
-        "version": "2.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:45Z",
+        "version": "2.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "integrations"
         ],
-        "downloads": 223,
+        "downloads": 229,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "name": "Cloudflare",
         "requires_min": "6.2.0",
@@ -38,18 +38,18 @@
             "cloudflare",
             "purge"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-25T06:30:33Z",
-        "version": "1.1.4"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:55:54Z",
+        "version": "1.1.5"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 57,
-        "icon": null,
+        "downloads": 58,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "name": "Digital Goods",
         "requires_min": "6.1.0",
         "short_description": "Let sellers attach downloadable files to a listing, stored privately and served through a gated link.",
@@ -60,17 +60,17 @@
             "downloads",
             "files"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T11:06:21Z",
-        "version": "2.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:00Z",
+        "version": "2.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools",
             "integrations"
         ],
-        "downloads": 52,
+        "downloads": 53,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -83,16 +83,38 @@
             "gtag",
             "tracking"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T18:12:51Z",
-        "version": "1.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:45Z",
+        "version": "1.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools"
         ],
-        "downloads": 61,
+        "downloads": 0,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/icon.svg",
+        "name": "Listing Import",
+        "requires_min": "6.4.0",
+        "short_description": "Import listings from other systems through a keyed REST API or scheduled JSON, CSV and RSS feeds.",
+        "slug": "listing-import",
+        "tags": [
+            "api",
+            "csv",
+            "feed",
+            "import",
+            "rss"
+        ],
+        "tested_max": "6.4",
+        "updated_at": "2026-09-24T12:29:18Z",
+        "version": "0.1.0"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
+            "admin-tools"
+        ],
+        "downloads": 63,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "name": "nginx Cache",
         "requires_min": "6.2.0",
@@ -105,17 +127,17 @@
             "performance",
             "purge"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-28T17:28:54Z",
-        "version": "0.4.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:55:44Z",
+        "version": "0.4.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "content-widgets",
             "integrations"
         ],
-        "downloads": 60,
+        "downloads": 61,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -128,17 +150,17 @@
             "qr",
             "share"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T18:12:16Z",
-        "version": "2.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:47Z",
+        "version": "2.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 55,
+        "downloads": 56,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -150,17 +172,17 @@
             "members-only",
             "private-site"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T18:11:03Z",
-        "version": "2.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:45Z",
+        "version": "2.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 55,
+        "downloads": 56,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -172,18 +194,18 @@
             "signup",
             "validation"
         ],
-        "tested_max": "6.2",
-        "updated_at": "2026-08-16T18:11:38Z",
-        "version": "2.0.0"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:44Z",
+        "version": "2.0.1"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 80,
-        "icon": null,
+        "downloads": 81,
+        "icon": "assets/sample-forms/assets/icon.svg",
         "name": "Sample Forms",
         "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the Forms platform: contexts, field filters, spam veto, and submission hooks.",
@@ -194,17 +216,17 @@
             "reference",
             "spam-filter"
         ],
-        "tested_max": "6.1",
-        "updated_at": "2026-08-08T09:23:06Z",
-        "version": "1.0.1"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:45Z",
+        "version": "1.0.2"
     },
     {
-        "author": "Mindstellar Community",
+        "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "content-widgets"
         ],
-        "downloads": 97,
-        "icon": null,
+        "downloads": 98,
+        "icon": "assets/sample-widgets/assets/icon.svg",
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
@@ -215,8 +237,8 @@
             "reference",
             "widgets"
         ],
-        "tested_max": "6.1",
-        "updated_at": "2026-08-08T09:23:07Z",
-        "version": "1.0.1"
+        "tested_max": "6.4",
+        "updated_at": "2026-09-25T03:56:47Z",
+        "version": "1.0.2"
     }
 ]
