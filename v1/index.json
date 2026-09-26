@@ -5,7 +5,7 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 60,
+        "downloads": 62,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -26,7 +26,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 244,
+        "downloads": 251,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "name": "Cloudflare",
         "requires_min": "6.2.0",
@@ -48,7 +48,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 63,
+        "downloads": 65,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "name": "Digital Goods",
         "requires_min": "6.1.0",
@@ -70,7 +70,7 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 57,
+        "downloads": 59,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -92,7 +92,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 3,
+        "downloads": 5,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/icon.svg",
         "name": "Listing Import",
         "requires_min": "6.4.0",
@@ -114,7 +114,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 69,
+        "downloads": 72,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "name": "nginx Cache",
         "requires_min": "6.2.0",
@@ -137,7 +137,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 65,
+        "downloads": 67,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -160,7 +160,7 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 60,
+        "downloads": 62,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -182,7 +182,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 60,
+        "downloads": 62,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -204,7 +204,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 85,
+        "downloads": 89,
         "icon": "assets/sample-forms/assets/icon.svg",
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -225,7 +225,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 103,
+        "downloads": 107,
         "icon": "assets/sample-widgets/assets/icon.svg",
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
@@ -238,7 +238,7 @@
             "widgets"
         ],
         "tested_max": "6.4",
-        "updated_at": "2026-09-25T03:56:47Z",
-        "version": "1.0.2"
+        "updated_at": "2026-09-26T06:48:59Z",
+        "version": "1.0.3"
     }
 ]
