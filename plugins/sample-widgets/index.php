@@ -3,7 +3,7 @@
 Plugin Name: Sample Widgets
 Plugin URI: https://github.com/mindstellar/shopclass
 Description: Reference plugin showing how to register functional widgets through the widget-type registry: a static notice, a live "recent listings" list, a category-filtered list, and a super-admin-gated raw embed.
-Version: 1.0.2
+Version: 1.0.3
 Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: sample-widgets
@@ -91,7 +91,9 @@ if (function_exists('osc_register_widget')) {
                 'label'   => 'Category',
                 'type'    => 'select',
                 'default' => '',
-                'options' => sample_widgets_category_options(),
+                // Shopclass 6.4 fills the list when the form is drawn; older cores need it now.
+                'options' => version_compare(OSCLASS_VERSION, '6.4.0.beta1', '>=')
+                    ? 'sample_widgets_category_options' : sample_widgets_category_options(),
             ),
         ),
         'render'      => 'sample_widgets_render_category_listings',

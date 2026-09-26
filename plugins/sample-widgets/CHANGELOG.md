@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Fixed
+
+- On Shopclass 6.4 the category list is built when the widget form opens, not on every page.
+
 ## 1.0.2
 
 ### Changed
