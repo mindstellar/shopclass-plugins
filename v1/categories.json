@@ -48,7 +48,7 @@
         "label": "Notifications"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Payment gateways, paid listing plans, and other monetization of the marketplace.",
         "id": "payments",
         "label": "Payments"
