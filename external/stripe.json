@@ -1,0 +1,26 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "stripe",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-stripe"
+  },
+  "asset_pattern": "^stripe_.*\\.zip$",
+  "categories": ["payments"],
+  "tags": ["stripe", "payments", "cards", "checkout", "billing"],
+  "short_description": "Take card payments for credit packages through Stripe Checkout, with signed webhooks and refunds from the admin.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
+  "screenshots": [
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/screenshot-1.png", "caption": "Test and live keys, and the webhook to add in Stripe" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/screenshot-2.png", "caption": "Stripe at checkout, next to the site's other payment methods" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/screenshot-3.png", "caption": "Buyers pay on Stripe's own page; no card data touches the site" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/screenshot-4.png", "caption": "Refund from the order screen, or open the payment in Stripe" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/screenshot-5.png", "caption": "Stripe ready under Billing settings" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-stripe/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-stripe#readme"
+  }
+}
