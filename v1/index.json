@@ -246,7 +246,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 0,
+        "downloads": 3,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "name": "Stripe Payment",
         "requires_min": "6.4.0",
@@ -260,7 +260,7 @@
             "stripe"
         ],
         "tested_max": "6.4",
-        "updated_at": "2026-10-02T07:53:55Z",
-        "version": "0.1.0"
+        "updated_at": "2026-10-02T08:04:20Z",
+        "version": "0.1.1"
     }
 ]

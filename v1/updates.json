@@ -316,6 +316,16 @@
             "downloads": 0,
             "requires": "6.4.0",
             "requires_php": "8.0",
+            "sha256": "b660f838093fbce39c916245d6ae45f82d1544a2a904ec5f337e85514b1dcc51",
+            "size": 40802,
+            "tested": "6.4",
+            "url": "https://github.com/mindstellar/shopclass-plugin-stripe/releases/download/v0.1.1/stripe_0.1.1.zip",
+            "version": "0.1.1"
+        },
+        {
+            "downloads": 3,
+            "requires": "6.4.0",
+            "requires_php": "8.0",
             "sha256": "aff2880c02f35ae5265bf08fd1ad46f7caf2e5c4ed259896d013e547e132f927",
             "size": 1164479,
             "tested": "6.4",
