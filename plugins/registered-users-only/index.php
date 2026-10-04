@@ -347,7 +347,7 @@ function ruo_guard()
 function ruo_purge_page_cache()
 {
     if (function_exists('osc_purge_page_cache')) {
-        osc_purge_page_cache();
+        osc_purge_page_cache('registered-users-only');
     }
 }
 

@@ -4,7 +4,7 @@
 
 ### Fixed
 
-- A page cached by nginx before the site was closed kept being served to signed-out visitors.
+- A page cached by nginx before the site was closed kept being served to signed-out visitors (fully purged on Shopclass 6.4.2 and later).
 - A seller's public profile was open to signed-out visitors; it now follows the browsing setting.
 
 ### Changed
