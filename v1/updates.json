@@ -201,6 +201,16 @@
     ],
     "nginx-cache": [
         {
+            "downloads": 0,
+            "requires": "6.2.0",
+            "requires_php": "8.0",
+            "sha256": "e0788f54efd2ed85c2da0942dbeb6db45bf9d87d86d25498a2c6ea2a8745ee49",
+            "size": 50747,
+            "tested": "6.4",
+            "url": "https://github.com/mindstellar/shopclass-plugin-nginx-cache/releases/download/v0.5.2/nginx-cache_0.5.2.zip",
+            "version": "0.5.2"
+        },
+        {
             "downloads": 2,
             "requires": "6.2.0",
             "requires_php": "8.0",
