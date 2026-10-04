@@ -30,7 +30,7 @@ $rows = array(
     ),
     'allow_search'  => array(
         __('Browsing and search', 'registered-users-only'),
-        __('Category listings and search results.', 'registered-users-only'),
+        __('Category listings, search results and sellers\' public profiles.', 'registered-users-only'),
     ),
     'allow_item'    => array(
         __('Individual listings', 'registered-users-only'),

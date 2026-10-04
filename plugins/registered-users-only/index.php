@@ -3,7 +3,7 @@
 Plugin Name: Registered Users Only
 Plugin URI: https://github.com/mindstellar/shopclass-plugins
 Description: Require a visitor to sign in before they can see the site, with control over what stays public.
-Version: 2.0.1
+Version: 2.1.0
 Author: Navjot Tomer (Mindstellar)
 Author URI: https://mindstellar.com
 Short Name: registered-users-only
@@ -41,6 +41,9 @@ Support URI: https://github.com/mindstellar/shopclass-plugins/issues
  */
 
 define('RUO_PREF_SECTION', 'registered_users_only');
+
+/** How long a shared cache may hold the redirect to the registration page, in seconds. */
+define('RUO_REDIRECT_MAX_AGE', 30);
 
 /**
  * Pages that stay public no matter how the plugin is configured.
@@ -160,12 +163,19 @@ function ruo_configure()
 /**
  * Whether the page being requested is readable without an account.
  *
- * @param string $page the resolved `page` parameter
+ * @param string $page   the resolved `page` parameter
+ * @param string $action the `action` parameter
  *
  * @return bool
  */
-function ruo_is_public($page)
+function ruo_is_public($page, $action = '')
 {
+    // A seller's public profile lives under `user` but lists their listings, so it follows
+    // the browsing setting rather than the always-open account pages.
+    if ($page === 'user' && $action === 'pub_profile') {
+        return ruo_setting('allow_search');
+    }
+
     // An empty page is the front page, which is the main thing being closed — so it is
     // not a special case, and an unrecognised one is closed too. For a plugin whose whole
     // job is to shut the door, the safe direction when in doubt is shut.
@@ -183,10 +193,118 @@ function ruo_is_public($page)
 }
 
 /**
+ * The page being requested, as the router resolved it.
+ *
+ * @return string
+ */
+function ruo_current_page()
+{
+    $page = (string)Rewrite::newInstance()->get_location();
+    if ($page === '') {
+        $page = Params::getParamString('page');
+    }
+
+    return $page;
+}
+
+/**
+ * Set while the redirect asks core whether it may be cached, so the filter below lets it through.
+ *
+ * @param bool|null $set
+ *
+ * @return bool
+ */
+function ruo_redirecting($set = null)
+{
+    static $redirecting = false;
+    if ($set !== null) {
+        $redirecting = (bool)$set;
+    }
+
+    return $redirecting;
+}
+
+/**
+ * Keep a closed page out of shared caches, for any page that renders without `before_html`.
+ *
+ * @param bool $cacheable
+ *
+ * @return bool
+ */
+function ruo_response_is_cacheable($cacheable)
+{
+    if (!$cacheable || ruo_redirecting() || osc_is_web_user_logged_in()) {
+        return $cacheable;
+    }
+
+    return ruo_is_public(ruo_current_page(), Params::getParamString('action'));
+}
+
+/**
+ * The Cache-Control for the redirect to the registration page.
+ *
+ * Public for a short window whenever core would cache an anonymous page: nginx replaces a
+ * stale entry only with a response it may store, so a private redirect leaves a page cached
+ * before the site was closed on show for as long as people keep requesting it.
+ *
+ * @return string
+ */
+function ruo_redirect_cache_control()
+{
+    ruo_redirecting(true);
+    osc_mark_response_cacheable();
+    $cacheable = osc_response_is_cacheable();
+    osc_mark_response_cacheable(false);
+    ruo_redirecting(false);
+
+    if (!$cacheable) {
+        return 'private, no-store';
+    }
+
+    return 'public, s-maxage=' . RUO_REDIRECT_MAX_AGE . ', max-age=0, must-revalidate';
+}
+
+/**
+ * Downgrade a public Cache-Control when the response also sets a cookie, so a cache can
+ * never replay one visitor's cookie to the next.
+ *
+ * @param string[] $headers as headers_list() returns them
+ *
+ * @return string|null the replacement Cache-Control, or null to leave it alone
+ */
+function ruo_cache_control_fix(array $headers)
+{
+    $public    = false;
+    $setCookie = false;
+    foreach ($headers as $header) {
+        $header = strtolower($header);
+        if (strpos($header, 'set-cookie:') === 0) {
+            $setCookie = true;
+        } elseif (strpos($header, 'cache-control:') === 0 && strpos($header, 'public') !== false) {
+            $public = true;
+        }
+    }
+
+    return $public && $setCookie ? 'private, no-store' : null;
+}
+
+/**
+ * The registration page with the marker that makes it explain why the visitor is there.
+ *
+ * @return string
+ */
+function ruo_register_url()
+{
+    $url = osc_register_account_url();
+
+    return $url . (strpos($url, '?') === false ? '?' : '&') . 'ruo=1';
+}
+
+/**
  * Send a signed-out visitor to the registration page.
  *
- * Runs on before_html, which fires before the theme has produced any output, so the
- * redirect header can still be sent.
+ * Runs on before_html, before the theme prints anything. The notice rides on a URL marker,
+ * not a flash cookie, because a response that sets a cookie cannot be cached.
  *
  * @return void
  */
@@ -196,19 +314,41 @@ function ruo_guard()
         return;
     }
 
-    $page = (string)Rewrite::newInstance()->get_location();
-    if ($page === '') {
-        $page = Params::getParamString('page');
+    $page = ruo_current_page();
+
+    if ($page === 'register' && Params::getParamString('ruo') === '1') {
+        osc_add_flash_info_message(
+            __('Only registered users can browse this site. Please sign in or create an account.', 'registered-users-only')
+        );
     }
 
-    if (ruo_is_public($page)) {
+    if (ruo_is_public($page, Params::getParamString('action'))) {
         return;
     }
 
-    osc_add_flash_info_message(
-        __('Only registered users can browse this site. Please sign in or create an account.', 'registered-users-only')
-    );
-    osc_redirect_to(osc_register_account_url());
+    if (!headers_sent()) {
+        header('Cache-Control: ' . ruo_redirect_cache_control());
+        // Anything that sets a cookie on the way out makes the redirect private again.
+        header_register_callback(static function () {
+            $fix = ruo_cache_control_fix(headers_list());
+            if ($fix !== null) {
+                header('Cache-Control: ' . $fix);
+            }
+        });
+    }
+    osc_redirect_to(ruo_register_url());
+}
+
+/**
+ * Ask the installed page cache to drop every page, so a change to what is public applies at once.
+ *
+ * @return void
+ */
+function ruo_purge_page_cache()
+{
+    if (function_exists('osc_purge_page_cache')) {
+        osc_purge_page_cache();
+    }
 }
 
 /**
@@ -231,6 +371,7 @@ function ruo_admin_post()
         osc_set_preference($key, Params::getParam($key) !== '' ? '1' : '0', RUO_PREF_SECTION, 'INTEGER');
     }
     osc_reset_preferences();
+    ruo_purge_page_cache();
 
     osc_add_flash_ok_message(__('Settings saved', 'registered-users-only'), 'admin');
     osc_redirect_to(osc_admin_render_plugin_url(ruo_settings_file()));
@@ -239,6 +380,9 @@ function ruo_admin_post()
 osc_register_plugin(osc_plugin_path(__FILE__), 'ruo_install');
 osc_add_hook(osc_plugin_path(__FILE__) . '_uninstall', 'ruo_uninstall');
 osc_add_hook(osc_plugin_path(__FILE__) . '_configure', 'ruo_configure');
+osc_add_hook(osc_plugin_path(__FILE__) . '_enable', 'ruo_purge_page_cache');
+osc_add_hook(osc_plugin_path(__FILE__) . '_disable', 'ruo_purge_page_cache');
 
 osc_add_hook('init_admin', 'ruo_admin_post');
 osc_add_hook('before_html', 'ruo_guard');
+osc_add_filter('response_is_cacheable', 'ruo_response_is_cacheable');

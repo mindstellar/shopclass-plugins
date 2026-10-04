@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.0
+
+### Fixed
+
+- A page cached by nginx before the site was closed kept being served to signed-out visitors.
+- A seller's public profile was open to signed-out visitors; it now follows the browsing setting.
+
+### Changed
+
+- The redirect to the registration page may be cached for 30 seconds, and its notice no longer needs a cookie.
+- Activating, deactivating and saving settings purge the page cache when core supports it.
+
 ## 2.0.1
 
 ### Changed

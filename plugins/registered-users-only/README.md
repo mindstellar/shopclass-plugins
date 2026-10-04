@@ -22,7 +22,7 @@ let in — or simply breaks the route:
 |---|---|
 | Static pages — terms, privacy notice, imprint | open |
 | Contact form | open |
-| Browsing and search | closed |
+| Browsing, search and sellers' public profiles | closed |
 | Individual listings | closed |
 
 Static pages default to open because that is where the terms and the privacy notice live,
@@ -33,6 +33,13 @@ and those usually have to be readable without an account.
 Closing browsing and listings hides them from search engines too — a crawler is a
 signed-out visitor. That is normally the point of a members-only site, but it is worth
 knowing before switching it on for a site that relies on organic traffic.
+
+## Page caching
+
+The redirect is cached for up to 30 seconds, so a page cached before the site was closed is
+replaced quickly. A longer page cache, such as the nginx Cache plugin's, cannot yet be purged
+in full from here: clear it on the server, or wait out its window, after activating the plugin
+or changing its settings.
 
 ## Requirements
 
