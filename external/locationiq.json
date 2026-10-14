@@ -1,0 +1,22 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "locationiq",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-locationiq"
+  },
+  "asset_pattern": "^locationiq_.*\\.zip$",
+  "categories": ["integrations"],
+  "tags": ["geocoding", "maps", "address", "locationiq", "distance-search"],
+  "short_description": "Find the exact map position of a listing from its street address with LocationIQ, in the background and within a daily limit.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
+  "screenshots": [
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/screenshot-1.png", "caption": "API key, region, daily limit, lookup status and the older-listings queue" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-locationiq/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-locationiq#readme"
+  }
+}
