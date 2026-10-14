@@ -5,7 +5,7 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 120,
+        "downloads": 122,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -26,7 +26,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 488,
+        "downloads": 497,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "name": "Cloudflare",
         "requires_min": "6.2.0",
@@ -48,7 +48,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 150,
+        "downloads": 154,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "name": "Digital Goods",
         "requires_min": "6.1.0",
@@ -70,7 +70,7 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 118,
+        "downloads": 120,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -92,7 +92,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 88,
+        "downloads": 92,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/icon.svg",
         "name": "Listing Import",
         "requires_min": "6.4.0",
@@ -114,7 +114,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 0,
+        "downloads": 1,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
         "name": "LocationIQ Geocoder",
         "requires_min": "7.0.0",
@@ -128,15 +128,15 @@
             "maps"
         ],
         "tested_max": "7.0",
-        "updated_at": "2026-10-14T15:16:22Z",
-        "version": "0.1.0"
+        "updated_at": "2026-10-14T18:29:55Z",
+        "version": "0.1.1"
     },
     {
         "author": "Navjot Tomer (Mindstellar)",
         "categories": [
             "admin-tools"
         ],
-        "downloads": 206,
+        "downloads": 212,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "name": "nginx Cache",
         "requires_min": "6.2.0",
@@ -159,7 +159,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 131,
+        "downloads": 133,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -182,7 +182,7 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 138,
+        "downloads": 141,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -204,7 +204,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 123,
+        "downloads": 125,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -226,7 +226,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 153,
+        "downloads": 155,
         "icon": "assets/sample-forms/assets/icon.svg",
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -247,7 +247,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 198,
+        "downloads": 201,
         "icon": "assets/sample-widgets/assets/icon.svg",
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
@@ -268,7 +268,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 54,
+        "downloads": 57,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "name": "Stripe Payment",
         "requires_min": "6.4.0",
