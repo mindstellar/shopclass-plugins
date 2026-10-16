@@ -12,7 +12,7 @@
         "label": "Anti-spam"
     },
     {
-        "count": 4,
+        "count": 5,
         "description": "Widgets, page templates, custom forms, and other content-authoring building blocks.",
         "id": "content-widgets",
         "label": "Content & widgets"
