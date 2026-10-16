@@ -1,0 +1,23 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "booking",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-booking"
+  },
+  "asset_pattern": "^booking_.*\\.zip$",
+  "categories": ["content-widgets"],
+  "tags": ["booking", "calendar", "rentals", "appointments", "availability", "ical"],
+  "short_description": "Let buyers book a listing for dates or a time slot, with an availability calendar, seller approval, e-mails and a calendar feed.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/icon.svg",
+  "screenshots": [
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/screenshot-1.jpg", "caption": "Booking nights on a listing: calendar, chosen stay and request form" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/screenshot-2.jpg", "caption": "Booking a time slot, confirmed at once" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-booking/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-booking#readme"
+  }
+}
