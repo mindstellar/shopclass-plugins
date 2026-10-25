@@ -1,0 +1,28 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "razorpay",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-razorpay"
+  },
+  "asset_pattern": "^razorpay_.*\\.zip$",
+  "categories": [
+    "payments"
+  ],
+  "tags": [
+    "billing",
+    "payments",
+    "razorpay",
+    "upi",
+    "india",
+    "checkout"
+  ],
+  "short_description": "Take UPI, card, netbanking and wallet payments for shop orders and credit packages through Razorpay, with signed webhooks and refunds.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-razorpay/main/assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-razorpay/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-razorpay#readme"
+  }
+}
