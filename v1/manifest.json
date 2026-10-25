@@ -1,8 +1,8 @@
 {
     "core_version": "7.0.5",
-    "generated_at": "2026-10-25T07:17:58Z",
-    "package_count": 16,
-    "resolved_version_count": 51,
+    "generated_at": "2026-10-25T09:57:58Z",
+    "package_count": 18,
+    "resolved_version_count": 54,
     "schema_version": "1",
     "type": "plugin"
 }
