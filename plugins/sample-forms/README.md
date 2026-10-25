@@ -1,36 +1,39 @@
 # Sample Forms
 
-A reference plugin for the Forms platform. It does not add a feature you would enable on a
-production site — it exists so a plugin author has a working example to copy from, and every hook
-it uses is inert unless you deliberately trigger it. Read `index.php`; each section is commented
-with what it demonstrates and why.
+A reference plugin for the Forms platform. It adds no feature for a live site. It gives plugin authors a working example to copy.
 
-## What it demonstrates
+## Requirements
 
-1. **Registering a placement context** — `osc_register_form_context()` gives a form embedded
-   through `osc_render_form($formId, 'sample_forms.embed', $someId)` a readable label (and
-   optional link) in **Listings → Form submissions**, instead of a raw `sample_forms.embed #id`.
-2. **Filtering a form's fields per context** — the `form_fields` filter runs for both render and
-   submit, so an added/removed/reordered field never diverges between the two. This example only
-   reverses field order, and only for a form whose slug is literally `sample-reversed`, so it is
-   inert on every real form.
-3. **Vetoing a submission** — `form_submit_veto` rejects a submission by returning a non-empty
-   message. The example rejects any value containing one of a few obviously spammy words.
-4. **Amending validation** — `form_validation_errors` lets a plugin add its own error messages on
-   top of core validation. The example is a documented no-op; a real plugin would inspect
-   `$values` and push messages onto `$errors`.
-5. **Reacting to a stored submission** — `form_submitted` fires once a submission is validated and
-   saved. This is where a real plugin would send an email, call a webhook, or push to a CRM; the
-   example logs the submission id under `OSC_DEBUG` instead.
+- Shopclass 6.1.0 or later
+- PHP 8.0 or later
 
-## Configuration
+## Install
 
-None. The plugin has no admin screen, no preferences, and no database table — it registers a
-context and wires hooks/filters at load time, which is why its install callback is empty.
+1. Open Plugins → Browse (or upload the zip from the GitHub release).
+2. Install.
+3. Activate.
 
-## Using this as a starting point
+There is nothing to set up. It has no admin screen, no preferences and no table.
 
-Copy `index.php`, rename the `sample_forms_*` functions and the `Short Name` header, and replace
-each example body with real logic. The registry calls (`osc_register_form_context`) are guarded
-with `function_exists()` so the same file degrades to a no-op rather than a fatal error on a core
-version that predates the Forms platform.
+## How it works
+
+Read `index.php`. Each section is commented. It shows:
+
+1. Registering a placement context. `osc_register_form_context()` gives a form embedded with `osc_render_form($formId, 'sample_forms.embed', $someId)` a readable label in Listings → Form submissions.
+2. Filtering a form's fields. The `form_fields` filter runs on render and submit. The example reverses field order, only for a form with the slug `sample-reversed`.
+3. Vetoing a submission. `form_submit_veto` rejects a submission by returning a message. The example rejects a few spammy words.
+4. Amending validation. `form_validation_errors` adds error messages on top of core's. The example is a no-op.
+5. Reacting to a stored submission. `form_submitted` fires after a submission is saved. The example logs the submission id under `OSC_DEBUG`.
+
+## Notes / limits
+
+- To start your own plugin: copy `index.php`, rename the `sample_forms_*` functions and the `Short Name` header, and replace each body.
+- The `osc_register_form_context()` call is guarded with `function_exists()`, so it does nothing on a core without the Forms platform.
+
+## Support
+
+https://github.com/mindstellar/shopclass/issues
+
+## License
+
+GPL-3.0-or-later.

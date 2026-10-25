@@ -1,58 +1,55 @@
 # Age Warning
 
-Shows an age-confirmation notice before a visitor sees the site, and remembers the answer
-so it is asked once rather than on every page.
+Shows an age-confirmation notice before a visitor sees the site, and remembers the answer. For sites with adult listings that must show a notice.
 
-Intended for sites whose listings carry adult content and which are obliged to put a
-notice in front of them.
+![Age Warning notice](assets/screenshot-1.png)
 
-## What it does
+## Requirements
 
-- Draws a full-screen notice over the page until the visitor confirms.
-- Remembers the confirmation in a cookie, for a period you choose (1–365 days).
-- Sends anyone who declines to an address you choose.
-- Every string on the notice is editable, and translatable: **Plugins → Manage plugins**,
-  then **Settings** next to Age Warning.
+- Shopclass 6.1.0 or later
+- PHP 8.0 or later
+- The theme must call the `header` and `footer` hooks. Without either, no notice shows.
 
-## What it is not
+## Install
 
-It is not access control. The page is still delivered to the browser, and anyone who
-wants to get past the notice can clear a cookie or read the source — which is true of
-every age gate on the web. It is a good-faith notice, which is what the regulations
-asking for one describe.
+1. Open Plugins → Browse (or upload the zip from the GitHub release).
+2. Install.
+3. Activate.
 
-## How it works
+## Set up
 
-The notice is on every page and is hidden in the browser once confirmed, so it works with
-a page cache. With JavaScript off, the notice stays.
+1. Open Plugins → Manage plugins, then Settings next to Age Warning.
+2. Edit the fields:
 
-## Settings
-
-| Setting | Default |
+| Field | Default |
 |---|---|
 | Notice text | "This site contains adult content. Confirm that you are of legal age…" |
 | Confirm button | "I am of legal age" |
 | Decline button | "Leave this site" |
 | Send decliners to | `https://www.google.com/` |
-| Remember for | 30 days |
+| Remember for (days) | 30 (1–365) |
 
-Only `http://` and `https://` addresses are accepted for the decline link; anything else
-falls back to the default, so a mistyped value cannot put another scheme into a link that
-appears on every public page.
+3. Save.
 
-## Requirements
+Only `http://` and `https://` addresses work for the decline link. Anything else falls back to the default.
 
-Shopclass 6.1.0 or newer, PHP 8.0 or newer.
+## How it works
 
-## Theme compatibility
+- A full-screen notice covers the page until the visitor confirms.
+- The answer is kept in a cookie for the number of days you set.
+- A visitor who declines goes to your chosen address.
+- The notice is in every page and hidden in the browser once confirmed, so it works with a page cache.
+- With JavaScript off, the notice stays.
 
-Needs the theme's `header` and `footer` hooks. A theme missing either shows no notice.
+## Notes / limits
 
-## History
+- It is a notice, not access control. The page is still sent to the browser, and a visitor can clear the cookie or read the source.
+- Derived from the Osclass "Age warning" plugin (1.0.2). See CHANGELOG.md.
 
-Derived from the Osclass "Age warning" plugin (1.0.2, 2013). See CHANGELOG.md.
+## Support
 
-## Licence
+https://github.com/mindstellar/shopclass-plugins/issues
 
-GPL-3.0-or-later. Derived from Osclass, originally Apache-2.0; both notices are retained
-in the source headers.
+## License
+
+GPL-3.0-or-later. Derived from Osclass (Apache-2.0); both notices are kept in the source headers.
