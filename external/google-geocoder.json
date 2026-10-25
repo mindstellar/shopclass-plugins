@@ -1,0 +1,27 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "google-geocoder",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-google-geocoder"
+  },
+  "asset_pattern": "^google-geocoder_.*\\.zip$",
+  "categories": [
+    "integrations"
+  ],
+  "tags": [
+    "geocoding",
+    "maps",
+    "address",
+    "google",
+    "distance-search"
+  ],
+  "short_description": "Find the exact map position of a listing from its street address with the Google Geocoding API, for distance search.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-google-geocoder/main/assets/icon.svg",
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-google-geocoder/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-google-geocoder#readme"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "analytics",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-analytics"
+  },
+  "asset_pattern": "^analytics_.*\\.zip$",
+  "categories": [
+    "integrations"
+  ],
+  "tags": [
+    "analytics",
+    "ga4",
+    "meta-pixel",
+    "consent",
+    "shop"
+  ],
+  "short_description": "Google Analytics 4 and Meta Pixel shop events from the theme, with a built-in consent bar. Nothing loads until the visitor accepts.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/screenshot-1.png",
+      "caption": "Measurement ids and the consent bar setting"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/screenshot-2.png",
+      "caption": "The consent bar on a phone, before any tag loads"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-analytics/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-analytics#readme"
+  }
+}
