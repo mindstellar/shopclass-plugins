@@ -5,7 +5,7 @@
         "integrations"
     ],
     "description_html": "<h1>LocationIQ Geocoder</h1>\n<p>Finds the exact map position of a Shopclass listing from its street address, using <a href=\"https://locationiq.com/\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LocationIQ</a>. Distance search then uses that point instead of the city or region centre.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later</li><li>PHP 8.0 or later, with the curl extension</li><li>A LocationIQ access token (the free plan is enough to start)</li></ul>\n<p>It works on shared hosting. Nothing runs on a normal page load; the plugin is built only when an address is looked up.</p>\n<h2>Setup</h2>\n<ol><li>Install and activate the plugin, then open <strong>Plugins → LocationIQ Geocoder</strong>.</li><li>Paste your access token into <em>API key</em>, pick the <em>Region</em>, and save.</li><li>Open <strong>Settings → General → Maps</strong> and choose <em>LocationIQ</em> under <em>Address lookup</em>.</li></ol>\n<p>The saved key is never shown again. Leave the box blank to keep it.</p>\n<h2>When lookups run</h2>\n<p>A lookup runs from the job queue after a listing with a street address is saved, not while the visitor waits. Cron (or auto-cron) must be running; that is enough on shared hosting, and a queue worker makes it faster.</p>\n<h2>Limits</h2>\n<p>The free plan allows 2 requests a second and 5,000 a day. Answers are kept up to a year, so an address is looked up once.</p>\n<p>The plugin waits for the next second when the free limit is reached. A server error or a refused key makes the lookup fail, and Shopclass tries again later. An address LocationIQ cannot find is remembered for a day.</p>\n<h2>Daily limit</h2>\n<p><strong>Daily request limit</strong> (default 5,000, the free plan&#039;s allowance; 0 is no limit) counts lookups from midnight UTC. When it is used up, or LocationIQ answers with a rate limit (HTTP 429), the lookups stay queued and run again once the limit renews: the next day for the daily limit, a minute later for the per-second and per-minute ones. Nobody waits for them on the site. The settings page shows how many listings wait, and when lookups go on.</p>\n<h2>Older listings</h2>\n<p>Tick <strong>Older listings</strong> and save to look up every listing that has a street address and no map position yet. One background job queues them 50 at a time, within the daily limit. It needs Shopclass 7.0.0 or later.</p>\n<h2>Attribution</h2>\n<p>The free plan requires a visible link to LocationIQ wherever its data is shown. Print it in your theme with <code>osc_geocode_attribution()</code>.</p>\n<h2>Uninstall</h2>\n<p>The plugin&#039;s settings are removed. If <em>Address lookup</em> in Settings → General → Maps named this plugin, it is reset to none.</p>\n<h2>Tests</h2>\n<pre><code>./tests/run.sh</code></pre>\n<p>They need no network. Core is read from <code>../osclass</code>, or from <code>SHOPCLASS_CORE</code>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later.</p>",
-    "downloads": 33,
+    "downloads": 35,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-locationiq",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
@@ -39,7 +39,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>The settings page shows when an API key is saved.</li></ul>",
-            "downloads": 17,
+            "downloads": 18,
             "published_at": "2026-10-14T18:29:55Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -51,7 +51,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Address lookup through LocationIQ for listings with a street address.</li><li>Settings for API key and region (us1 or eu1).</li><li>Answers are kept up to a year, so an address is looked up once.</li><li>Calls stay under the free plan&#039;s 2 requests a second.</li><li>A daily request limit (5,000 by default); when it or LocationIQ&#039;s own limit is used up, lookups wait in the queue until it renews.</li><li>Look up older listings with a street address from the settings page, in the background.</li><li>Translation template in <code>languages/locationiq.pot</code>.</li></ul>",
-            "downloads": 16,
+            "downloads": 17,
             "published_at": "2026-10-14T15:16:22Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
