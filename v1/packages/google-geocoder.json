@@ -5,7 +5,7 @@
         "integrations"
     ],
     "description_html": "<h1>Google Maps Geocoder</h1>\n<p>Finds the exact map position of a listing from its street address, using the <a href=\"https://developers.google.com/maps/documentation/geocoding\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Google Geocoding API</a>. Distance search then uses that point instead of the city or region centre.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later</li><li>PHP 8.0 or later, with the curl extension</li><li>A Google Cloud project with billing on and the Geocoding API enabled</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>In Google Cloud, create an API key, enable the Geocoding API for it, and restrict it by IP address to your server.</li><li>Open Plugins → Google Maps Geocoder and paste the key into <em>Server API key</em>.</li><li>Open Settings → General → Maps and choose Google Maps under <em>Address lookup</em>.</li></ol>\n<p>Use a separate key, not the Maps JavaScript key from Settings → General. That key is public and limited to your site&#039;s web address, so Google refuses it for lookups made by the server.</p>\n<h2>How it works</h2>\n<ul><li>A lookup runs from the job queue after a listing with a street address is saved. Visitors do not wait for it.</li><li>Cron (or auto-cron) must be running. A queue worker makes it faster.</li><li>Nothing runs on a normal page load.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>The saved key is never shown again. Leave the box blank to keep it.</li><li>A quota error, a refused key or an unreachable service makes the lookup fail. Shopclass tries again later.</li><li>An address Google cannot find is remembered for a day.</li><li>Positions are kept for 30 days, the longest Google allows.</li><li>Google&#039;s terms want results shown on a Google map. Use this plugin with the Google Maps display, not another map. The plugin prints no attribution.</li><li>On uninstall, the settings are removed. If <em>Address lookup</em> named this plugin, it is reset to none.</li><li>Works on shared hosting.</li></ul>\n<h2>For developers</h2>\n<p>Run the tests with <code>./tests/run.sh</code>. They need no network. Core is read from <code>../osclass</code>, or from <code>SHOPCLASS_CORE</code>.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-google-geocoder/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugin-google-geocoder/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later</p>",
-    "downloads": 1,
+    "downloads": 4,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-google-geocoder",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-google-geocoder/main/assets/icon.svg",
@@ -34,7 +34,7 @@
     "versions": [
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Address lookup through the Google Geocoding API for listings with a street address.</li><li>A separate server API key, never shown again after saving.</li><li>Answers are kept 30 days, the longest Google allows.</li><li>Translation template in <code>languages/google-geocoder.pot</code>.</li></ul>",
-            "downloads": 1,
+            "downloads": 4,
             "published_at": "2026-10-25T09:57:53Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
