@@ -5,7 +5,7 @@
         "admin-tools"
     ],
     "description_html": "<h1>nginx Cache</h1>\n<p>Holds pages in nginx&#039;s FastCGI cache for an hour instead of thirty seconds, and purges them when a listing changes. For site owners who run their own nginx.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/v0.5.4/assets/screenshot-1.png\" alt=\"nginx Cache settings in the Shopclass admin\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.2.0 or later (tested up to 6.4)</li><li>PHP 8.0 or later</li><li>nginx built with <code>ngx_cache_purge</code>. It is not in the official image. It builds as a dynamic module against stock nginx (checked on 1.31.3).</li></ul>\n<p>The bundled Shopclass Docker image ships it already configured. A standalone install adds it by hand.</p>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<p>(<code>php oc-cli.php market:install nginx-cache</code> also works.)</p>\n<h2>Set up</h2>\n<ol><li>Open Plugins → nginx Cache: Setup. It prints the Dockerfile, the <code>load_module</code> line and the purge <code>location</code> block for this install. Add them to nginx.</li><li>Open Plugins → nginx Cache.</li><li>Set <em>Purge endpoint</em>: an address this server can open itself, never the site&#039;s public URL. Default: <code>$SHOPCLASS_PURGE_ENDPOINT</code>, else <code>&lt;nginx&#039;s scheme&gt;://127.0.0.1/purge</code>.</li><li>Set <em>Host headers</em>: every hostname visitors use, one per line, port included. Include <code>www</code>, aliases and staging names. The site&#039;s own host must be in the list.</li><li>Optional: set <em>How long pages are held</em> (<em>Listings</em>, <em>Static pages</em>, <em>Home, category, profile</em>). Default and maximum are 3600 seconds.</li><li>Press <em>Test purge</em>. The longer window stays off until the test passes.</li></ol>\n<p>Where PHP and nginx are separate containers, use the nginx service name as the endpoint, for example <code>http://webserver/purge</code>.</p>\n<h2>How it works</h2>\n<ul><li>Core sends <code>Cache-Control: public, s-maxage=30</code>. Until the test passes, the plugin keeps that.</li><li>After a pass, listings, static pages and home, category and profile pages are held up to an hour.</li><li>When a listing changes, these are purged: the listing (one URL per locale), the home page, its category page and the seller&#039;s profile.</li><li>Site-wide changes purge everything: a theme switch, a plugin enabled or disabled, or a settings, maintenance, language, currency, widget, category or page change.</li><li>The plugin sends one <code>PURGE /index.php</code>. The <code>purge_all</code> line from the Setup page clears the whole zone.</li><li>If nginx refuses, the plugin purges what it can name (home, enabled categories, static pages, the sitemap) and retries from cron. <em>Purge everything now</em> on the settings page does the same by hand.</li><li>On the Docker image 6.4.2+ with <code>OSC_MICROCACHE=1</code>, core purges everything itself through <code>OSC_PAGE_CACHE_PURGE_URL</code>. The <code>purge_all</code> line is not needed.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>It saves origin renders, not page speed. nginx already serves expiring entries stale while it refreshes.</li><li>Not purged, so they keep core&#039;s short window: search results with parameters, any URL with a query string, and every page when permalinks are off.</li><li>The test also checks purge-everything and stores the result in <code>purge_all_ok</code>. This does not gate the longer windows, but the settings page warns until it passes.</li><li>The <code>purge_all</code> line allows <code>127.0.0.1</code> only. If PHP runs in another container, add its address.</li><li>Keep <code>set_real_ip_from</code> to your proxy only. A wider range lets an internet client pass the purge allow list.</li><li>Times are capped at 3600 seconds. Past that, the form token in a cached page can expire.</li><li>Works with the Cloudflare plugin, which owns the edge. This one owns the origin.</li></ul>\n<h2>For developers</h2>\n<p>Filters:</p>\n<ul><li><code>nginx_cache_item_urls</code>: add URLs for a theme&#039;s own listing routes.</li><li><code>nginx_cache_purge_urls</code>: take the whole list and deliver it elsewhere.</li></ul>\n<p>Hooks it listens to: <code>posted_item</code>, <code>edited_item</code>, <code>after_delete_item</code>, <code>enable_item</code>, <code>disable_item</code>, <code>activate_item</code>, <code>deactivate_item</code>, <code>item_premium_on</code>, <code>item_premium_off</code>, <code>item_expiration_updated</code>, <code>invalidate_item_cache</code> (6.2.0+), <code>add_category</code>, <code>after_delete_category</code>, <code>edit_page</code>, <code>after_delete_page</code>.</p>\n<p>For purge-everything it uses <code>page_cache_purge</code> (core 6.4.2+). On older cores it uses <code>theme_activate</code>, <code>after_plugin_activate</code>, <code>after_plugin_deactivate</code> and <code>admin_form_after_save</code>, so any admin settings save purges everything on cores 6.2 to 6.4.1.</p>\n<p>Settings are stored in the <code>nginx_cache</code> section: <code>purge_endpoint</code>, <code>purge_host</code>, <code>ttl_item</code>, <code>ttl_page</code>, <code>ttl_aggregate</code>. The nginx config is also in <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/v0.5.4/nginx/shopclass-cache.conf\" rel=\"nofollow noopener noreferrer\" target=\"_blank\"><code>nginx/shopclass-cache.conf</code></a>.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-nginx-cache/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugin-nginx-cache/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later</p>",
-    "downloads": 336,
+    "downloads": 344,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-nginx-cache",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
@@ -43,7 +43,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>The cache bypass cookie list now includes <code>oc_theme</code> and <code>oc_admin_browsing</code>, and follows core&#039;s list.</li></ul>",
-            "downloads": 5,
+            "downloads": 6,
             "published_at": "2026-10-25T10:47:02Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -55,7 +55,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Docs: README rewritten in plain language.</li></ul>",
-            "downloads": 2,
+            "downloads": 3,
             "published_at": "2026-10-25T10:24:52Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -67,7 +67,7 @@
         },
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>Cron and CLI on the Docker image also leave purge-everything to Shopclass 6.4.3+.</li></ul>",
-            "downloads": 39,
+            "downloads": 40,
             "published_at": "2026-10-04T11:58:44Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -79,7 +79,7 @@
         },
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>On the Docker image (core 6.4.2+, <code>OSC_MICROCACHE=1</code>) the plugin no longer sends its own purge-everything, which always failed and left a retry queued.</li></ul>",
-            "downloads": 36,
+            "downloads": 37,
             "published_at": "2026-10-04T10:47:18Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -91,7 +91,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Purges the whole cache on core&#039;s <code>page_cache_purge</code> (theme, plugin and settings changes).</li><li><strong>Purge everything now</strong> button on the settings page.</li></ul>\n<h3>Changed</h3>\n<ul><li>Test purge also proves purge-everything.</li></ul>",
-            "downloads": 37,
+            "downloads": 38,
             "published_at": "2026-10-04T10:19:43Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -103,7 +103,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 52,
+            "downloads": 53,
             "published_at": "2026-09-25T03:55:44Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -115,7 +115,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>The purge host is a list: a site answering on several names has each one purged, and Test purge proves each in turn.</li></ul>\n<h3>Fixed</h3>\n<ul><li>A site whose visitors arrive on a name other than the configured one — <code>www</code>, an alias, a proxy passing a different Host — verified against a host nobody uses while every real cached page went unpurged.</li></ul>",
-            "downloads": 83,
+            "downloads": 84,
             "published_at": "2026-08-28T17:28:54Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
@@ -127,7 +127,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Settings page: endpoint, host, the three windows, <strong>Test purge</strong>, and the queue.</li><li>Setup page printing the nginx configuration this install needs, filled in with its own host, scheme and nginx version.</li></ul>\n<h3>Changed</h3>\n<ul><li>Windows are capped at 3600s — past that the CSRF token cached inside a page outlives itself and every form on it starts reporting an expired session.</li><li>The self-test counts STALE, UPDATING and EXPIRED as cached; requiring HIT failed it whenever an entry happened to be refreshing.</li></ul>",
-            "downloads": 82,
+            "downloads": 83,
             "published_at": "2026-08-28T16:46:46Z",
             "requires": "6.2.0",
             "requires_php": "8.0",
