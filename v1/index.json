@@ -5,7 +5,7 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 174,
+        "downloads": 176,
         "icon": "assets/age-warning/assets/icon.svg",
         "name": "Age Warning",
         "requires_min": "6.1.0",
@@ -26,7 +26,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 16,
+        "downloads": 18,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/icon.svg",
         "name": "Analytics",
         "requires_min": "7.0.0",
@@ -48,7 +48,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 54,
+        "downloads": 57,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/icon.svg",
         "name": "Booking Calendar",
         "requires_min": "7.0.0",
@@ -71,7 +71,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 732,
+        "downloads": 742,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "name": "Cloudflare",
         "requires_min": "6.2.0",
@@ -93,7 +93,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 305,
+        "downloads": 311,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "name": "Digital Goods",
         "requires_min": "6.1.0",
@@ -115,7 +115,7 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 173,
+        "downloads": 175,
         "icon": "assets/google-analytics/assets/icon.svg",
         "name": "Google Analytics",
         "requires_min": "6.1.0",
@@ -137,7 +137,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 10,
+        "downloads": 11,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-google-geocoder/main/assets/icon.svg",
         "name": "Google Maps Geocoder",
         "requires_min": "7.0.0",
@@ -159,7 +159,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 206,
+        "downloads": 211,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/icon.svg",
         "name": "Listing Import",
         "requires_min": "6.4.0",
@@ -181,7 +181,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 67,
+        "downloads": 71,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
         "name": "LocationIQ Geocoder",
         "requires_min": "7.0.0",
@@ -203,7 +203,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 385,
+        "downloads": 393,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "name": "nginx Cache",
         "requires_min": "6.2.0",
@@ -225,7 +225,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 36,
+        "downloads": 39,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/main/assets/icon.svg",
         "name": "PayPal Payment",
         "requires_min": "7.0.0",
@@ -247,7 +247,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 190,
+        "downloads": 192,
         "icon": "assets/qr-code/assets/icon.svg",
         "name": "QR Code",
         "requires_min": "6.1.0",
@@ -269,7 +269,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 20,
+        "downloads": 22,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-razorpay/main/assets/icon.svg",
         "name": "Razorpay Payment",
         "requires_min": "7.0.0",
@@ -293,7 +293,7 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 221,
+        "downloads": 224,
         "icon": "assets/registered-users-only/assets/icon.svg",
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
@@ -315,7 +315,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 180,
+        "downloads": 182,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
@@ -337,7 +337,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 207,
+        "downloads": 209,
         "icon": "assets/sample-forms/assets/icon.svg",
         "name": "Sample Forms",
         "requires_min": "6.1.0",
@@ -358,7 +358,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 277,
+        "downloads": 280,
         "icon": "assets/sample-widgets/assets/icon.svg",
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
@@ -379,7 +379,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 137,
+        "downloads": 140,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "name": "Stripe Payment",
         "requires_min": "6.4.0",
@@ -402,7 +402,7 @@
             "admin-tools",
             "localisation"
         ],
-        "downloads": 1,
+        "downloads": 5,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/icon.svg",
         "name": "Translator",
         "requires_min": "7.0.6",
@@ -416,7 +416,7 @@
             "translation"
         ],
         "tested_max": "7.1",
-        "updated_at": "2026-10-28T12:08:50Z",
-        "version": "0.1.0"
+        "updated_at": "2026-10-28T16:46:08Z",
+        "version": "0.1.1"
     }
 ]
