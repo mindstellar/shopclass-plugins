@@ -1,7 +1,7 @@
 {
     "age-warning": [
         {
-            "downloads": 57,
+            "downloads": 58,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "4a8a83d2fa952d5e6c9661a31b2a292839e8f16ee55352d4548bc1046726a49c",
@@ -11,7 +11,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 109,
+            "downloads": 110,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "f230980b6d29fcbb0eb43f7d904a06d293caa0b724c5515f90040ba029190828",
@@ -23,7 +23,7 @@
     ],
     "analytics": [
         {
-            "downloads": 2,
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "a46eb919b53f03ddbbbf8258293671aacb149126a7c188433cbc7cf79ea94e6f",
@@ -33,7 +33,7 @@
             "version": "0.1.1"
         },
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "3def537643ae7b6cfd94aa4c163998072f8f28e5b8019b8dabe5413f1e4d1c5a",
@@ -45,7 +45,7 @@
     ],
     "booking": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "805a9813abbd6e31858dddb2c29ba38f4e33f803b5ff985f6a9133e10b634579",
@@ -55,7 +55,7 @@
             "version": "0.2.1"
         },
         {
-            "downloads": 19,
+            "downloads": 20,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fe6148c809abb4dbb213dde3834ea20f2eec000e6afd6f18b520bb754576caa8",
@@ -65,7 +65,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 19,
+            "downloads": 20,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "ffc300f3a2a382b93c7b3354b55fbb3e91be5cf89de4a1e49d0c971b5d7d4fdb",
@@ -77,7 +77,7 @@
     ],
     "cloudflare": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "e89ac5ccc0f2d20194698533b840b71a04684df6ddc6f2e1073ed465559fb481",
@@ -87,7 +87,7 @@
             "version": "1.2.1"
         },
         {
-            "downloads": 44,
+            "downloads": 45,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "28cde246a6af8f9ba5c4253d4688aec2240b98b4cc448c24e4c19c4508cfe34e",
@@ -97,7 +97,7 @@
             "version": "1.2.0"
         },
         {
-            "downloads": 39,
+            "downloads": 40,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "3246c19e783dfe5ed9f5650f606e2668fd1863cf962d249e0a21016b5f305776",
@@ -107,7 +107,7 @@
             "version": "1.1.6"
         },
         {
-            "downloads": 55,
+            "downloads": 56,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "1ba69e8ac4e29cfcbd93eff9d6fe37a8650445d1956321646405dda171e4e6cc",
@@ -117,7 +117,7 @@
             "version": "1.1.5"
         },
         {
-            "downloads": 94,
+            "downloads": 95,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "dc6ed0089afc744772a0650fca00f4333e70d61d064f7b6b62c8413d161bf122",
@@ -127,7 +127,7 @@
             "version": "1.1.4"
         },
         {
-            "downloads": 89,
+            "downloads": 90,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "8b22776fb15e265abbd837228d644bfefc6150029ece3d97d21144c7267e2094",
@@ -137,7 +137,7 @@
             "version": "1.1.3"
         },
         {
-            "downloads": 91,
+            "downloads": 92,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "a2ef180be660c79fe55a9c2659ca86ac15ca041926bae26ed498a8bdedf4ba21",
@@ -147,7 +147,7 @@
             "version": "1.1.2"
         },
         {
-            "downloads": 90,
+            "downloads": 91,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "2330f8a92c27ccbad5edd032986ea22b78fea65037f0ea4f2e7d82815c85e9ae",
@@ -157,7 +157,7 @@
             "version": "1.1.1"
         },
         {
-            "downloads": 90,
+            "downloads": 91,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "8abf558048cb5b67a90e47027569332d2dc7166e7565efaf3d2482c7fe460838",
@@ -167,7 +167,7 @@
             "version": "1.1.0"
         },
         {
-            "downloads": 94,
+            "downloads": 95,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "97ecdf5a447b3f730e9900cf31f792016ed283a8266d026298eddb1ff6d4c017",
@@ -179,7 +179,7 @@
     ],
     "digital-goods": [
         {
-            "downloads": 21,
+            "downloads": 22,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "afe4305219e8d019ce1a0ad3286e40f481b3470ad17340c9d423edd3a6a2062b",
@@ -189,7 +189,7 @@
             "version": "2.2.0"
         },
         {
-            "downloads": 20,
+            "downloads": 21,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "f5182b485ec5e13e2f1cd789cf072aa09264f7d6f4d05d575e79b1f235b6fa5a",
@@ -199,7 +199,7 @@
             "version": "2.1.2"
         },
         {
-            "downloads": 33,
+            "downloads": 34,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1e9b5bbc8a4ec5311781b7791e5547843e4052c625a88b376005af24932e2682",
@@ -209,7 +209,7 @@
             "version": "2.1.1"
         },
         {
-            "downloads": 42,
+            "downloads": 43,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "f413880452ae36aeac745936a78fc569b072572c1afa5020fc0def9b96630462",
@@ -219,7 +219,7 @@
             "version": "2.1.0"
         },
         {
-            "downloads": 53,
+            "downloads": 54,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "4d4c5ca50ba9d3e012482171663ed8ac213397c207b0af5c78a9ae69032d9a64",
@@ -229,7 +229,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 112,
+            "downloads": 113,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "fe23dea1a38ad4a4657231dc351eca85b8b5705fe7d5f5c8600cc0a81fcd307d",
@@ -241,7 +241,7 @@
     ],
     "google-analytics": [
         {
-            "downloads": 59,
+            "downloads": 60,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "2c76bf5a69f80c507421d2a4a66437aca6e1a49a1fd9dc1b218a339e239f81ec",
@@ -251,7 +251,7 @@
             "version": "1.0.1"
         },
         {
-            "downloads": 106,
+            "downloads": 107,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "e0da47e8f31389622d6c410b8914a2c65b436040c7b9052fa15cf2df16c1d3b3",
@@ -263,7 +263,7 @@
     ],
     "google-geocoder": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "4c51cc6fbd4ed04e6265a868bcc6f081ffaef677d6b56be079a010cc74e9dabf",
@@ -275,7 +275,7 @@
     ],
     "listing-import": [
         {
-            "downloads": 5,
+            "downloads": 6,
             "requires": "7.0",
             "requires_php": "8.0",
             "sha256": "b822731a2ba1dead6aac964a3a0fe0d7edb27ab183248a82c486878c539ebabc",
@@ -285,7 +285,7 @@
             "version": "0.3.1"
         },
         {
-            "downloads": 33,
+            "downloads": 34,
             "requires": "7.0",
             "requires_php": "8.0",
             "sha256": "3d9e3a5e90b8e22c9f62bcd062bb7e3b1728351c950471c0bac45c4fc90a0ae4",
@@ -295,7 +295,7 @@
             "version": "0.3.0"
         },
         {
-            "downloads": 42,
+            "downloads": 43,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "34c719fd65fc9e023741eb7904a0c51f93d0a110c3f592a99b6fe8a2f3c2c849",
@@ -305,7 +305,7 @@
             "version": "0.2.1"
         },
         {
-            "downloads": 52,
+            "downloads": 53,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "649ead0d84fa166671f5f5f3a602bead75c60b3307a08890113daee3392571ac",
@@ -315,7 +315,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 54,
+            "downloads": 55,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "f24b62d6100a3300b94ae5548784cb978a3588aa6620ceb1ee233041f38d0447",
@@ -327,7 +327,7 @@
     ],
     "locationiq": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "161375f0627aecaf584142adc36dbfb11c45c33a311d9e5294b83d2431300f02",
@@ -337,7 +337,7 @@
             "version": "0.1.2"
         },
         {
-            "downloads": 25,
+            "downloads": 26,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "60bc63414b551bb3f0e6cda609f105575478b7589c04ef6ab0374ac2e2596a32",
@@ -347,7 +347,7 @@
             "version": "0.1.1"
         },
         {
-            "downloads": 24,
+            "downloads": 25,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "5746f7de755c2f652fce40419df9fae6f69189e552c13d9ad50d24e6e02a8332",
@@ -359,7 +359,7 @@
     ],
     "nginx-cache": [
         {
-            "downloads": 8,
+            "downloads": 9,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "6accc0956aa83d720e3516cd1afbcab2ae423288e7d128ed5e3ae6fbe76365bf",
@@ -369,7 +369,7 @@
             "version": "0.5.4"
         },
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "2ad2c8ae4dae24c3d27d140b90e198fe0d2c4fc1517a82b9ecedc6173d63379f",
@@ -379,7 +379,7 @@
             "version": "0.5.3"
         },
         {
-            "downloads": 41,
+            "downloads": 42,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "e0788f54efd2ed85c2da0942dbeb6db45bf9d87d86d25498a2c6ea2a8745ee49",
@@ -389,7 +389,7 @@
             "version": "0.5.2"
         },
         {
-            "downloads": 38,
+            "downloads": 39,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "899b92fc70e5a3c59c9db6df28939c00eaa8160a7b95505e03d092e4028a5968",
@@ -399,7 +399,7 @@
             "version": "0.5.1"
         },
         {
-            "downloads": 39,
+            "downloads": 40,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "18a7879a242b302b8d773e3b57e46b7f1fe4a8328564c9c52d5f20f428423fde",
@@ -409,7 +409,7 @@
             "version": "0.5.0"
         },
         {
-            "downloads": 54,
+            "downloads": 55,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "5c60c012f8934aea1719a39ba72ce37c23577f2b55d7ba1a858a0da519a621c4",
@@ -419,7 +419,7 @@
             "version": "0.4.1"
         },
         {
-            "downloads": 85,
+            "downloads": 86,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "327f58554f8eed8749d782a7c24fb0717de0f69c42d0142d44a14d1a83cbc956",
@@ -429,7 +429,7 @@
             "version": "0.4.0"
         },
         {
-            "downloads": 84,
+            "downloads": 85,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "345880b5c36af883ac207610b423ec04515756bfefe4a921223999faea788dd1",
@@ -441,7 +441,7 @@
     ],
     "paypal": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "a5d6d3bead2a656400011b714f835c6aeaf6d71a5949eaac9e5f8882cf5a8727",
@@ -451,7 +451,7 @@
             "version": "0.1.7"
         },
         {
-            "downloads": 8,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "788eb6b9c80637be8ea114a839dac9e4dad72098fe9ec760d42a7dd391d35d37",
@@ -461,7 +461,7 @@
             "version": "0.1.6"
         },
         {
-            "downloads": 10,
+            "downloads": 11,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "9caec0868b1c0d77599f6a05963b01d9eb2195ceec968971ee66cae75f186de6",
@@ -473,7 +473,7 @@
     ],
     "qr-code": [
         {
-            "downloads": 68,
+            "downloads": 69,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "51d7530e797b5e8e5c039c0f3d27a8f6e9472b5dc2928c2d962cd37afb487e00",
@@ -483,7 +483,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 114,
+            "downloads": 115,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "7247e087e08d9e25ac61992b07e24d4827a12140f7ce2ce79ecef494610137a4",
@@ -495,7 +495,7 @@
     ],
     "razorpay": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fb03f24c4fb268aebea89fbcbcdaa02363eefe4b6538fd81095e93e945b8f63b",
@@ -505,7 +505,7 @@
             "version": "0.1.6"
         },
         {
-            "downloads": 8,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "34c40caadf61b277b2337985745fcce0762fd29ed35d5eac23023d1bc2101c76",
@@ -517,7 +517,7 @@
     ],
     "registered-users-only": [
         {
-            "downloads": 45,
+            "downloads": 47,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "0451e0b6708df94aae734ece2e0f2b4fe7a1fb8b5ad7405372751343b4de9217",
@@ -527,7 +527,7 @@
             "version": "2.1.0"
         },
         {
-            "downloads": 53,
+            "downloads": 54,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "2ace494c0f9d61dc9f8ed7a24b1f7d98af54e743a2a9d722a22d94681a0904c5",
@@ -537,7 +537,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 109,
+            "downloads": 110,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "a2be708f37e7307bc721de798e0f91943378d4d923957dc5a3424d9c7abe3c00",
@@ -549,7 +549,7 @@
     ],
     "required-registration-fields": [
         {
-            "downloads": 63,
+            "downloads": 64,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "770c4b39328a779c9651ae6c9012e40a3cb299d81a9716fc10d20e669ac50e5f",
@@ -559,7 +559,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 109,
+            "downloads": 110,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "b2f4905670af76f21f2c481e07a8e31b4befaf97b846f47f2da82786a0acf094",
@@ -571,7 +571,7 @@
     ],
     "sample-forms": [
         {
-            "downloads": 65,
+            "downloads": 66,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "9b8102389b333b6e917e4399af680d08105bdd21b81c849a84b3358f85e034f1",
@@ -581,7 +581,7 @@
             "version": "1.0.2"
         },
         {
-            "downloads": 134,
+            "downloads": 135,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1033f4cd28f4a4cc390a18e4529552f33ea8cb9b7cb2e70be0890e7bf1c1bfd8",
@@ -593,7 +593,7 @@
     ],
     "sample-widgets": [
         {
-            "downloads": 58,
+            "downloads": 59,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "0d202db10bc7301cb4f6b4dd787f0ace3749fd465b4859b6cc6570954321d94d",
@@ -603,7 +603,7 @@
             "version": "1.0.3"
         },
         {
-            "downloads": 56,
+            "downloads": 57,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "206a50b21fe215800092cda3c2cde37d26e9278a9647bf4de4fa24afdbb1af76",
@@ -613,7 +613,7 @@
             "version": "1.0.2"
         },
         {
-            "downloads": 151,
+            "downloads": 152,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "1018cec3ce11586e8f036e3fc17ab2bb452cef7ec41a5f16cb036b31775de743",
@@ -625,7 +625,7 @@
     ],
     "stripe": [
         {
-            "downloads": 36,
+            "downloads": 37,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "9854806b51b44a092e7b14007e975a95fbdc880a2d353b4b120f17149d4c676c",
@@ -635,7 +635,7 @@
             "version": "0.1.2"
         },
         {
-            "downloads": 44,
+            "downloads": 45,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "b660f838093fbce39c916245d6ae45f82d1544a2a904ec5f337e85514b1dcc51",
@@ -645,7 +645,7 @@
             "version": "0.1.1"
         },
         {
-            "downloads": 45,
+            "downloads": 46,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "aff2880c02f35ae5265bf08fd1ad46f7caf2e5c4ed259896d013e547e132f927",
