@@ -5,7 +5,7 @@
         "content-widgets"
     ],
     "description_html": "<h1>Sample Widgets</h1>\n<p>A reference plugin for the widget and page-template registries. It adds no feature for a live site. It gives plugin authors working examples to copy.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<p>No plugin settings. Once active, the widget types can be placed in Appearance → Widgets. Each widget&#039;s own fields are set in the widget editor. The page template can be picked when editing a static page.</p>\n<h2>How it works</h2>\n<p>Read <code>index.php</code> and <code>widgets/*.php</code>. Four widget types use <code>osc_register_widget()</code>:</p>\n<ol><li><code>sample_widgets.notice</code> (&quot;Sample: Notice box&quot;): a static text box with one textarea field.</li><li><code>sample_widgets.recent_listings</code> (&quot;Sample: Recent listings&quot;): the newest published listings, no configuration. See <code>widgets/recent-listings.php</code>.</li><li><code>sample_widgets.category_listings</code> (&quot;Sample: Category listings&quot;): the same list for a chosen Category and Number of listings. It shows the <code>s_config</code> JSON round-trip. See <code>widgets/category-list.php</code>.</li><li><code>sample_widgets.embed_code</code> (&quot;Sample: Embed code (raw)&quot;): a raw HTML/JavaScript field, limited to <code>capability: &#039;super_admin&#039;</code>.</li></ol>\n<p>One page template uses <code>osc_register_page_template()</code>: <code>sample_widgets.plain</code> (&quot;Sample: Plain page (full width)&quot;). It reuses the theme&#039;s header and footer and the <code>osc_static_page_*()</code> helpers.</p>\n<h2>Notes / limits</h2>\n<ul><li>To start your own plugin: copy a registration block, rename the type id and the <code>sample_widgets_*</code> functions, and replace <code>render</code> with your markup.</li><li>Registry calls are guarded with <code>function_exists()</code>, so on an older core the plugin does nothing.</li><li>The embed widget outputs unfiltered code. Keep it limited to super admins.</li></ul>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later.</p>",
-    "downloads": 268,
+    "downloads": 271,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass",
     "icon": "assets/sample-widgets/assets/icon.svg",
@@ -38,7 +38,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>On Shopclass 6.4 the category list is built when the widget form opens, not on every page.</li></ul>",
-            "downloads": 59,
+            "downloads": 60,
             "published_at": "2026-09-26T06:48:59Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -50,7 +50,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 57,
+            "downloads": 58,
             "published_at": "2026-09-25T03:56:47Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -62,7 +62,7 @@
         },
         {
             "changelog_html": "<ul><li>First release published from the registry. Adds the packaging metadata a catalog entry needs — declared core and PHP compatibility, <code>LICENSE</code>, <code>README.md</code> and a <code>.distignore</code>. No change to the plugin&#039;s behaviour.</li></ul>",
-            "downloads": 152,
+            "downloads": 153,
             "published_at": "2026-08-08T09:23:07Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
