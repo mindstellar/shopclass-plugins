@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "translator",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-translator"
+  },
+  "asset_pattern": "^translator_.*\\.zip$",
+  "categories": ["localisation", "admin-tools"],
+  "tags": ["translation", "texts", "language", "gettext", "po"],
+  "short_description": "Change or translate any text of Shopclass, your theme and plugins, kept safe through updates.",
+  "screenshots": [
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/screenshot-1.png", "caption": "Tools › Translator: search a text and change it" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-translator/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-translator#readme"
+  }
+}
