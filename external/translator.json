@@ -10,6 +10,7 @@
   "categories": ["localisation", "admin-tools"],
   "tags": ["translation", "texts", "language", "gettext", "po"],
   "short_description": "Change or translate any text of Shopclass, your theme and plugins, kept safe through updates.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/icon.svg",
   "screenshots": [
     { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/screenshot-1.png", "caption": "Tools › Translator: search a text and change it" }
   ],
