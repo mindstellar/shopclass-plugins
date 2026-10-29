@@ -1,0 +1,25 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "tax-gst",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-tax-gst"
+  },
+  "asset_pattern": "^tax-gst_.*\\.zip$",
+  "categories": ["integrations"],
+  "tags": ["billing", "shop", "tax", "gst", "india", "invoice", "checkout"],
+  "short_description": "India GST for the Tax plugin: CGST and SGST in the seller's state, IGST elsewhere, GSTIN and HSN on the invoice.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/screenshot-1.png",
+      "caption": "A tax invoice with IGST, GSTIN and HSN"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-tax-gst/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-tax-gst#readme"
+  }
+}
