@@ -1,0 +1,33 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "shop-emails",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-shop-emails"
+  },
+  "asset_pattern": "^shop-emails_.*\\.zip$",
+  "categories": ["notifications"],
+  "tags": ["shop", "newsletter", "email", "abandoned-cart", "double-opt-in"],
+  "short_description": "A newsletter sign-up list with double opt-in and CSV export, and one reminder e-mail for a signed-in shopper who leaves a cart.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-1.png",
+      "caption": "The newsletter subscribers screen"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-2.png",
+      "caption": "Shop emails settings"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-3.png",
+      "caption": "The sign-up widget in a theme footer"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-shop-emails/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-shop-emails#readme"
+  }
+}
