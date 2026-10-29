@@ -1,0 +1,25 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "promotions",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-promotions"
+  },
+  "asset_pattern": "^promotions_.*\\.zip$",
+  "categories": ["integrations"],
+  "tags": ["shop", "coupons", "discounts", "promotions", "checkout"],
+  "short_description": "Coupon codes, automatic discounts, a first-order offer and usage limits, worked out on the server and refused clearly at checkout.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-promotions/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-promotions/main/assets/screenshot-1.png",
+      "caption": "Offers and coupons"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-promotions/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-promotions#readme"
+  }
+}
