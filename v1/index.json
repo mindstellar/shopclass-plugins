@@ -5,8 +5,11 @@
             "admin-tools",
             "content-widgets"
         ],
-        "downloads": 178,
+        "downloads": 180,
         "icon": "assets/age-warning/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Age Warning",
         "requires_min": "6.1.0",
         "short_description": "Show an age-confirmation notice before a visitor sees adult content, and remember the answer.",
@@ -26,8 +29,12 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 21,
+        "downloads": 25,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Analytics",
         "requires_min": "7.0.0",
         "short_description": "Google Analytics 4 and Meta Pixel with a built-in consent bar, and shop events from 7.1. Nothing loads until the visitor accepts.",
@@ -48,8 +55,12 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 61,
+        "downloads": 66,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Booking Calendar",
         "requires_min": "7.0.0",
         "short_description": "Let buyers book a listing for dates or a time slot, with an availability calendar, seller approval, e-mails and a calendar feed.",
@@ -71,8 +82,12 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 753,
+        "downloads": 766,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Cloudflare",
         "requires_min": "6.2.0",
         "short_description": "Purge Cloudflare's cache when listings change, install the recommended cache rules, and view cache analytics.",
@@ -93,8 +108,12 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 317,
+        "downloads": 332,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Digital Goods",
         "requires_min": "6.1.0",
         "short_description": "Let sellers attach downloadable files to a listing, stored privately and served through a gated link.",
@@ -105,9 +124,9 @@
             "downloads",
             "files"
         ],
-        "tested_max": "7.0",
-        "updated_at": "2026-10-17T05:59:37Z",
-        "version": "2.2.0"
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:25Z",
+        "version": "2.4.0"
     },
     {
         "author": "Navjot Tomer (Mindstellar)",
@@ -115,8 +134,11 @@
             "admin-tools",
             "integrations"
         ],
-        "downloads": 178,
+        "downloads": 180,
         "icon": "assets/google-analytics/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Google Analytics",
         "requires_min": "6.1.0",
         "short_description": "Add Google Analytics 4 to your site, with consent gating and a per-browser opt-out.",
@@ -137,8 +159,12 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 12,
+        "downloads": 14,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-google-geocoder/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Google Maps Geocoder",
         "requires_min": "7.0.0",
         "short_description": "Find the exact map position of a listing from its street address with the Google Geocoding API, for distance search.",
@@ -159,8 +185,12 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 217,
+        "downloads": 224,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-listing-import/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Listing Import",
         "requires_min": "6.4.0",
         "short_description": "Import listings from other systems through the site's REST API or scheduled JSON, CSV and RSS feeds.",
@@ -181,8 +211,12 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 74,
+        "downloads": 79,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "LocationIQ Geocoder",
         "requires_min": "7.0.0",
         "short_description": "Find the exact map position of a listing from its street address with LocationIQ, in the background and within a daily limit.",
@@ -201,10 +235,40 @@
     {
         "author": "Navjot Tomer (Mindstellar)",
         "categories": [
+            "search"
+        ],
+        "downloads": 1,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-map-search/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
+        "name": "Map Search",
+        "requires_min": "7.1.0",
+        "short_description": "A map of listings on the search page, with pin clusters and a \"Search this area\" button. Free OpenFreeMap tiles by default, no key.",
+        "slug": "map-search",
+        "tags": [
+            "location",
+            "map",
+            "maplibre",
+            "openstreetmap",
+            "search"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:08Z",
+        "version": "0.1.0"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
             "admin-tools"
         ],
-        "downloads": 402,
+        "downloads": 412,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "nginx Cache",
         "requires_min": "6.2.0",
         "short_description": "Hold pages in nginx's FastCGI cache for an hour instead of thirty seconds, and purge them the moment a listing changes.",
@@ -225,8 +289,12 @@
         "categories": [
             "payments"
         ],
-        "downloads": 43,
+        "downloads": 48,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "PayPal Payment",
         "requires_min": "7.0.0",
         "short_description": "Take payments for shop orders and credit packages through PayPal Checkout, with verified webhooks and refunds from the admin.",
@@ -244,11 +312,39 @@
     {
         "author": "Navjot Tomer (Mindstellar)",
         "categories": [
+            "integrations"
+        ],
+        "downloads": 3,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-promotions/main/assets/icon.svg",
+        "modes": [
+            "shop"
+        ],
+        "name": "Promotions",
+        "requires_min": "7.1.0",
+        "short_description": "Coupon codes, automatic discounts, a first-order offer and usage limits, worked out on the server and refused clearly at checkout.",
+        "slug": "promotions",
+        "tags": [
+            "checkout",
+            "coupons",
+            "discounts",
+            "promotions",
+            "shop"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:04:03Z",
+        "version": "0.1.1"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
             "content-widgets",
             "integrations"
         ],
-        "downloads": 194,
+        "downloads": 196,
         "icon": "assets/qr-code/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "QR Code",
         "requires_min": "6.1.0",
         "short_description": "Show a QR code for a listing so it can be scanned, shared or printed.",
@@ -269,8 +365,12 @@
         "categories": [
             "payments"
         ],
-        "downloads": 24,
+        "downloads": 28,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-razorpay/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Razorpay Payment",
         "requires_min": "7.0.0",
         "short_description": "Take UPI, card, netbanking and wallet payments for shop orders and credit packages through Razorpay, with signed webhooks and refunds.",
@@ -293,8 +393,11 @@
             "admin-tools",
             "listings-moderation"
         ],
-        "downloads": 227,
+        "downloads": 230,
         "icon": "assets/registered-users-only/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Registered Users Only",
         "requires_min": "6.1.0",
         "short_description": "Require a visitor to sign in before they can see the site, with control over what stays public.",
@@ -315,8 +418,11 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 184,
+        "downloads": 186,
         "icon": "assets/required-registration-fields/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Required Registration Fields",
         "requires_min": "6.1.0",
         "short_description": "Ask for more than a name and an email when someone registers, and require the fields you pick.",
@@ -337,8 +443,11 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 211,
+        "downloads": 213,
         "icon": "assets/sample-forms/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Sample Forms",
         "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the Forms platform: contexts, field filters, spam veto, and submission hooks.",
@@ -358,8 +467,11 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 283,
+        "downloads": 286,
         "icon": "assets/sample-widgets/assets/icon.svg",
+        "modes": [
+            "classifieds"
+        ],
         "name": "Sample Widgets",
         "requires_min": "6.1.0",
         "short_description": "Reference plugin demonstrating the widget and page-template registries with four working widget types.",
@@ -377,10 +489,66 @@
     {
         "author": "Navjot Tomer (Mindstellar)",
         "categories": [
+            "integrations"
+        ],
+        "downloads": 1,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/icon.svg",
+        "modes": [
+            "shop"
+        ],
+        "name": "Shipping",
+        "requires_min": "7.1.0",
+        "short_description": "Delivery zones with flat and weight rates, Standard and Express, free delivery over an amount, delivery dates, PIN checks, tracking links.",
+        "slug": "shipping",
+        "tags": [
+            "checkout",
+            "delivery",
+            "shipping",
+            "shop",
+            "tracking",
+            "zones"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:06Z",
+        "version": "0.1.1"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
+            "notifications"
+        ],
+        "downloads": 2,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
+        "name": "Shop emails",
+        "requires_min": "7.1.0",
+        "short_description": "A newsletter sign-up list with double opt-in and CSV export, and one reminder e-mail for a signed-in shopper who leaves a cart.",
+        "slug": "shop-emails",
+        "tags": [
+            "abandoned-cart",
+            "double-opt-in",
+            "email",
+            "newsletter",
+            "shop"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:11Z",
+        "version": "0.1.1"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
             "payments"
         ],
-        "downloads": 143,
+        "downloads": 154,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Stripe Payment",
         "requires_min": "6.4.0",
         "short_description": "Take card payments for credit packages through Stripe Checkout, with signed webhooks and refunds from the admin.",
@@ -392,9 +560,63 @@
             "payments",
             "stripe"
         ],
-        "tested_max": "6.4",
-        "updated_at": "2026-10-10T17:33:14Z",
-        "version": "0.1.2"
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:22Z",
+        "version": "0.1.7"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
+            "integrations"
+        ],
+        "downloads": 1,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax/main/assets/icon.svg",
+        "modes": [
+            "shop"
+        ],
+        "name": "Tax",
+        "requires_min": "7.1.0",
+        "short_description": "Tax on every cart and order for any country: default, country and category rates, prices with or without tax, and a tax invoice.",
+        "slug": "tax",
+        "tags": [
+            "billing",
+            "checkout",
+            "gst",
+            "invoice",
+            "shop",
+            "tax",
+            "vat"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:12Z",
+        "version": "0.1.1"
+    },
+    {
+        "author": "Navjot Tomer (Mindstellar)",
+        "categories": [
+            "integrations"
+        ],
+        "downloads": 1,
+        "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/icon.svg",
+        "modes": [
+            "shop"
+        ],
+        "name": "Tax GST",
+        "requires_min": "7.1.0",
+        "short_description": "India GST for the Tax plugin: CGST and SGST in the seller's state, IGST elsewhere, GSTIN and HSN on the invoice.",
+        "slug": "tax-gst",
+        "tags": [
+            "billing",
+            "checkout",
+            "gst",
+            "india",
+            "invoice",
+            "shop",
+            "tax"
+        ],
+        "tested_max": "7.1",
+        "updated_at": "2026-10-29T12:01:16Z",
+        "version": "0.1.0"
     },
     {
         "author": "Navjot Tomer (Mindstellar)",
@@ -402,8 +624,12 @@
             "admin-tools",
             "localisation"
         ],
-        "downloads": 10,
+        "downloads": 14,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/icon.svg",
+        "modes": [
+            "classifieds",
+            "shop"
+        ],
         "name": "Translator",
         "requires_min": "7.0.6",
         "short_description": "Change or translate any text of Shopclass, your theme and plugins, kept safe through updates.",

@@ -24,7 +24,7 @@
         "label": "Import & export"
     },
     {
-        "count": 6,
+        "count": 10,
         "description": "Connectors to external services and APIs: social login, analytics, CRMs, and similar.",
         "id": "integrations",
         "label": "Integrations"
@@ -42,7 +42,7 @@
         "label": "Localisation"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Email, SMS, push, or webhook notifications to users and admins.",
         "id": "notifications",
         "label": "Notifications"
@@ -54,7 +54,7 @@
         "label": "Payments"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Search relevance, filters, facets, and discovery of listings.",
         "id": "search",
         "label": "Search"

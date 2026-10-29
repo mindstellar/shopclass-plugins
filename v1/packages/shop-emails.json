@@ -1,0 +1,65 @@
+{
+    "author": "Navjot Tomer (Mindstellar)",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "notifications"
+    ],
+    "description_html": "<h1>Shop emails</h1>\n<p>A newsletter sign-up list with double opt-in and CSV export, and one reminder e-mail for a signed-in shopper who leaves a cart.</p>\n<p>The newsletter works on classifieds and shop sites. The cart reminder is for shop sites only.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/v0.1.1/assets/screenshot-1.png\" alt=\"The newsletter subscribers screen\" loading=\"lazy\"> <img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/v0.1.1/assets/screenshot-2.png\" alt=\"Shop emails settings\" loading=\"lazy\"> <img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/v0.1.1/assets/screenshot-3.png\" alt=\"The sign-up widget in a theme footer\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.1.0 or later</li><li>PHP 8.2 or later</li><li>No outside accounts. The reminder runs on the hourly cron and job queue. Core&#039;s auto-cron drives them; a system cron or worker only makes them run on time.</li></ul>\n<h2>Install</h2>\n<ol><li>Open <strong>Plugins → Browse</strong> (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open <strong>Settings → Email → Shop emails</strong>.</li><li>Set the newsletter options:<p>| Setting | Default | |---|---| | Ask new subscribers to confirm by e-mail | On | | Confirmation subject, Confirmation text | A short &quot;please confirm&quot; mail | | Sign-ups per visitor per hour | 10 |</p></li><li>On a shop site, set the cart reminder options (a classifieds site does not show them):<p>| Setting | Default | |---|---| | Remind signed-in shoppers about a cart they left | On | | Send after (hours) | 24 | | Skip carts older than (days), counted after the wait | 7 | | Reminder subject, Reminder text | &quot;You left something in your cart&quot; | | Cart link | The home page with <code>#cart</code> | | Reminders per hourly run | 50 |</p></li><li>Show the form: open <strong>Appearance → Manage widgets</strong> and add <strong>Newsletter sign-up</strong> to a widget area. Set its heading, field label and button text. A theme with its own form can post to the plugin instead (see For developers).</li><li>See who signed up under <strong>Users → Newsletter subscribers</strong>.</li></ol>\n<p>Texts are plain. A blank line starts a new paragraph. <code>{WEB_TITLE}</code> is the site name. <code>{USER_NAME}</code> is the shopper&#039;s name in the reminder.</p>\n<p>With the Aisle theme, its home page newsletter form works once the plugin is active. Aisle opens its cart drawer for the <code>#cart</code> link.</p>\n<h2>How it works</h2>\n<p>Newsletter:</p>\n<ul><li>A theme&#039;s form posts <code>email</code> to <code>shop-emails/subscribe</code>. The plugin checks the address, a hidden <code>website</code> field that only bots fill, and the hourly limit per visitor.</li><li>The visitor returns to the page they came from with <code>?newsletter=sent|confirmed|exists|invalid|wait</code>.</li><li><code>sent</code>: a confirm mail went out (also the answer to a bot). <code>confirmed</code>: double opt-in is off. <code>exists</code>: already confirmed. <code>invalid</code>: not an e-mail address, or over 191 characters. <code>wait</code>: over the limit, or the mail could not be sent.</li><li>The confirm mail has a confirm link and an unsubscribe link. Each carries a random token, not the address. The unsubscribe link asks first, so a mail scanner cannot remove anyone.</li><li>A second sign-up of a pending address within 10 minutes sends nothing. Later, it sends a new link and the old one stops working.</li><li>Unconfirmed sign-ups are removed after 3 days.</li><li><strong>Newsletter subscribers</strong> shows counts, the list, a search by the start of an address, and Delete. <strong>Export CSV</strong> downloads confirmed addresses (<code>email,status,source,signed_up,confirmed_at</code>, times in UTC).</li></ul>\n<p>Cart reminder (shop sites only):</p>\n<ul><li>Once an hour, the plugin reads saved carts of signed-in shoppers and queues a reminder for each cart that has items, has not changed for the set hours, and belongs to a live account with an e-mail.</li><li>The job checks again before sending. A cart emptied, changed or ordered since gets nothing.</li><li>The mail lists up to five items with price and links to the cart.</li><li>A shopper gets at most one reminder in 30 days. Placing an order also stops one.</li><li>Each run reads at most 500 carts and queues at most <strong>Reminders per hourly run</strong>. The next run carries on.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>The plugin does not send newsletters.</li><li>Guests&#039; carts live in the browser and get no reminder.</li><li>Everything is in core&#039;s <code>t_key_value</code> table, groups <code>newsletter</code>, <code>newsletter_token</code>, <code>cart_reminder</code> and <code>shop_emails</code>. No table of its own. Settings are preferences in the <code>shop-emails</code> section.</li><li>The visitor&#039;s IP is never stored. The hourly limit uses core&#039;s rate counter, which keeps a hash.</li><li>Personal data: core&#039;s data export includes the account&#039;s newsletter row and reminder mark. Deleting an account deletes both. Delete one address under <strong>Users → Newsletter subscribers</strong>, or the person can use the unsubscribe link.</li><li>Uninstalling deletes the list, links, marks and settings. Export the list first.</li><li>On an older Shopclass the plugin loads, does nothing and says so in the admin.</li></ul>\n<h2>For developers</h2>\n<ul><li>The filter <code>aisle_newsletter_action</code> returns the subscribe address. Another theme can call <code>shop_emails_subscribe_url()</code> and post a form with an <code>email</code> field to it.</li><li>Show a line for each <code>?newsletter=</code> status. Print only the five values above.</li><li>An optional <code>source</code> field (<code>a-z</code>, <code>0-9</code>, <code>_</code>, <code>-</code>, up to 20 characters) names the form. It defaults to <code>home</code>.</li><li>Mail text passes through filters before placeholders are filled: <code>shop_emails_confirm_title</code>, <code>shop_emails_confirm_description</code> (<code>$text, $email</code>), <code>shop_emails_reminder_title</code>, <code>shop_emails_reminder_description</code> (<code>$text, $user, $lines</code>). The description filters get HTML, so escape what you add.</li><li>Listens to <code>aisle_newsletter_action</code>, <code>personal_data_export</code>, <code>cron_hourly</code>, <code>register_jobs</code>, <code>billing_order_placed</code> and <code>delete_user</code>.</li></ul>\n<p>Translations: copy <code>languages/shop-emails.pot</code> to <code>languages/&lt;locale&gt;/messages.po</code>, translate, and compile to <code>messages.mo</code>. Rebuild the template with <code>php tools/make-pot.php</code>.</p>\n<p>Tests: <code>./tests/run.sh</code> (unit) and <code>php tests/integration/flow.php</code> (needs core&#039;s scratch MySQL on port 33061).</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-shop-emails/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">GitHub issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/v0.1.1/LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
+    "downloads": 2,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/shopclass-plugin-shop-emails",
+    "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/icon.svg",
+    "latest_version": "0.1.1",
+    "license": "GPL-3.0-or-later",
+    "modes": [
+        "classifieds",
+        "shop"
+    ],
+    "name": "Shop emails",
+    "requires_min": "7.1.0",
+    "screenshots": [
+        {
+            "caption": "The newsletter subscribers screen",
+            "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-1.png"
+        },
+        {
+            "caption": "Shop emails settings",
+            "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-2.png"
+        },
+        {
+            "caption": "The sign-up widget in a theme footer",
+            "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/screenshot-3.png"
+        }
+    ],
+    "short_description": "A newsletter sign-up list with double opt-in and CSV export, and one reminder e-mail for a signed-in shopper who leaves a cart.",
+    "slug": "shop-emails",
+    "source": "external",
+    "support": {
+        "docs": "https://github.com/mindstellar/shopclass-plugin-shop-emails#readme",
+        "issues": "https://github.com/mindstellar/shopclass-plugin-shop-emails/issues"
+    },
+    "tags": [
+        "abandoned-cart",
+        "double-opt-in",
+        "email",
+        "newsletter",
+        "shop"
+    ],
+    "tested_max": "7.1",
+    "type": "plugin",
+    "updated_at": "2026-10-29T12:01:11Z",
+    "versions": [
+        {
+            "changelog_html": "<h3>Changed</h3>\n<ul><li>Listens to core&#039;s typed <code>OrderPlaced</code> event on a core that has it.</li></ul>",
+            "downloads": 2,
+            "published_at": "2026-10-29T12:01:11Z",
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "48308b6f4f7625a3e3e63545c9d25e0b204420a0226d1d7e9c4beac37a0e455c",
+            "size": 46929,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-shop-emails/releases/download/v0.1.1/shop-emails_0.1.1.zip",
+            "version": "0.1.1"
+        }
+    ]
+}

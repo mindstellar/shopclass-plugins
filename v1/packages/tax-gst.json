@@ -1,0 +1,58 @@
+{
+    "author": "Navjot Tomer (Mindstellar)",
+    "author_uri": "https://mindstellar.com",
+    "categories": [
+        "integrations"
+    ],
+    "description_html": "<h1>Tax GST</h1>\n<p>India GST for the Tax plugin. Tax works out the amounts. This plugin decides how GST is split and what the invoice calls things.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/v0.1.0/assets/screenshot-1.png\" alt=\"A tax invoice with IGST, GSTIN and HSN\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Tax plugin 0.1 or later, enabled. Without it this plugin does nothing and the admin sees a notice.</li><li>Shopclass 7.1.0 or later, with shop mode</li><li>PHP 8.2 or later</li></ul>\n<p>Works on shared hosting. No cron, worker, Redis or shell.</p>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<p>There is nothing to set here. Set up Tax first (Billing → Tax):</p>\n<ol><li>Seller country <code>IN</code> and your Seller state, such as Delhi.</li><li>Seller tax number (your GSTIN) and the rates: a default, and by category with HSN codes.</li><li>Prices: on for GST-inclusive prices, off to add GST on top.</li></ol>\n<h2>How it works</h2>\n<ul><li>Buyer in the seller&#039;s state: CGST and SGST, each half the rate (18% shows as CGST 9% + SGST 9%).</li><li>Buyer in another state: IGST at the full rate.</li><li>The invoice calls the seller&#039;s number GSTIN and the tax codes HSN. It adds the buyer&#039;s state code and the kind of supply.</li><li>States are matched by GST state code. &quot;Delhi&quot;, &quot;NCT of Delhi&quot; and &quot;New Delhi&quot; are one state, as are &quot;Orissa&quot; and &quot;Odisha&quot;. A name that is not an Indian state falls back to Tax&#039;s own comparison.</li><li>A buyer with no address yet counts as in the seller&#039;s state, so the cart drawer shows CGST + SGST.</li><li>Each line&#039;s tax is split in whole rupees by largest remainder, so CGST + SGST always equals the line&#039;s GST.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>GST applies only to a sale from India to India with the seller&#039;s state set. Any other sale keeps Tax&#039;s single tax line.</li><li>Not included: buyer GSTIN at checkout, e-invoicing (IRN, QR), reverse charge, cess, composition-scheme rules, sequential invoice numbers, PDF invoices.</li><li>Stores nothing. Orders keep the tax lines they were charged.</li></ul>\n<h2>For developers</h2>\n<p>Listens to Tax&#039;s filters <code>tax_parts</code> (the CGST, SGST and IGST split) and <code>tax_invoice</code> (GSTIN, HSN, state code). It fires no hooks.</p>\n<p>Tests: <code>./tests/run.sh</code>, or <code>SHOPCLASS_CORE=../shopclass DRIFT_DB_PORT=33061 ./tests/run.sh</code> to add the integration test. Tests that need Tax look in <code>../shopclass-plugin-tax</code> or <code>SHOPCLASS_TAX</code>, and skip without it. Regenerate the template with <code>php tools/make-pot.php</code>.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-tax-gst/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugin-tax-gst/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/v0.1.0/LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
+    "downloads": 1,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/shopclass-plugin-tax-gst",
+    "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/icon.svg",
+    "latest_version": "0.1.0",
+    "license": "GPL-3.0-or-later",
+    "modes": [
+        "shop"
+    ],
+    "name": "Tax GST",
+    "requires_min": "7.1.0",
+    "screenshots": [
+        {
+            "caption": "A tax invoice with IGST, GSTIN and HSN",
+            "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/screenshot-1.png"
+        }
+    ],
+    "short_description": "India GST for the Tax plugin: CGST and SGST in the seller's state, IGST elsewhere, GSTIN and HSN on the invoice.",
+    "slug": "tax-gst",
+    "source": "external",
+    "support": {
+        "docs": "https://github.com/mindstellar/shopclass-plugin-tax-gst#readme",
+        "issues": "https://github.com/mindstellar/shopclass-plugin-tax-gst/issues"
+    },
+    "tags": [
+        "billing",
+        "checkout",
+        "gst",
+        "india",
+        "invoice",
+        "shop",
+        "tax"
+    ],
+    "tested_max": "7.1",
+    "type": "plugin",
+    "updated_at": "2026-10-29T12:01:16Z",
+    "versions": [
+        {
+            "changelog_html": "<h3>New</h3>\n<ul><li>GST split for the Tax plugin: CGST and SGST halves for a buyer in the seller&#039;s state, IGST for another state.</li><li>Indian state names matched by GST state code, including old and short spellings.</li><li>Invoice shows the number as GSTIN, tax codes as HSN, the buyer&#039;s state code and the kind of supply.</li></ul>",
+            "downloads": 1,
+            "published_at": "2026-10-29T12:01:16Z",
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "3fdae574af7a7c2fd12477f63f31edd34ce34686bdaa318cc48817c95e2be440",
+            "size": 20791,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-tax-gst/releases/download/v0.1.0/tax-gst_0.1.0.zip",
+            "version": "0.1.0"
+        }
+    ]
+}
