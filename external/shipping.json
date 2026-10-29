@@ -1,0 +1,29 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "shipping",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-shipping"
+  },
+  "asset_pattern": "^shipping_.*\\.zip$",
+  "categories": ["integrations"],
+  "tags": ["shop", "shipping", "delivery", "zones", "checkout", "tracking"],
+  "short_description": "Delivery zones with flat and weight rates, Standard and Express, free delivery over an amount, delivery dates, PIN checks, tracking links.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/icon.svg",
+  "screenshots": [
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/screenshot-1.png",
+      "caption": "Shipping zones"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/screenshot-2.png",
+      "caption": "Shipping settings"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-shipping/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-shipping#readme"
+  }
+}
