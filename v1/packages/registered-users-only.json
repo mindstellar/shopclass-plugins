@@ -6,7 +6,7 @@
         "listings-moderation"
     ],
     "description_html": "<h1>Registered Users Only</h1>\n<p>Closes the site to visitors who are not signed in. You choose what stays public.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugins/c2b4d9929eccb6d434edc93a91dd3f01f2ad6ce5/plugins/registered-users-only/assets/screenshot-1.png\" alt=\"Registered Users Only settings\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open Plugins → Manage plugins, then Settings next to Registered Users Only.</li><li>Tick the areas that stay open to signed-out visitors. Everything not ticked is closed.</li></ol>\n<table><thead><tr><th>Area</th><th>Default</th></tr></thead><tbody><tr><td>Static pages (terms, privacy notice, imprint)</td><td>open</td></tr><tr><td>Contact form</td><td>open</td></tr><tr><td>Browsing and search (category listings, search results, sellers&#039; public profiles)</td><td>closed</td></tr><tr><td>Individual listings</td><td>closed</td></tr></tbody></table>\n<ol start=\"3\"><li>Save.</li></ol>\n<h2>How it works</h2>\n<ul><li>A signed-out visitor who asks for a closed page goes to the registration page with a message saying why.</li><li>These are always open: sign in, register, password recovery, account activation, the error page, the sitemap, the feeds, the ajax endpoints, the cron entry point and a signed-in user&#039;s own account pages.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>Closing browsing and listings hides them from search engines too, since a crawler is a signed-out visitor.</li><li>The redirect is cached for up to 30 seconds. A longer page cache, such as the nginx Cache plugin&#039;s, is purged on Shopclass 6.4.2 and later. On older versions, a page cached before activation can show for one cache window.</li><li>Derived from the Osclass &quot;Registered users only&quot; plugin (0.9.3). See CHANGELOG.md.</li></ul>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugins/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugins/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Derived from Osclass (Apache-2.0); both notices are kept in the source headers.</p>",
-    "downloads": 233,
+    "downloads": 236,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
     "icon": "assets/registered-users-only/assets/icon.svg",
@@ -46,7 +46,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>A page cached by nginx before the site was closed kept being served to signed-out visitors (fully purged on Shopclass 6.4.2 and later).</li><li>A seller&#039;s public profile was open to signed-out visitors; it now follows the browsing setting.</li></ul>\n<h3>Changed</h3>\n<ul><li>The redirect to the registration page may be cached for 30 seconds, and its notice no longer needs a cookie.</li><li>Activating, deactivating and saving settings purge the page cache when core supports it.</li></ul>",
-            "downloads": 55,
+            "downloads": 56,
             "published_at": "2026-10-04T10:20:58Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -58,7 +58,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 61,
+            "downloads": 62,
             "published_at": "2026-09-25T03:56:45Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -70,7 +70,7 @@
         },
         {
             "changelog_html": "<p>First Shopclass release, rewritten from the Osclass plugin (0.9.3, 2013).</p>\n<h3>Fixed</h3>\n<ul><li><strong>Password recovery and account activation were unreachable.</strong> Only the login and registration pages were let through, so a signed-out visitor following a reset link or an activation email was redirected to the registration form instead, with no way back into their account. The whole sign-in flow is now permanently open.</li><li><strong>The sitemap, the feeds and the ajax endpoints were redirected too.</strong> Sending a crawler or an XHR to the registration page does not gate anything, it breaks the route. They are now exempt.</li><li>The guard function was called <code>login_necessary()</code>, an unprefixed name in the global namespace. Everything this plugin defines is now prefixed.</li></ul>\n<h3>New</h3>\n<ul><li>Settings screen: static pages, the contact form, browsing and search, and individual listings can each be left open. Static pages and the contact form default to open, because the terms and privacy notice usually have to be readable without an account.</li><li>The always-public set is filterable through <code>registered_users_only_always_public</code>.</li></ul>",
-            "downloads": 117,
+            "downloads": 118,
             "published_at": "2026-08-16T18:11:03Z",
             "requires": "6.1.0",
             "requires_php": "8.0",

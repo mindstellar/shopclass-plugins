@@ -5,7 +5,7 @@
         "payments"
     ],
     "description_html": "<h1>PayPal Payment</h1>\n<p>Take payments for shop orders and credit packages through <a href=\"https://developer.paypal.com/docs/checkout/\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">PayPal Checkout</a>. Buyers pay on PayPal&#039;s own pages, so no card details reach your site.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later, with billing turned on</li><li>PHP 8.0 or later</li><li>A PayPal business account with a REST app (Client ID and Secret)</li><li>Cron or core&#039;s auto-cron, for retries and the daily check of pending orders</li></ul>\n<h2>Install</h2>\n<ol><li>Open <strong>Plugins → Browse</strong> (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open <strong>Settings → Billing → Payment methods</strong> and choose <strong>Set up</strong> next to PayPal Payment.</li><li>At <a href=\"https://developer.paypal.com\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">developer.paypal.com</a>, open <strong>Apps &amp; Credentials</strong> with <em>Sandbox</em> selected and create an app.</li><li>Copy its Client ID and Secret into the <strong>Sandbox app</strong> fields.</li><li>In the same app, add a webhook with the URL shown under <strong>Webhook URL</strong>:<pre><code>https://example.com/index.php?page=billing&amp;action=callback&amp;gateway=paypal</code></pre><p>Subscribe it to <code>CHECKOUT.ORDER.APPROVED</code>, <code>PAYMENT.CAPTURE.COMPLETED</code>, <code>PAYMENT.CAPTURE.DENIED</code> and <code>PAYMENT.CAPTURE.REFUNDED</code>.</p></li><li>Copy the webhook&#039;s ID into <strong>Webhook ID</strong> and save. The <strong>Connection</strong> line says whether the credentials and webhook work.</li><li>To go live, repeat steps 2 to 5 with <em>Live</em> selected, fill the <strong>Live app</strong> fields, then set <strong>Mode</strong> to <em>Live</em>.</li></ol>\n<p>The secret is never shown again. Leave its box blank to keep it. <strong>Name at checkout</strong> sets the label buyers see (default <code>PayPal</code>).</p>\n<h2>How it works</h2>\n<ul><li>PayPal shows at checkout once the active mode has a Client ID and Secret, and the billing currency is supported.</li><li>The buyer pays on PayPal. On return, the plugin captures the payment and settles the order.</li><li>If the buyer never returns, the <code>CHECKOUT.ORDER.APPROVED</code> webhook captures it.</li><li>A buyer who cancels at PayPal returns to the buy page and the order is closed.</li><li>Once a day, pending orders over an hour old are checked with PayPal. Orders never approved are closed after a day.</li><li>If a payment arrives for an order already closed, the plugin refunds it and e-mails the site&#039;s contact address.</li><li>To refund, open the order under <strong>Billing → Orders</strong> and press <strong>Refund</strong>. The whole payment is refunded and core takes the credits back. A full refund made in your PayPal account is recorded the same way.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>The plugin starts in sandbox mode, and an admin notice says so. In sandbox mode only a signed-in admin sees PayPal at checkout.</li><li>Webhook ID is optional in sandbox and required in live mode.</li><li>Supported currencies: AUD, BRL, CAD, CHF, CNY, CZK, DKK, EUR, GBP, HKD, HUF, ILS, JPY, MXN, MYR, NOK, NZD, PHP, PLN, SEK, SGD, THB, TWD, USD. Other currencies hide PayPal.</li><li>HUF, JPY and TWD are charged in whole units. A price with a fraction in them cannot be paid.</li><li>Partial refunds made in PayPal change nothing on the site.</li><li>Several sites can share one PayPal account. Give each site its own webhook.</li><li>Uninstalling removes the settings, saved secrets and cached token. The site id is kept, so orders in flight settle after a reinstall.</li><li>No tables of its own. Retries and the daily check use core&#039;s job queue.</li></ul>\n<h2>For developers</h2>\n<p>Registers the gateway on <code>register_payment_gateways</code> and listens to <code>register_jobs</code>, <code>cron_daily</code> and <code>job_gave_up</code>. It fires no hooks.</p>\n<p>Translations: copy <code>languages/paypal.pot</code> to <code>languages/&lt;locale&gt;/messages.po</code>, translate, and compile to <code>messages.mo</code>. Rebuild the template with <code>php tools/make-pot.php</code>.</p>\n<p>Tests: <code>./tests/run.sh</code> (unit) and <code>php tests/integration/billing.php</code> (needs core&#039;s scratch MySQL on port 33061). Core is loaded from <code>SHOPCLASS_CORE</code> or a sibling <code>osclass</code> checkout.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-paypal/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">GitHub issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/v0.1.7/LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
-    "downloads": 51,
+    "downloads": 54,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-paypal",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/main/assets/icon.svg",
@@ -37,7 +37,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>A refund PayPal is still processing shows as sent, not as an error, on Shopclass 7.1.</li></ul>",
-            "downloads": 16,
+            "downloads": 17,
             "published_at": "2026-10-25T09:57:58Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -49,7 +49,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>PayPal is offered for any order in a currency it takes, whatever the billing currency; credit packages need the billing currency to be one PayPal takes.</li><li>The settings page warns only when the billing currency is one PayPal cannot take.</li></ul>",
-            "downloads": 17,
+            "downloads": 18,
             "published_at": "2026-10-25T06:18:31Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -61,7 +61,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>On Shopclass 7.0 the settings page stays reachable from the plugin list, since 7.0 has no Billing menu for plugin pages.</li><li>On Shopclass 7.0 the daily check of pending orders is skipped instead of failing.</li><li>In sandbox mode PayPal is offered with only the client id and secret; live mode still needs the webhook id.</li><li>The settings page moves under Billing, and says why PayPal is not offered at checkout (unsupported currency, sandbox mode).</li><li>Sandbox mode also shows at checkout for a signed-in admin on themes that pay through the API (Shopclass 7.1).</li></ul>",
-            "downloads": 18,
+            "downloads": 19,
             "published_at": "2026-10-25T05:30:41Z",
             "requires": "7.0.0",
             "requires_php": "8.0",

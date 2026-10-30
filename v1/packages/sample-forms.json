@@ -6,7 +6,7 @@
         "content-widgets"
     ],
     "description_html": "<h1>Sample Forms</h1>\n<p>A reference plugin for the Forms platform. It adds no feature for a live site. It gives plugin authors a working example to copy.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<p>There is nothing to set up. It has no admin screen, no preferences and no table.</p>\n<h2>How it works</h2>\n<p>Read <code>index.php</code>. Each section is commented. It shows:</p>\n<ol><li>Registering a placement context. <code>osc_register_form_context()</code> gives a form embedded with <code>osc_render_form($formId, &#039;sample_forms.embed&#039;, $someId)</code> a readable label in Listings → Form submissions.</li><li>Filtering a form&#039;s fields. The <code>form_fields</code> filter runs on render and submit. The example reverses field order, only for a form with the slug <code>sample-reversed</code>.</li><li>Vetoing a submission. <code>form_submit_veto</code> rejects a submission by returning a message. The example rejects a few spammy words.</li><li>Amending validation. <code>form_validation_errors</code> adds error messages on top of core&#039;s. The example is a no-op.</li><li>Reacting to a stored submission. <code>form_submitted</code> fires after a submission is saved. The example logs the submission id under <code>OSC_DEBUG</code>.</li></ol>\n<h2>Notes / limits</h2>\n<ul><li>To start your own plugin: copy <code>index.php</code>, rename the <code>sample_forms_*</code> functions and the <code>Short Name</code> header, and replace each body.</li><li>The <code>osc_register_form_context()</code> call is guarded with <code>function_exists()</code>, so it does nothing on a core without the Forms platform.</li></ul>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later.</p>",
-    "downloads": 215,
+    "downloads": 217,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass",
     "icon": "assets/sample-forms/assets/icon.svg",
@@ -42,7 +42,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 73,
+            "downloads": 74,
             "published_at": "2026-09-25T03:56:45Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -54,7 +54,7 @@
         },
         {
             "changelog_html": "<ul><li>First release published from the registry. Adds the packaging metadata a catalog entry needs — declared core and PHP compatibility, <code>LICENSE</code>, <code>README.md</code> and a <code>.distignore</code>. No change to the plugin&#039;s behaviour.</li></ul>",
-            "downloads": 142,
+            "downloads": 143,
             "published_at": "2026-08-08T09:23:06Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
