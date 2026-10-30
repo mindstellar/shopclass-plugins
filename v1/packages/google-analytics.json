@@ -6,7 +6,7 @@
         "integrations"
     ],
     "description_html": "<h1>Google Analytics</h1>\n<p>Adds Google Analytics 4 to the public side of your site, with consent gating and a per-browser opt-out.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugins/c2b4d9929eccb6d434edc93a91dd3f01f2ad6ce5/plugins/google-analytics/assets/screenshot-1.png\" alt=\"Google Analytics settings\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li><li>A Google Analytics 4 measurement ID</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<p>If core already had a tracking ID (6.1.0 or earlier), install picks it up. No retyping.</p>\n<h2>Set up</h2>\n<ol><li>Open Plugins → Manage plugins, then Settings next to Google Analytics.</li><li>Enter the Measurement ID. It must start with <code>G-</code>, <code>GT-</code>, <code>UA-</code> or <code>AW-</code>. Anything else is refused.</li><li>Choose the switches: &quot;Wait for consent before tracking&quot; and &quot;Ask Google to truncate visitor IP addresses&quot;.</li><li>Save.</li></ol>\n<h2>How it works</h2>\n<ul><li>Consent Mode starts with storage denied, before the library loads. gtag.js sets no cookie or identifier until consent is granted.</li><li>Whatever asks the visitor calls <code>oscGoogleAnalytics.grant()</code> or <code>oscGoogleAnalytics.deny()</code>. Remembering the answer is the banner&#039;s job.</li><li>Turn the consent switch off if another tool already manages consent for the page.</li><li>The button &quot;Stop counting this browser&quot; marks this browser as not counted. Use it in each browser you visit from.</li><li>It loads on the public side only, never in the admin. It works with a page cache.</li></ul>\n<h2>For developers</h2>\n<p>Filter <code>google_analytics_should_track</code>: return false to skip the tag for a request.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugins/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugins/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later.</p>",
-    "downloads": 184,
+    "downloads": 186,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
     "icon": "assets/google-analytics/assets/icon.svg",
@@ -43,7 +43,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 69,
+            "downloads": 70,
             "published_at": "2026-09-25T03:56:45Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -55,7 +55,7 @@
         },
         {
             "changelog_html": "<p>First release. Restores, as a plugin, the analytics core carried until 6.2.0 — and adds what a plain snippet does not.</p>\n<h3>New</h3>\n<ul><li>Google Analytics 4 through <code>gtag.js</code>, configured from the admin.</li><li><strong>Consent Mode</strong>, initialised denied before the library loads, with <code>oscGoogleAnalytics.grant()</code> / <code>.deny()</code> for a banner to call. Ordering matters: a default written after gtag.js has started arrives too late, and the first page view is already recorded with storage allowed.</li><li>A per-browser opt-out, set from the settings screen, so your own visits stay out of the numbers. Per-browser because an admin session cannot be seen from the public side of the site — and because deciding it in the browser leaves the page cacheable.</li><li>The tracking ID core used to hold is adopted on install, so an upgraded site keeps working without retyping it.</li><li><code>google_analytics_should_track</code> filter for suppressing the tag per request.</li></ul>\n<h3>Notes</h3>\n<ul><li>The measurement ID is checked against the shapes Google issues before it is written into a page.</li><li>Output does not vary between tracked visitors, so the response cache is unaffected.</li></ul>",
-            "downloads": 115,
+            "downloads": 116,
             "published_at": "2026-08-16T18:12:51Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
