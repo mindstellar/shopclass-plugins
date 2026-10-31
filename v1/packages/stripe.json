@@ -5,16 +5,12 @@
         "payments"
     ],
     "description_html": "<h1>Stripe Payment</h1>\n<p>Take card payments for shop orders and credit packages through <a href=\"https://stripe.com/payments/checkout\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Stripe Checkout</a>. Buyers pay on Stripe&#039;s page, so no card data reaches your site.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later (tested up to 7.1), with billing turned on</li><li>PHP 8.0 or later, with the curl extension</li><li>A Stripe account</li><li>Cron running (for retries and the daily check of pending orders)</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open Billing → Stripe (Shopclass 7.1). On 7.0, open Plugins and choose Configure next to Stripe.</li><li>In the Stripe dashboard, open Developers → API keys. Copy the secret key (<code>sk_test_…</code> in test mode) into Test secret key.</li><li>Open Developers → Webhooks. Add an endpoint with the Endpoint URL shown on the settings page:<pre><code>https://example.com/index.php?page=billing&amp;action=callback&amp;gateway=stripe</code></pre></li><li>Select these events:<ul><li><code>checkout.session.completed</code></li><li><code>checkout.session.async_payment_succeeded</code></li><li><code>checkout.session.async_payment_failed</code></li><li><code>checkout.session.expired</code></li><li><code>charge.refunded</code></li></ul></li><li>Copy the endpoint&#039;s signing secret (<code>whsec_…</code>) into Test webhook secret and save.</li><li>Optional: set Name at checkout (default &quot;Card (Stripe)&quot;) and Currencies (comma-separated codes; empty uses the billing currency).</li></ol>\n<p>To go live, add the Live secret key, add a second webhook endpoint in live mode with the same URL and events, paste its signing secret into Live webhook secret, then set Mode to Live.</p>\n<p>Saved keys are never shown again. Leave a key box blank to keep it.</p>\n<h2>How it works</h2>\n<ul><li>Stripe shows at checkout once the secret key for the active mode is set and the billing currency is one Stripe takes.</li><li>When the buyer returns from Stripe, the plugin asks Stripe for the session and settles the order.</li><li>The webhook settles it too, for a buyer who closes the tab. Bank debits that clear later arrive this way.</li><li>If the site cannot record a payment, the event is queued and retried. If it still fails, the site&#039;s contact address gets an e-mail.</li><li>Once a day, pending Stripe orders over an hour old are checked with Stripe.</li><li>A payment for an order already closed (failed or cancelled) is refunded at Stripe. If Stripe refuses, it shows as &quot;paid after close&quot; in Tools → Activity log.</li><li>Core checks amount, currency and owner on every path. A replayed event credits nothing.</li><li>Refund: open the order under Billing → Orders and press Refund. The whole payment is refunded and core takes the credits back. A full refund made in the Stripe dashboard is recorded the same way.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>The plugin starts in test mode, and an admin notice says so. In test mode only a signed-in admin sees Stripe at checkout.</li><li>Test with Stripe&#039;s <a href=\"https://docs.stripe.com/testing\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">test cards</a>, such as <code>4242 4242 4242 4242</code>.</li><li>Live mode needs the webhook secret. In test mode it is optional, so a local site Stripe cannot reach still works.</li><li>Partial refunds change nothing on the site.</li><li>Several sites can share one Stripe account. Each site ignores events tagged for other sites. Give each its own webhook endpoint.</li><li>Keys, mode and site id are preferences in the <code>stripe</code> section. Order references are kept in order meta. No table of its own.</li></ul>\n<h2>For developers</h2>\n<p>Registers the gateway on <code>register_payment_gateways</code> and listens to <code>register_jobs</code>, <code>cron_daily</code> and <code>job_gave_up</code>. It fires no hooks.</p>\n<p>Translations: copy <code>languages/stripe.pot</code> to <code>languages/&lt;locale&gt;/messages.po</code>, translate, and compile to <code>messages.mo</code>. Regenerate the template with <code>php tools/make-pot.php</code>.</p>\n<p>Tests: <code>./tests/run.sh</code> (unit, no network) and <code>php tests/integration/billing.php</code> (core&#039;s scratch MySQL on port 33061). Both load core from <code>SHOPCLASS_CORE</code>, or a sibling checkout named <code>osclass</code>.</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-stripe/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugin-stripe/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/v0.1.7/LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
-    "downloads": 168,
+    "downloads": 172,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-stripe",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
     "latest_version": "0.1.7",
     "license": "GPL-3.0-or-later",
-    "modes": [
-        "classifieds",
-        "shop"
-    ],
     "name": "Stripe Payment",
     "requires_min": "6.4.0",
     "screenshots": [
@@ -59,7 +55,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>A refund Stripe is still processing shows as sent, not as an error, on Shopclass 7.1.</li><li>Stripe is offered for any order in a currency it takes, whatever the billing currency; credit packages still need the billing currency to be one it takes.</li><li>On Shopclass 7.0 the settings page stays reachable from the plugin list, since 7.0 has no Billing menu for plugin pages.</li><li>In test mode Stripe is offered with only the secret key; live mode still needs the webhook signing secret.</li><li>The settings page moves under Billing.</li><li>Test mode also shows at checkout for a signed-in admin on themes that pay through the API (Shopclass 7.1).</li><li>A payment for an order already closed (failed or cancelled) is refunded at Stripe.</li></ul>",
-            "downloads": 8,
+            "downloads": 9,
             "published_at": "2026-10-29T12:01:22Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -71,7 +67,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Works with Shopclass 7.0 as well as 6.4.</li></ul>",
-            "downloads": 49,
+            "downloads": 50,
             "published_at": "2026-10-10T17:33:14Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -83,7 +79,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>The download is smaller: the market screenshots are no longer inside the zip.</li></ul>",
-            "downloads": 55,
+            "downloads": 56,
             "published_at": "2026-10-02T08:04:20Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -95,7 +91,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Card payments for credit packages through Stripe Checkout; no card data on the site.</li><li>Orders are settled when the buyer returns and by a signed webhook, both through core&#039;s billing checks.</li><li>Webhook signatures are checked against the raw body, with a five-minute window.</li><li>Payments that clear later, failed payments and expired checkouts update the order.</li><li>An event the site could not record is queued and retried; the admin is e-mailed if it still fails.</li><li>A daily check settles pending orders Stripe never reported.</li><li>Refunds from the admin order screen; full refunds made in Stripe are recorded too.</li><li>A &quot;View payment&quot; link on the admin order screen opens the payment in the Stripe dashboard (test or live, as it was paid).</li><li>Test and live mode with separate keys; test mode is offered only to signed-in admins.</li><li>Zero- and three-decimal currencies are charged in the right units.</li><li>Several sites can share one Stripe account.</li><li>Translation template in <code>languages/stripe.pot</code>.</li></ul>",
-            "downloads": 56,
+            "downloads": 57,
             "published_at": "2026-10-02T07:53:55Z",
             "requires": "6.4.0",
             "requires_php": "8.0",

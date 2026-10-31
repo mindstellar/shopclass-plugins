@@ -5,15 +5,12 @@
         "integrations"
     ],
     "description_html": "<h1>Shipping</h1>\n<p>Delivery zones for Shopclass shop orders: flat and weight-based prices, shipping class charges, Standard and Express delivery, free delivery over an amount, delivery dates, PIN code checks and courier tracking links.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/v0.2.1/assets/screenshot-1.png\" alt=\"Shipping zones\" loading=\"lazy\"> <img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/v0.2.1/assets/screenshot-2.png\" alt=\"Shipping settings\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.1.0 or later, in shop mode</li><li>PHP 8.2 or later</li><li>No outside accounts. No cron, worker, Redis or shell needed.</li></ul>\n<h2>Install</h2>\n<ol><li>Open <strong>Plugins → Browse</strong> (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open <strong>Billing → Shipping</strong> and press <strong>Add zone</strong>.</li><li>Fill <strong>Name</strong>, then <strong>Countries</strong>, <strong>States</strong> and <strong>PIN or postcode starts</strong> for where it covers. Leave a list empty to cover everything. Under <strong>Shipping class charges</strong>, write one class per line with its extra charge, such as <code>bulky = 200</code>.</li><li>For <strong>Standard delivery</strong> and <strong>Express delivery</strong>, turn on <strong>Offer this method in the zone</strong> and set <strong>Name at checkout</strong>, <strong>Price</strong>, the weight included, the price per extra kilo, the free-over amount and the delivery days.</li><li>Press <strong>Save zone</strong>. Use <strong>Move up</strong> and <strong>Move down</strong> to order zones.</li><li>Open the <strong>Settings</strong> tab on the same screen:<ul><li><strong>Zone used before an address is known</strong></li><li><strong>An address no zone covers</strong></li><li><strong>Weight of an item with none set</strong> (grams)</li><li><strong>Couriers and tracking links</strong></li></ul></li></ol>\n<p>Amounts are in the site&#039;s currency.</p>\n<h2>How it works</h2>\n<ul><li>The most exact zone wins: a PIN start beats a state, a state beats a country. Among zones of the same kind, the one higher in the list wins.</li><li>A zone with states needs the shopper&#039;s state. A zone with PIN starts needs a PIN. <code>11</code> covers every PIN starting <code>11</code>. States ignore capitals and spaces.</li><li>A zone with every method off never matches.</li><li>Before the shopper gives an address, the default zone prices the cart. With no default zone, core&#039;s flat rate shows.</li><li>Price: <code>amount + per_kg × (started kilos above the included weight)</code>. Every started kilo counts, so 1,001 g over is two kilos.</li><li>Delivery is free once the items reach the free-over amount. Empty means never. That amount also drives the cart&#039;s free-delivery meter.</li><li>An item with no weight counts as the default weight.</li><li>Shipping classes come from each product variant&#039;s <strong>Shipping class</strong>. A class with a charge in the zone adds that charge for each item, on top of the price. Free-over still makes the whole delivery free.</li><li>Items in the class <code>free</code> ship free and add no weight. A cart of only <code>free</code> items ships free.</li><li>A method with fastest and slowest day counts shows a date range, such as &quot;20 Oct - 21 Oct&quot;. One day exactly shows &quot;Tomorrow&quot;. Both at 0 shows no date. The estimate is kept on the order&#039;s shipping line.</li><li>For an address no zone covers, <strong>Refuse it</strong> (default) says &quot;We do not deliver to this PIN code yet.&quot; or &quot;country&quot;. <strong>Keep the standard delivery rate</strong> keeps core&#039;s flat rate.</li><li>Tracking: under <strong>Couriers and tracking links</strong>, write one per line, a name, a comma and an https link with <code>{tracking}</code>:<pre><code>Delhivery, https://www.delhivery.com/track/package/{tracking}</code></pre><p>When an admin ships an order with a matching courier name and a tracking number, the buyer gets that link. Links that are not https, or lack <code>{tracking}</code>, are refused.</p></li></ul>\n<h2>Notes / limits</h2>\n<ul><li>With no zones at all, nothing is refused.</li><li>An address missing the PIN or state a zone needs is not refused. The default zone prices the cart until the shopper types it.</li><li>No database query when a cart is priced. Zones are read from the settings core already loads.</li><li>Without the cart hooks (older Shopclass), the plugin loads, does nothing and says so in the admin.</li><li>Zones and settings are preferences in the <code>shipping</code> section. No table of its own.</li><li>Uninstalling removes the zones and settings. Orders keep what they were charged.</li></ul>\n<h2>For developers</h2>\n<p>Listens to the filters <code>cart_shipping_methods</code>, <code>cart_problems</code>, <code>cart_free_over</code> and <code>billing_tracking_url</code>. It fires no hooks.</p>\n<p>Translations: copy <code>languages/shipping.pot</code> to <code>languages/&lt;locale&gt;/messages.po</code>, translate, and compile to <code>messages.mo</code>. Rebuild the template with <code>php tools/make-pot.php</code>.</p>\n<p>Tests: <code>./tests/run.sh</code> (unit) and <code>php tests/integration/quote.php</code> (needs core&#039;s scratch MySQL on port 33061).</p>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugin-shipping/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">GitHub issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <a href=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/v0.2.1/LICENSE\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">LICENSE</a>.</p>",
-    "downloads": 8,
+    "downloads": 13,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-shipping",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/icon.svg",
     "latest_version": "0.2.1",
     "license": "GPL-3.0-or-later",
-    "modes": [
-        "shop"
-    ],
     "name": "Shipping",
     "requires_min": "7.1.0",
     "screenshots": [
@@ -47,7 +44,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>The admin order screen suggests the set-up couriers in its Carrier box.</li></ul>",
-            "downloads": 1,
+            "downloads": 3,
             "published_at": "2026-10-30T17:30:37Z",
             "requires": "7.1.0",
             "requires_php": "8.2",
@@ -59,7 +56,7 @@
         },
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Shipping class charges per zone, such as bulky = 200 for each bulky item. Items in the class &quot;free&quot; ship free.</li></ul>",
-            "downloads": 3,
+            "downloads": 4,
             "published_at": "2026-10-30T07:09:28Z",
             "requires": "7.1.0",
             "requires_php": "8.2",
@@ -71,7 +68,7 @@
         },
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Free-over, address problems and tracking links use core&#039;s typed cart events.</li></ul>",
-            "downloads": 4,
+            "downloads": 6,
             "published_at": "2026-10-29T12:01:06Z",
             "requires": "7.1.0",
             "requires_php": "8.2",

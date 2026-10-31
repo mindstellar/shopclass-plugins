@@ -6,15 +6,12 @@
         "content-widgets"
     ],
     "description_html": "<h1>Age Warning</h1>\n<p>Shows an age-confirmation notice before a visitor sees the site, and remembers the answer. For sites with adult listings that must show a notice.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugins/c2b4d9929eccb6d434edc93a91dd3f01f2ad6ce5/plugins/age-warning/assets/screenshot-1.png\" alt=\"Age Warning notice\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li><li>The theme must call the <code>header</code> and <code>footer</code> hooks. Without either, no notice shows.</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open Plugins → Manage plugins, then Settings next to Age Warning.</li><li>Edit the fields:</li></ol>\n<table><thead><tr><th>Field</th><th>Default</th></tr></thead><tbody><tr><td>Notice text</td><td>&quot;This site contains adult content. Confirm that you are of legal age…&quot;</td></tr><tr><td>Confirm button</td><td>&quot;I am of legal age&quot;</td></tr><tr><td>Decline button</td><td>&quot;Leave this site&quot;</td></tr><tr><td>Send decliners to</td><td><code>https://www.google.com/</code></td></tr><tr><td>Remember for (days)</td><td>30 (1–365)</td></tr></tbody></table>\n<ol start=\"3\"><li>Save.</li></ol>\n<p>Only <code>http://</code> and <code>https://</code> addresses work for the decline link. Anything else falls back to the default.</p>\n<h2>How it works</h2>\n<ul><li>A full-screen notice covers the page until the visitor confirms.</li><li>The answer is kept in a cookie for the number of days you set.</li><li>A visitor who declines goes to your chosen address.</li><li>The notice is in every page and hidden in the browser once confirmed, so it works with a page cache.</li><li>With JavaScript off, the notice stays.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>It is a notice, not access control. The page is still sent to the browser, and a visitor can clear the cookie or read the source.</li><li>Derived from the Osclass &quot;Age warning&quot; plugin (1.0.2). See CHANGELOG.md.</li></ul>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugins/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugins/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Derived from Osclass (Apache-2.0); both notices are kept in the source headers.</p>",
-    "downloads": 186,
+    "downloads": 189,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
     "icon": "assets/age-warning/assets/icon.svg",
     "latest_version": "2.0.1",
     "license": "GPL-3.0-or-later",
-    "modes": [
-        "classifieds"
-    ],
     "name": "Age Warning",
     "requires_min": "6.1.0",
     "screenshots": [
@@ -46,7 +43,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 6.4.</li></ul>",
-            "downloads": 67,
+            "downloads": 69,
             "published_at": "2026-09-25T03:56:45Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
@@ -58,7 +55,7 @@
         },
         {
             "changelog_html": "<p>First Shopclass release, rewritten from the Osclass plugin (1.0.2, 2013).</p>\n<h3>Breaking</h3>\n<ul><li>The confirmation is no longer kept in the PHP session, so a visitor who confirmed under 1.0.2 is asked once more. Nothing else carries over; there were no settings to migrate.</li></ul>\n<h3>Changed</h3>\n<ul><li><strong>The gate no longer redirects.</strong> It was a server-side redirect to an interstitial page, with the answer in the session. Both are incompatible with a response cache: the HTML differed between a confirmed and an unconfirmed visitor, so a shared cache could serve the interstitial to everyone or the page to someone who never confirmed, and touching the session marked the response private, which stopped the page being cached at all. The notice is now drawn on every page and dismissed in the browser, leaving the response identical for every visitor.</li><li>The notice fails closed: it is visible as plain HTML and CSS, and script only <em>hides</em> it once the confirmation cookie is found. Previously a visitor without JavaScript was unaffected either way, because the gate was a redirect.</li><li>The confirmation cookie is set with <code>SameSite=Lax</code>, and with <code>Secure</code> over HTTPS.</li></ul>\n<h3>New</h3>\n<ul><li>Settings screen under Plugins → Configure: notice text, both button labels, where decliners are sent, and how long the confirmation is remembered.</li><li>Every string is translatable under the <code>age-warning</code> domain.</li><li>The notice is a labelled dialog (<code>role=&quot;dialog&quot;</code>, <code>aria-modal</code>), respects the visitor&#039;s dark-mode preference, and its buttons are real buttons and links rather than styled text.</li></ul>\n<h3>Fixed</h3>\n<ul><li><strong>Removed an open redirect.</strong> The post-confirmation location came from the request URI by way of the session and was passed to <code>header(&#039;Location: …&#039;)</code> unchecked, so a request path beginning <code>//</code> sent the visitor to another host.</li><li><strong>Removed two <code>error_log()</code> calls that ran on every page load</strong>, one of them logging the requested file. On a busy site they filled the error log.</li><li>The decline link is validated: only <code>http://</code> and <code>https://</code> are used, so a settings value cannot introduce another scheme into a link rendered on every public page.</li><li>The decline link no longer points at a hardcoded third-party address for every site.</li><li>Settings are removed on uninstall, so a reinstall does not silently inherit them.</li><li>Dropped <code>confirm.php</code>, which contained nothing but an editor&#039;s template comment and existed only as a marker in the redirect flow.</li></ul>",
-            "downloads": 119,
+            "downloads": 120,
             "published_at": "2026-08-16T18:09:14Z",
             "requires": "6.1.0",
             "requires_php": "8.0",
