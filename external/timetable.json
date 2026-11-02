@@ -1,0 +1,23 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "timetable",
+  "type": "plugin",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/shopclass-plugin-timetable"
+  },
+  "asset_pattern": "^timetable_.*\\.zip$",
+  "categories": ["content-widgets"],
+  "tags": ["timetable", "schedule", "classes", "custom-fields"],
+  "short_description": "Lets posters add a weekly timetable of classes or sessions to a listing, shown by day on the listing page.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-timetable/main/assets/icon.svg",
+  "screenshots": [
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-timetable/main/assets/screenshot-1.png", "caption": "Posters add sessions on the listing form" },
+    { "src": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-timetable/main/assets/screenshot-2.png", "caption": "The timetable by day on the listing page" }
+  ],
+  "license": "GPL-3.0-or-later",
+  "support": {
+    "issues": "https://github.com/mindstellar/shopclass-plugin-timetable/issues",
+    "docs": "https://github.com/mindstellar/shopclass-plugin-timetable#readme"
+  }
+}
