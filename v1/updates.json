@@ -709,6 +709,16 @@
     ],
     "shipping": [
         {
+            "downloads": 1,
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "af03bd8fa3974c09c449b99b8ac3b033b5eac1b388ceb7376c02f9f4371df7a9",
+            "size": 43342,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-shipping/releases/download/v0.3.0/shipping_0.3.0.zip",
+            "version": "0.3.0"
+        },
+        {
             "downloads": 9,
             "requires": "7.1.0",
             "requires_php": "8.2",
@@ -795,6 +805,16 @@
     ],
     "tax": [
         {
+            "downloads": 1,
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "c294cd21c601d554a9cc36332ad89442155d96d5fae7e9280442d59e31c71cad",
+            "size": 40712,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-tax/releases/download/v0.1.4/tax_0.1.4.zip",
+            "version": "0.1.4"
+        },
+        {
             "downloads": 8,
             "requires": "7.1.0",
             "requires_php": "8.2",
@@ -839,7 +859,7 @@
     ],
     "timetable": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "60ce304ead4a4319349c4d474a1ff38e8533419bcca0cdd611a5191300f17459",
