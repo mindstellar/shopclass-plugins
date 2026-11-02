@@ -39,8 +39,8 @@
 #
 #   --out=DIR         where to assemble package-ci/  [default: package-ci]
 #   --core-repo=R     the core repository              [default: mindstellar/shopclass]
-#   --ref=REF         pin the fallback clone to this tag/branch instead of
-#                      auto-detecting the newest release tag
+#   --ref=REF         take the bundle from this release, and pin the fallback
+#                      clone to this tag/branch, instead of the newest release
 #
 # Exit codes: 0 = at least the required components (package-lint.php,
 # Compatibility.php, deprecated-api.json) are present in package-ci/;
@@ -140,8 +140,10 @@ try_release_tarball() {
   fi
 
   local asset_url
-  asset_url="$(printf '%s' "$releases" | jq -r '
+  # With --ref the bundle comes from that release; without it, from the newest one.
+  asset_url="$(printf '%s' "$releases" | jq -r --arg ref "$REF" '
     map(select(.draft == false))
+    | if $ref != "" then map(select(.tag_name == $ref)) else . end
     | sort_by(.published_at)
     | reverse
     | map(.assets[]? | select(.name == "shopclass-package-ci.tar.gz") | {url: .browser_download_url, tag: .tag_name})
