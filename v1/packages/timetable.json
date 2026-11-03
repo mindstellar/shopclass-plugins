@@ -5,7 +5,7 @@
         "content-widgets"
     ],
     "description_html": "<h1>Weekly Timetable</h1>\n<p>Lets posters add a weekly timetable of classes or sessions to a listing: a gym&#039;s classes, a school&#039;s lessons, a club&#039;s training nights. The listing page shows it by day.</p>\n<p>The timetable is saved in a normal Text area custom field, so it needs no new table and stays with the listing if the plugin is turned off.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later</li><li>PHP 8.0 or later</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open Forms → Manage forms and open the form for the categories that need a timetable.</li><li>Use Add field to add a <strong>Text area</strong> field, for example &quot;Weekly timetable&quot;.</li><li>Open Plugins → Weekly Timetable, pick that field under <em>Timetable field</em>, and save. <em>Where it shows</em> then lists the categories the field&#039;s form is set for.</li></ol>\n<p>The settings page also has a short <em>How to use it</em> section.</p>\n<h2>How it works</h2>\n<ul><li>On the publish and edit forms, the Text area becomes rows. Each row has a day, a start time, an end time, a class and details. <em>Add a session</em> adds a row.</li><li>Each row is saved as one line of the Text area, for example <code>Mon | 18:00 | 19:00 | Yoga | Beginners</code>.</li><li>The listing page shows the sessions under each day, sorted by start time.</li><li>The admin&#039;s listing editor shows the plain lines. They can be edited there in the same format.</li><li>Uninstall removes the plugin&#039;s one setting. The field and its values stay.</li></ul>\n<h2>Theme notes</h2>\n<p>The plugin sets layout only. Inputs and buttons use the theme&#039;s own styles. The listing view uses these classes: <code>timetable</code>, <code>timetable__day</code>, <code>timetable__name</code>, <code>timetable__time</code>, <code>timetable__note</code>.</p>\n<h2>Translate</h2>\n<p>The template is <code>languages/timetable.pot</code>. Put a translation in <code>languages/&lt;locale&gt;/messages.po</code> and <code>messages.mo</code>, for example <code>languages/de_DE/messages.mo</code>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later.</p>",
-    "downloads": 5,
+    "downloads": 7,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugin-timetable",
     "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-timetable/main/assets/icon.svg",
@@ -46,7 +46,7 @@
     "versions": [
         {
             "changelog_html": "<h3>New</h3>\n<ul><li>Posters fill in a weekly timetable on the listing form: a row per session with a day, start, end, class and details.</li><li>The listing page shows the timetable by day, sorted by start time.</li><li>The timetable is saved in a Text area custom field picked under Plugins → Weekly Timetable. The settings page shows the categories where it appears, and how to use it.</li><li>Translation template in <code>languages/timetable.pot</code>.</li></ul>",
-            "downloads": 5,
+            "downloads": 7,
             "published_at": "2026-11-02T00:46:05Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
