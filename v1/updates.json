@@ -45,7 +45,7 @@
     ],
     "booking": [
         {
-            "downloads": 0,
+            "downloads": 2,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e6a0fd06242a6bb124e19cab5d8c2bf5956dcb778380a1ffe62212cd5f4bda42",
@@ -88,6 +88,16 @@
     "cloudflare": [
         {
             "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "a79928f80bbc4d9c05b5195f22ea78b740562eee7090f2732e32be353696b979",
+            "size": 39945,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-cloudflare/releases/download/v1.3.1/cloudflare_1.3.1.zip",
+            "version": "1.3.1"
+        },
+        {
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "7fa144ab0c759d6988b1699ec3e94cf09c94a64139775fdb0811459316a5604d",
@@ -199,7 +209,7 @@
     ],
     "digital-goods": [
         {
-            "downloads": 0,
+            "downloads": 2,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e8fa4ca56772eed16c6f355ea4eddeaf147b7c417ce4b177b7a831343da7798a",
@@ -399,7 +409,7 @@
     ],
     "map-search": [
         {
-            "downloads": 1,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "aee3f28e6cac10cf76d6430de84c676eca5caac5a430342514eb83508677ab39",
@@ -431,7 +441,17 @@
     ],
     "nginx-cache": [
         {
-            "downloads": 0,
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "8e71f55c92554ac92ff8eb808cef5eb8efbdc83cb0249fb8a6ac77d4e1aafcd6",
+            "size": 49091,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-nginx-cache/releases/download/v0.6.1/nginx-cache_0.6.1.zip",
+            "version": "0.6.1"
+        },
+        {
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "8d9246e36628b72564c06f8524e58a12d8f3f41f91cad0c9a02800f0a76223a0",
@@ -441,7 +461,7 @@
             "version": "0.6.0"
         },
         {
-            "downloads": 28,
+            "downloads": 29,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "6accc0956aa83d720e3516cd1afbcab2ae423288e7d128ed5e3ae6fbe76365bf",
@@ -451,7 +471,7 @@
             "version": "0.5.4"
         },
         {
-            "downloads": 22,
+            "downloads": 23,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "2ad2c8ae4dae24c3d27d140b90e198fe0d2c4fc1517a82b9ecedc6173d63379f",
@@ -461,7 +481,7 @@
             "version": "0.5.3"
         },
         {
-            "downloads": 56,
+            "downloads": 57,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "e0788f54efd2ed85c2da0942dbeb6db45bf9d87d86d25498a2c6ea2a8745ee49",
@@ -471,7 +491,7 @@
             "version": "0.5.2"
         },
         {
-            "downloads": 53,
+            "downloads": 54,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "899b92fc70e5a3c59c9db6df28939c00eaa8160a7b95505e03d092e4028a5968",
@@ -481,7 +501,7 @@
             "version": "0.5.1"
         },
         {
-            "downloads": 54,
+            "downloads": 55,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "18a7879a242b302b8d773e3b57e46b7f1fe4a8328564c9c52d5f20f428423fde",
@@ -491,7 +511,7 @@
             "version": "0.5.0"
         },
         {
-            "downloads": 69,
+            "downloads": 70,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "5c60c012f8934aea1719a39ba72ce37c23577f2b55d7ba1a858a0da519a621c4",
@@ -501,7 +521,7 @@
             "version": "0.4.1"
         },
         {
-            "downloads": 100,
+            "downloads": 101,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "327f58554f8eed8749d782a7c24fb0717de0f69c42d0142d44a14d1a83cbc956",
@@ -511,7 +531,7 @@
             "version": "0.4.0"
         },
         {
-            "downloads": 99,
+            "downloads": 100,
             "requires": "6.2.0",
             "requires_php": "8.0",
             "sha256": "345880b5c36af883ac207610b423ec04515756bfefe4a921223999faea788dd1",
@@ -523,7 +543,7 @@
     ],
     "paypal": [
         {
-            "downloads": 1,
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "c7e34ed59a8dc24d75316eb0fe15479f7928a326da2497e283f1e220c8e6b7a9",
@@ -619,7 +639,17 @@
     ],
     "razorpay": [
         {
-            "downloads": 0,
+            "downloads": 1,
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "5254b81e664006da42627d6b87012e5f9ae276c478da0a030201ce7379ba7a1c",
+            "size": 47017,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-razorpay/releases/download/v0.2.1/razorpay_0.2.1.zip",
+            "version": "0.2.1"
+        },
+        {
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "2d33191a18779cbc0c5d142eec93b702ce6b22ba356b4b597feff02f6f96bac2",
@@ -629,7 +659,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 1,
+            "downloads": 2,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "0616cfa5b10607df05521b9632e26ca1ccf93cb26b0d6419e3a136b442347bb5",
@@ -789,7 +819,7 @@
     ],
     "shipping": [
         {
-            "downloads": 1,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "872b0c33d06d86e185c13fba861ce7ec0868237f292a1ea828ef1b6e945e576e",
@@ -841,7 +871,7 @@
     ],
     "shop-emails": [
         {
-            "downloads": 0,
+            "downloads": 2,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "720b51ab2bf600a690628c55f9102293531d1a012601708dee71baf9a78b9211",
@@ -863,7 +893,7 @@
     ],
     "stripe": [
         {
-            "downloads": 0,
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "05ca30af6b254d0364f6828e2570c5eb103a87c52acaecc24f56f6560c54da1d",
@@ -915,7 +945,7 @@
     ],
     "tax": [
         {
-            "downloads": 0,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "aa40a1eaa2108713857792f66dbf2ba1e81308900d777affe2b95975a32a8eb1",
@@ -925,7 +955,7 @@
             "version": "0.2.1"
         },
         {
-            "downloads": 1,
+            "downloads": 2,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "dde96a8965e596da746a456f46e672635897a3d4e9a683633e7f62c6f259841c",
@@ -935,7 +965,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "c294cd21c601d554a9cc36332ad89442155d96d5fae7e9280442d59e31c71cad",
@@ -977,7 +1007,7 @@
     ],
     "tax-gst": [
         {
-            "downloads": 0,
+            "downloads": 2,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "edf76475a0cc48b1745c86f5869aa3e2ef616b85206c29ed2d1b1e3a552791d2",
@@ -999,7 +1029,7 @@
     ],
     "timetable": [
         {
-            "downloads": 7,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "60ce304ead4a4319349c4d474a1ff38e8533419bcca0cdd611a5191300f17459",
