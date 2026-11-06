@@ -55,7 +55,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 104,
+        "downloads": 105,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-booking/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -82,7 +82,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 875,
+        "downloads": 876,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-cloudflare/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -108,7 +108,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 403,
+        "downloads": 410,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -263,7 +263,7 @@
         "categories": [
             "admin-tools"
         ],
-        "downloads": 496,
+        "downloads": 497,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-nginx-cache/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -289,7 +289,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 93,
+        "downloads": 96,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -314,7 +314,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 25,
+        "downloads": 31,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-promotions/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -365,7 +365,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 75,
+        "downloads": 78,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-razorpay/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -418,7 +418,7 @@
             "admin-tools",
             "anti-spam"
         ],
-        "downloads": 215,
+        "downloads": 217,
         "icon": "assets/required-registration-fields/assets/icon.svg",
         "modes": [
             "classifieds"
@@ -443,7 +443,7 @@
             "anti-spam",
             "content-widgets"
         ],
-        "downloads": 238,
+        "downloads": 239,
         "icon": "assets/sample-forms/assets/icon.svg",
         "modes": [
             "classifieds"
@@ -491,7 +491,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 38,
+        "downloads": 44,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -517,7 +517,7 @@
         "categories": [
             "notifications"
         ],
-        "downloads": 16,
+        "downloads": 22,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -543,7 +543,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 199,
+        "downloads": 202,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -569,7 +569,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 38,
+        "downloads": 44,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax/main/assets/icon.svg",
         "modes": [
             "shop"
