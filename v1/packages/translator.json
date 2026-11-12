@@ -16,6 +16,7 @@
         "classifieds",
         "shop"
     ],
+    "modes_declared": true,
     "name": "Translator",
     "requires_min": "7.0.6",
     "screenshots": [

@@ -15,6 +15,7 @@
         "classifieds",
         "shop"
     ],
+    "modes_declared": true,
     "name": "Analytics",
     "requires_min": "7.0.0",
     "screenshots": [

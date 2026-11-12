@@ -15,6 +15,7 @@
     "modes": [
         "classifieds"
     ],
+    "modes_declared": false,
     "name": "Google Analytics",
     "requires_min": "6.1.0",
     "screenshots": [

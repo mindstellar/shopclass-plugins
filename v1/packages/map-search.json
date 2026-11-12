@@ -15,6 +15,7 @@
         "classifieds",
         "shop"
     ],
+    "modes_declared": true,
     "name": "Map Search",
     "requires_min": "7.1.0",
     "screenshots": [

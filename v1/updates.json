@@ -209,7 +209,7 @@
     ],
     "digital-goods": [
         {
-            "downloads": 33,
+            "downloads": 34,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e8fa4ca56772eed16c6f355ea4eddeaf147b7c417ce4b177b7a831343da7798a",
@@ -313,7 +313,17 @@
     ],
     "google-geocoder": [
         {
-            "downloads": 27,
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "fee3118f9833760febc5acfd072a63172798b1b514b9ede1b940729df97ebd36",
+            "size": 22040,
+            "tested": "7.0",
+            "url": "https://github.com/mindstellar/shopclass-plugin-google-geocoder/releases/download/v0.1.1/google-geocoder_0.1.1.zip",
+            "version": "0.1.1"
+        },
+        {
+            "downloads": 28,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "4c51cc6fbd4ed04e6265a868bcc6f081ffaef677d6b56be079a010cc74e9dabf",
@@ -377,7 +387,17 @@
     ],
     "locationiq": [
         {
-            "downloads": 28,
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "1282d0c46c9f501e85c3974301e3c329bd9eae8d1b5c3c6a13f01ae0e0ca3722",
+            "size": 243249,
+            "tested": "7.0",
+            "url": "https://github.com/mindstellar/shopclass-plugin-locationiq/releases/download/v0.1.3/locationiq_0.1.3.zip",
+            "version": "0.1.3"
+        },
+        {
+            "downloads": 29,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "161375f0627aecaf584142adc36dbfb11c45c33a311d9e5294b83d2431300f02",
@@ -387,7 +407,7 @@
             "version": "0.1.2"
         },
         {
-            "downloads": 44,
+            "downloads": 45,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "60bc63414b551bb3f0e6cda609f105575478b7589c04ef6ab0374ac2e2596a32",
@@ -397,7 +417,7 @@
             "version": "0.1.1"
         },
         {
-            "downloads": 40,
+            "downloads": 41,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "5746f7de755c2f652fce40419df9fae6f69189e552c13d9ad50d24e6e02a8332",
@@ -595,7 +615,7 @@
     ],
     "promotions": [
         {
-            "downloads": 41,
+            "downloads": 42,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "d51174588f3b83a40d19d1ed83207b002a0532d4ed9a123f4a1baedd29059001",
@@ -829,7 +849,7 @@
     ],
     "shipping": [
         {
-            "downloads": 34,
+            "downloads": 35,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "872b0c33d06d86e185c13fba861ce7ec0868237f292a1ea828ef1b6e945e576e",
@@ -881,7 +901,7 @@
     ],
     "shop-emails": [
         {
-            "downloads": 34,
+            "downloads": 35,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "720b51ab2bf600a690628c55f9102293531d1a012601708dee71baf9a78b9211",
@@ -903,7 +923,17 @@
     ],
     "stripe": [
         {
-            "downloads": 30,
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "544c935943697e76dfff145daa91caf3d691c9874c3893ced021bd0cdc3c0783",
+            "size": 45072,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-stripe/releases/download/v0.1.9/stripe_0.1.9.zip",
+            "version": "0.1.9"
+        },
+        {
+            "downloads": 32,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "05ca30af6b254d0364f6828e2570c5eb103a87c52acaecc24f56f6560c54da1d",
@@ -975,7 +1005,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 35,
+            "downloads": 36,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "c294cd21c601d554a9cc36332ad89442155d96d5fae7e9280442d59e31c71cad",
@@ -1017,7 +1047,17 @@
     ],
     "tax-gst": [
         {
-            "downloads": 2,
+            "downloads": 1,
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "bc2465401c3b34ad143bd5ce2382e0eed6d620f3623a59e8db9e89d9448c06c4",
+            "size": 23369,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-tax-gst/releases/download/v0.2.1/tax-gst_0.2.1.zip",
+            "version": "0.2.1"
+        },
+        {
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "edf76475a0cc48b1745c86f5869aa3e2ef616b85206c29ed2d1b1e3a552791d2",
