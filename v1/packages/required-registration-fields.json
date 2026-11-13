@@ -6,7 +6,7 @@
         "anti-spam"
     ],
     "description_html": "<h1>Required Registration Fields</h1>\n<p>Adds profile fields to the registration form and lets you make some of them mandatory.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/shopclass-plugins/b7196d0c8a499a9aee9bcb2901ac7588ae57f808/plugins/required-registration-fields/assets/screenshot-1.png\" alt=\"Required Registration Fields settings\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 6.1.0 or later</li><li>PHP 8.0 or later</li></ul>\n<h2>Install</h2>\n<ol><li>Open Plugins → Browse (or upload the zip from the GitHub release).</li><li>Install.</li><li>Activate.</li></ol>\n<h2>Set up</h2>\n<ol><li>Open Plugins → Manage plugins, then Settings next to Required Registration Fields.</li><li>For each field, choose Not shown, Shown, optional or Shown, required. The fields are mobile phone, landline, website, address and account type (person or company).</li><li>Save.</li></ol>\n<p>Nothing is added until you choose, so installing changes nothing on its own.</p>\n<h2>How it works</h2>\n<ul><li>The fields take the theme&#039;s own layout on the sign-up form.</li><li>A required field is checked on the server when the account is created. A registration with an empty one is rejected and what was typed is kept.</li><li>The form also carries the browser&#039;s <code>required</code> attribute, as a convenience only.</li><li>Only the fields you turn on are written, each to its matching column on the new account. The column list is fixed in the plugin, so a request cannot reach a column you did not enable.</li></ul>\n<h2>Notes / limits</h2>\n<ul><li>Derived from the Osclass &quot;Required Fields at Registration&quot; plugin (1.0.6). See CHANGELOG.md.</li></ul>\n<h2>Support</h2>\n<p><a href=\"https://github.com/mindstellar/shopclass-plugins/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">https://github.com/mindstellar/shopclass-plugins/issues</a></p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Derived from Osclass (Apache-2.0); both notices are kept in the source headers.</p>",
-    "downloads": 221,
+    "downloads": 223,
     "funding": null,
     "homepage": "https://github.com/mindstellar/shopclass-plugins",
     "icon": "assets/required-registration-fields/assets/icon.svg",
@@ -47,7 +47,7 @@
     "versions": [
         {
             "changelog_html": "<h3>Changed</h3>\n<ul><li>Tested up to Shopclass 7.1.</li></ul>",
-            "downloads": 7,
+            "downloads": 9,
             "published_at": "2026-11-06T03:23:37Z",
             "requires": "6.1.0",
             "requires_php": "8.0",

@@ -45,7 +45,7 @@
     ],
     "booking": [
         {
-            "downloads": 5,
+            "downloads": 6,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e6a0fd06242a6bb124e19cab5d8c2bf5956dcb778380a1ffe62212cd5f4bda42",
@@ -229,7 +229,7 @@
             "version": "2.4.0"
         },
         {
-            "downloads": 41,
+            "downloads": 42,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "afe4305219e8d019ce1a0ad3286e40f481b3470ad17340c9d423edd3a6a2062b",
@@ -313,7 +313,7 @@
     ],
     "google-geocoder": [
         {
-            "downloads": 1,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fee3118f9833760febc5acfd072a63172798b1b514b9ede1b940729df97ebd36",
@@ -387,7 +387,7 @@
     ],
     "locationiq": [
         {
-            "downloads": 1,
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "1282d0c46c9f501e85c3974301e3c329bd9eae8d1b5c3c6a13f01ae0e0ca3722",
@@ -763,7 +763,7 @@
     ],
     "required-registration-fields": [
         {
-            "downloads": 7,
+            "downloads": 9,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "5078fe2824ffcd47b18c874cb7c8d8202d4dbc2ae020cae2d68fdb8c5e2a4f96",
@@ -926,6 +926,16 @@
             "downloads": 1,
             "requires": "7.0.0",
             "requires_php": "8.0",
+            "sha256": "805c59fa0db556c57c11d87dfde48a8db2f239e13fd32babdad087933fc5dea5",
+            "size": 45183,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-stripe/releases/download/v0.1.10/stripe_0.1.10.zip",
+            "version": "0.1.10"
+        },
+        {
+            "downloads": 5,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
             "sha256": "544c935943697e76dfff145daa91caf3d691c9874c3893ced021bd0cdc3c0783",
             "size": 45072,
             "tested": "7.1",
@@ -1047,7 +1057,7 @@
     ],
     "tax-gst": [
         {
-            "downloads": 1,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "bc2465401c3b34ad143bd5ce2382e0eed6d620f3623a59e8db9e89d9448c06c4",
@@ -1091,7 +1101,7 @@
     ],
     "translator": [
         {
-            "downloads": 23,
+            "downloads": 25,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "d90e6d44b282378ce61fe218fc861ef71ef3b5fae7644cc7aa952ac09ed9065d",
