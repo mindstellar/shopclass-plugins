@@ -112,7 +112,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 436,
+        "downloads": 396,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -564,7 +564,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 234,
+        "downloads": 239,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -674,7 +674,7 @@
             "admin-tools",
             "localisation"
         ],
-        "downloads": 42,
+        "downloads": 43,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/icon.svg",
         "modes": [
             "classifieds",

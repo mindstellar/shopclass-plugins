@@ -229,17 +229,7 @@
             "version": "2.4.0"
         },
         {
-            "downloads": 42,
-            "requires": "6.4.0",
-            "requires_php": "8.0",
-            "sha256": "afe4305219e8d019ce1a0ad3286e40f481b3470ad17340c9d423edd3a6a2062b",
-            "size": 45644,
-            "tested": "7.0",
-            "url": "https://github.com/mindstellar/shopclass-plugin-digital-goods/releases/download/2.2.0/digital-goods_2.2.0.zip",
-            "version": "2.2.0"
-        },
-        {
-            "downloads": 37,
+            "downloads": 38,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "f5182b485ec5e13e2f1cd789cf072aa09264f7d6f4d05d575e79b1f235b6fa5a",
@@ -259,7 +249,7 @@
             "version": "2.1.1"
         },
         {
-            "downloads": 59,
+            "downloads": 60,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "f413880452ae36aeac745936a78fc569b072572c1afa5020fc0def9b96630462",
@@ -923,7 +913,7 @@
     ],
     "stripe": [
         {
-            "downloads": 1,
+            "downloads": 6,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "805c59fa0db556c57c11d87dfde48a8db2f239e13fd32babdad087933fc5dea5",
@@ -1101,7 +1091,7 @@
     ],
     "translator": [
         {
-            "downloads": 25,
+            "downloads": 26,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "d90e6d44b282378ce61fe218fc861ef71ef3b5fae7644cc7aa952ac09ed9065d",
