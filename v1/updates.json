@@ -23,7 +23,7 @@
     ],
     "analytics": [
         {
-            "downloads": 25,
+            "downloads": 26,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "a46eb919b53f03ddbbbf8258293671aacb149126a7c188433cbc7cf79ea94e6f",
@@ -209,7 +209,17 @@
     ],
     "digital-goods": [
         {
-            "downloads": 34,
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "e27ae5dea6d6d41380d2b82d3ad281667076d2aea5d80cbf23e45ef1b2b3101d",
+            "size": 54296,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-digital-goods/releases/download/v2.4.2/digital-goods_2.4.2.zip",
+            "version": "2.4.2"
+        },
+        {
+            "downloads": 39,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e8fa4ca56772eed16c6f355ea4eddeaf147b7c417ce4b177b7a831343da7798a",
@@ -605,7 +615,7 @@
     ],
     "promotions": [
         {
-            "downloads": 42,
+            "downloads": 45,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "d51174588f3b83a40d19d1ed83207b002a0532d4ed9a123f4a1baedd29059001",
@@ -839,7 +849,7 @@
     ],
     "shipping": [
         {
-            "downloads": 35,
+            "downloads": 38,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "872b0c33d06d86e185c13fba861ce7ec0868237f292a1ea828ef1b6e945e576e",
@@ -891,7 +901,7 @@
     ],
     "shop-emails": [
         {
-            "downloads": 35,
+            "downloads": 38,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "720b51ab2bf600a690628c55f9102293531d1a012601708dee71baf9a78b9211",
@@ -913,7 +923,7 @@
     ],
     "stripe": [
         {
-            "downloads": 6,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "805c59fa0db556c57c11d87dfde48a8db2f239e13fd32babdad087933fc5dea5",
@@ -1005,7 +1015,7 @@
             "version": "0.2.0"
         },
         {
-            "downloads": 36,
+            "downloads": 39,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "c294cd21c601d554a9cc36332ad89442155d96d5fae7e9280442d59e31c71cad",
