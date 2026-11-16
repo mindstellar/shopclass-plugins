@@ -209,7 +209,7 @@
     ],
     "digital-goods": [
         {
-            "downloads": 1,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "e27ae5dea6d6d41380d2b82d3ad281667076d2aea5d80cbf23e45ef1b2b3101d",
@@ -923,7 +923,7 @@
     ],
     "stripe": [
         {
-            "downloads": 9,
+            "downloads": 10,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "805c59fa0db556c57c11d87dfde48a8db2f239e13fd32babdad087933fc5dea5",
