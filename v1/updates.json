@@ -1101,7 +1101,7 @@
     ],
     "translator": [
         {
-            "downloads": 26,
+            "downloads": 28,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "d90e6d44b282378ce61fe218fc861ef71ef3b5fae7644cc7aa952ac09ed9065d",
