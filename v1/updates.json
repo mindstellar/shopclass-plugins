@@ -313,7 +313,7 @@
     ],
     "google-geocoder": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fee3118f9833760febc5acfd072a63172798b1b514b9ede1b940729df97ebd36",
@@ -387,7 +387,7 @@
     ],
     "locationiq": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "1282d0c46c9f501e85c3974301e3c329bd9eae8d1b5c3c6a13f01ae0e0ca3722",

@@ -165,7 +165,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 32,
+        "downloads": 33,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-google-geocoder/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -219,7 +219,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 119,
+        "downloads": 120,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-locationiq/main/assets/icon.svg",
         "modes": [
             "classifieds",
