@@ -23,7 +23,7 @@
     ],
     "analytics": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "8cddc81256dc0ee3fed197b1d8131d41483babacde54001023dd32383a303e53",
@@ -333,7 +333,7 @@
     ],
     "google-geocoder": [
         {
-            "downloads": 2,
+            "downloads": 3,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fde35989b41527df2bcc843055b2ef27b29a30f280560c85319d06649a020ae5",
@@ -365,7 +365,7 @@
     ],
     "listing-import": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0",
             "requires_php": "8.0",
             "sha256": "17c2cab76fbf33106f7d2e87bfcc6a685a101a1d46577a68f6bfaf7452b884f9",
@@ -623,7 +623,7 @@
     ],
     "paypal": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "72c8172f1cc273ad481166db9fd0e76ae2a5e6cbea3f443e3c9107ae071b3f1f",
@@ -685,7 +685,7 @@
     ],
     "promotions": [
         {
-            "downloads": 2,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "a9abe5fb456e899584edff5d1042d0717d425059b5ca78cef4e11798f52a38d6",
@@ -949,7 +949,7 @@
     ],
     "shipping": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "81cc73273ab1d69ddbc60255bef6ec101e99cc41a911f213b450540a0bf43fc3",
@@ -1021,7 +1021,7 @@
     ],
     "shop-emails": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "5d34f3d15f165e05cfbe26e760f3012d6b153aa6b462a92ccad48b5b3bccacc0",
@@ -1053,7 +1053,7 @@
     ],
     "stripe": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "7121a449b29fe5e399cd8857a16e0cd0d7d3d3355f0e9ea733918c3d1f3ade82",
@@ -1135,7 +1135,7 @@
     ],
     "tax": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "46aee64a8c8cb8eaf010f5b14e6cdd618fd23135fe44277be14c79940bed8cf4",
@@ -1291,7 +1291,7 @@
     ],
     "translator": [
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "41027a16b76e867afbdf367f2f31d19df87a127227a79da8df0075080095e7ad",
