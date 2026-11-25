@@ -219,6 +219,16 @@
     ],
     "digital-goods": [
         {
+            "downloads": 1,
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "3abcd95ed6d2995428c478165c01d743631115954ecced8b8a453abbe30820c9",
+            "size": 54666,
+            "tested": "7.1",
+            "url": "https://github.com/mindstellar/shopclass-plugin-digital-goods/releases/download/v2.5.0/digital-goods_2.5.0.zip",
+            "version": "2.5.0"
+        },
+        {
             "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -1269,7 +1279,7 @@
     ],
     "timetable": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "9d886d53e9ef422bbfda524a5dd59935c890643f62535cb4691ad43678fce8f4",
@@ -1291,7 +1301,7 @@
     ],
     "translator": [
         {
-            "downloads": 7,
+            "downloads": 8,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "41027a16b76e867afbdf367f2f31d19df87a127227a79da8df0075080095e7ad",
