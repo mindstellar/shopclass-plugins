@@ -30,7 +30,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 58,
+        "downloads": 59,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-analytics/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -112,7 +112,7 @@
             "listings-moderation",
             "storage-media"
         ],
-        "downloads": 413,
+        "downloads": 416,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-digital-goods/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -246,7 +246,7 @@
         "categories": [
             "search"
         ],
-        "downloads": 29,
+        "downloads": 30,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-map-search/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -300,7 +300,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 103,
+        "downloads": 104,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-paypal/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -326,7 +326,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 67,
+        "downloads": 68,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-promotions/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -353,7 +353,7 @@
             "content-widgets",
             "integrations"
         ],
-        "downloads": 222,
+        "downloads": 223,
         "icon": "assets/qr-code/assets/icon.svg",
         "modes": [
             "classifieds"
@@ -379,7 +379,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 83,
+        "downloads": 84,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-razorpay/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -510,7 +510,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 81,
+        "downloads": 82,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shipping/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -537,7 +537,7 @@
         "categories": [
             "notifications"
         ],
-        "downloads": 58,
+        "downloads": 59,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-shop-emails/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -564,7 +564,7 @@
         "categories": [
             "payments"
         ],
-        "downloads": 249,
+        "downloads": 252,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-stripe/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -591,7 +591,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 83,
+        "downloads": 84,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -619,7 +619,7 @@
         "categories": [
             "integrations"
         ],
-        "downloads": 22,
+        "downloads": 23,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-tax-gst/main/assets/icon.svg",
         "modes": [
             "shop"
@@ -647,7 +647,7 @@
         "categories": [
             "content-widgets"
         ],
-        "downloads": 14,
+        "downloads": 15,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-timetable/main/assets/icon.svg",
         "modes": [
             "classifieds",
@@ -674,7 +674,7 @@
             "admin-tools",
             "localisation"
         ],
-        "downloads": 57,
+        "downloads": 58,
         "icon": "https://raw.githubusercontent.com/mindstellar/shopclass-plugin-translator/main/assets/icon.svg",
         "modes": [
             "classifieds",

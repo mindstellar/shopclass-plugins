@@ -23,7 +23,7 @@
     ],
     "analytics": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "8cddc81256dc0ee3fed197b1d8131d41483babacde54001023dd32383a303e53",
@@ -219,7 +219,7 @@
     ],
     "digital-goods": [
         {
-            "downloads": 1,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "3abcd95ed6d2995428c478165c01d743631115954ecced8b8a453abbe30820c9",
@@ -489,7 +489,7 @@
     ],
     "map-search": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "7ab0839d000bc96791b7992c180aae8efee737c5cfd07d9acb7d81a573e39799",
@@ -633,7 +633,7 @@
     ],
     "paypal": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "72c8172f1cc273ad481166db9fd0e76ae2a5e6cbea3f443e3c9107ae071b3f1f",
@@ -695,7 +695,7 @@
     ],
     "promotions": [
         {
-            "downloads": 3,
+            "downloads": 4,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "a9abe5fb456e899584edff5d1042d0717d425059b5ca78cef4e11798f52a38d6",
@@ -737,7 +737,7 @@
     ],
     "qr-code": [
         {
-            "downloads": 89,
+            "downloads": 90,
             "requires": "6.1.0",
             "requires_php": "8.0",
             "sha256": "51d7530e797b5e8e5c039c0f3d27a8f6e9472b5dc2928c2d962cd37afb487e00",
@@ -759,7 +759,7 @@
     ],
     "razorpay": [
         {
-            "downloads": 2,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "922be045de6b563c20049477038d02780733ab6fd31a1499721a90bd12045138",
@@ -959,7 +959,7 @@
     ],
     "shipping": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "81cc73273ab1d69ddbc60255bef6ec101e99cc41a911f213b450540a0bf43fc3",
@@ -1031,7 +1031,7 @@
     ],
     "shop-emails": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "5d34f3d15f165e05cfbe26e760f3012d6b153aa6b462a92ccad48b5b3bccacc0",
@@ -1063,7 +1063,7 @@
     ],
     "stripe": [
         {
-            "downloads": 5,
+            "downloads": 8,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "7121a449b29fe5e399cd8857a16e0cd0d7d3d3355f0e9ea733918c3d1f3ade82",
@@ -1145,7 +1145,7 @@
     ],
     "tax": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "46aee64a8c8cb8eaf010f5b14e6cdd618fd23135fe44277be14c79940bed8cf4",
@@ -1227,7 +1227,7 @@
     ],
     "tax-gst": [
         {
-            "downloads": 2,
+            "downloads": 3,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "e3cf601f7d56aba84e97ef0b7e80922629bee49e735cbfb4f6aa57b9f5637d09",
@@ -1279,7 +1279,7 @@
     ],
     "timetable": [
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "9d886d53e9ef422bbfda524a5dd59935c890643f62535cb4691ad43678fce8f4",
@@ -1301,7 +1301,7 @@
     ],
     "translator": [
         {
-            "downloads": 8,
+            "downloads": 9,
             "requires": "7.0.6",
             "requires_php": "8.0",
             "sha256": "41027a16b76e867afbdf367f2f31d19df87a127227a79da8df0075080095e7ad",
